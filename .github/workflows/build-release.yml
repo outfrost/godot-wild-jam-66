@@ -27,7 +27,7 @@ jobs:
     - name: Write version to version file
       shell: bash
       run: |
-        echo "${{ steps.tag_version.outputs.TAG_VERSION }}" > ./version.tres
+        echo "${{ steps.tag_version.outputs.TAG_VERSION }}" > ./version.txt
 
     - name: Export project
       uses: firebelley/godot-export@v5.2.1

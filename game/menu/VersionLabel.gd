@@ -1,7 +1,7 @@
 class_name VersionLabel
 extends Label
 
-const VERSION_PATH: = "res://version.tres"
+const VERSION_PATH: = "res://version.txt"
 
 func _ready() -> void:
 	var v = FileAccess.get_file_as_string(VERSION_PATH)
