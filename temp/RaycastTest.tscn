@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2u6etso12hn0"]
+[gd_scene load_steps=8 format=3 uid="uid://b2u6etso12hn0"]
 
 [ext_resource type="PackedScene" uid="uid://ng3mtaufeth3" path="res://temp/Character.tscn" id="1_6kgt4"]
+[ext_resource type="Script" path="res://temp/Detector.gd" id="2_cy4aq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ehi2"]
 
@@ -45,9 +46,10 @@ shape = SubResource("ConvexPolygonShape3D_ojvsd")
 transform = Transform3D(7.42292, 0, 0, 0, 11.4251, 0, 0, 0, 1, -9.99688, 6.03048, -5.06876)
 mesh = SubResource("BoxMesh_ks8se")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+[node name="Detector" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.827652, 2, -10)
+script = ExtResource("2_cy4aq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Detector"]
 mesh = SubResource("BoxMesh_h228i")
 surface_material_override/0 = SubResource("StandardMaterial3D_lrrjq")
