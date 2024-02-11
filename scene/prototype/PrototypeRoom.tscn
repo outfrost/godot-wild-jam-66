@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="2_daf64"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm4g0"]
-size = Vector3(20, 1, 20)
+size = Vector3(10, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwg6f"]
 albedo_texture = ExtResource("1_2i7cm")
@@ -13,11 +13,12 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_wt4u0"]
 material = SubResource("StandardMaterial3D_nwg6f")
-size = Vector3(20, 1, 20)
+size = Vector3(10, 1, 10)
 
 [node name="PrototypeRoom" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_fm4g0")
@@ -26,7 +27,38 @@ shape = SubResource("BoxShape3D_fm4g0")
 mesh = SubResource("BoxMesh_wt4u0")
 skeleton = NodePath("../..")
 
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
+shape = SubResource("BoxShape3D_fm4g0")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Floor2"]
+mesh = SubResource("BoxMesh_wt4u0")
+skeleton = NodePath("../..")
+
+[node name="Floor3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3"]
+shape = SubResource("BoxShape3D_fm4g0")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Floor3"]
+mesh = SubResource("BoxMesh_wt4u0")
+skeleton = NodePath("../..")
+
+[node name="Floor4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4"]
+shape = SubResource("BoxShape3D_fm4g0")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Floor4"]
+mesh = SubResource("BoxMesh_wt4u0")
+skeleton = NodePath("../..")
+
 [node name="TestProp" parent="." instance=ExtResource("2_daf64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.382683, 0.853553, 0.353553, 0, -0.382683, 0.92388, 0.92388, -0.353553, -0.146447, 0, 8, 0)
