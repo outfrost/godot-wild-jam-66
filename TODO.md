@@ -15,3 +15,6 @@
 * environment
 	* [~] fire exit @lyall
 * [ ] domestic pineapple juice @outfrost
+* [ ] settings menu @outfrost
+* [ ] keyboard menu navigation @outfrost
+* [ ] gamepad controls?
