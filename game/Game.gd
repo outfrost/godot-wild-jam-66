@@ -25,7 +25,8 @@ func on_start_game() -> void:
 	main_menu.hide()
 	var level = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
 	add_child(level)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func back_to_menu() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	main_menu.show()
-
