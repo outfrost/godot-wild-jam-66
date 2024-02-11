@@ -3,18 +3,20 @@ extends CharacterBody3D
 @export var visual: Node3D
 @export var camera_anchor: Node3D
 
-@export var speed = 1.0
-@export var acceleration = 4.0
-@export var deceleration = 10.0
-@export var jump_speed = 2.7
-@export var rotation_speed = 10.0
+@export var speed: = 1.0
+@export var acceleration: = 4.0
+@export var deceleration: = 10.0
+@export var jump_speed: = 2.7
+@export var rotation_speed: = 10.0
+
+@onready var visual_base_pos: = visual.position
+@onready var visual_base_rot: = visual.rotation.y
+@onready var camera_anchor_base_pos: = camera_anchor.position
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var movement_delta: = Vector3.ZERO
-
-@onready var visual_base_pos: = visual.position
-@onready var camera_anchor_base_pos: = camera_anchor.position
+var rotation_delta: = 0.0
 
 func _process(delta: float) -> void:
 	# interpolate movement to prevent stutters
@@ -23,11 +25,16 @@ func _process(delta: float) -> void:
 	visual.position = visual_base_pos + correction
 	camera_anchor.position = camera_anchor_base_pos + correction
 
-	DebugOverlay.display(rotation.y)
-	DebugOverlay.display(camera_anchor.rotation.y)
+	# interpolate rotation
+	var rot_correction: = rotation_delta * (-1.0 + Engine.get_physics_interpolation_fraction())
+	visual.rotation.y = visual_base_rot + rot_correction
+
+	#DebugOverlay.display(rotation.y)
+	#DebugOverlay.display(camera_anchor.rotation.y)
 
 func _physics_process(delta: float) -> void:
 	var last_pos: = transform.origin
+	var last_rot: = rotation.y
 
 	if !is_on_floor():
 		velocity.y -= gravity * delta
@@ -36,7 +43,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_speed
 
 	if Input.get_action_strength("move_forward") > 0.0:
-		var new_rotation_y: = rotate_toward(rotation.y, rotation.y + camera_anchor.rotation.y, rotation_speed * delta)
+		var slerp_rate: = rotation_speed * (0.25 + 0.5 * (cos(camera_anchor.rotation.y) + 1.0)) * delta
+		var new_rotation_y: = lerp_angle(rotation.y, rotation.y + camera_anchor.rotation.y, slerp_rate)
 		camera_anchor.rotate_y(rotation.y - new_rotation_y)
 		rotation.y = new_rotation_y
 
@@ -57,3 +65,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	movement_delta = transform.origin - last_pos
+	rotation_delta = wrapf(rotation.y - last_rot, - 0.5 * TAU, 0.5 * TAU)
