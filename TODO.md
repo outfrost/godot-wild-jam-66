@@ -1,4 +1,4 @@
-* [~] movement, camera control @outfrost
+* [x] movement, camera control @outfrost
 * [ ] outer loop - spawning, finishing a level, progressing @outfrost
 * [ ] overall building layout
 * [ ] NPC navigation
