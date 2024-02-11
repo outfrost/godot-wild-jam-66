@@ -29,8 +29,7 @@ func _process(delta: float) -> void:
 	var rot_correction: = rotation_delta * (-1.0 + Engine.get_physics_interpolation_fraction())
 	visual.rotation.y = visual_base_rot + rot_correction
 
-	#DebugOverlay.display(rotation.y)
-	#DebugOverlay.display(camera_anchor.rotation.y)
+	#DebugOverlay.display([rotation.y, camera_anchor.rotation.y], self)
 
 func _physics_process(delta: float) -> void:
 	var last_pos: = transform.origin
