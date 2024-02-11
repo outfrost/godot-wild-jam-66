@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
+	var level = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
+	add_child(level)
 
 func back_to_menu() -> void:
 	main_menu.show()
+
