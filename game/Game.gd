@@ -16,7 +16,7 @@ func _ready() -> void:
 	main_menu.start_game.connect(on_start_game)
 
 func _process(delta: float) -> void:
-	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS))
+	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS), null, true)
 
 	if Input.is_action_just_pressed("menu"):
 		back_to_menu()

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var label: Label = $DebugLabel
+@onready var release_mode: bool = !OS.has_feature("debug")
 
 var buffer: String = ""
 
@@ -11,7 +12,9 @@ func _process(_delta):
 	label.text = buffer
 	buffer = ""
 
-func display(s, caller: Node = null):
-	if caller is Node:
+func display(expr, caller: Node = null, show_in_release: bool = false):
+	if release_mode && !show_in_release:
+		return
+	if caller:
 		buffer += "[%s] " % caller.name
-	buffer += str(s) + "\n"
+	buffer += str(expr) + "\n"
