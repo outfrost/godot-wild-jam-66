@@ -1,8 +1,8 @@
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
-* [ ] overall building layout
+* [ ] overall building layout @lyall
 * [ ] NPC navigation
-* [ ] NPC perception
+* [~] NPC perception @outfrost
 * [ ] NPC chase
 * props
 	* [~] fluid tank @lyall
@@ -11,6 +11,7 @@
 	* [~] shelving unit @lyall
 	* [ ] manager's coffee mug
 	* [ ] tools
+	* [ ] conveyor?
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
