@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cckf8gufr4uos"]
+[gd_scene load_steps=18 format=3 uid="uid://cckf8gufr4uos"]
 
 [ext_resource type="Texture2D" uid="uid://7ly2lf0fa1k" path="res://scene/prototype/texture/kenney/dark/00.png" id="1_2i7cm"]
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_3vnvr"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_56c8p"]
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="2_daf64"]
 [ext_resource type="PackedScene" uid="uid://l1dqwp7nm7rb" path="res://character/test/TestProp2.tscn" id="4_1bcnv"]
+[ext_resource type="Texture2D" uid="uid://c07y68pxnm34f" path="res://scene/prototype/texture/kenney/green/07.png" id="4_kp7cm"]
 [ext_resource type="PackedScene" uid="uid://dlbumgy041cro" path="res://character/test/TestProp3.tscn" id="5_fs64n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm4g0"]
@@ -31,6 +32,16 @@ uv1_world_triplanar = true
 material = SubResource("StandardMaterial3D_agkml")
 size = Vector3(0.5, 0.5, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwpgj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdt72"]
+albedo_texture = ExtResource("4_kp7cm")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7brvb"]
+material = SubResource("StandardMaterial3D_pdt72")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_42fs2"]
 size = Vector3(3, 1, 2)
 
@@ -41,6 +52,7 @@ finish_area = NodePath("FinishArea")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_fm4g0")
@@ -51,6 +63,7 @@ skeleton = NodePath("../..")
 
 [node name="Floor2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
 shape = SubResource("BoxShape3D_fm4g0")
@@ -61,6 +74,7 @@ skeleton = NodePath("../..")
 
 [node name="Floor3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3"]
 shape = SubResource("BoxShape3D_fm4g0")
@@ -71,6 +85,7 @@ skeleton = NodePath("../..")
 
 [node name="Floor4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4"]
 shape = SubResource("BoxShape3D_fm4g0")
@@ -81,6 +96,7 @@ skeleton = NodePath("../..")
 
 [node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.75, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -91,6 +107,7 @@ skeleton = NodePath("../..")
 
 [node name="Box13" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box13"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -101,6 +118,7 @@ skeleton = NodePath("../..")
 
 [node name="Box2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -111,6 +129,7 @@ skeleton = NodePath("../..")
 
 [node name="Box3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.25, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box3"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -121,6 +140,7 @@ skeleton = NodePath("../..")
 
 [node name="Box4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, 1.75)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box4"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -131,6 +151,7 @@ skeleton = NodePath("../..")
 
 [node name="Box5" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.75, 1.75)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box5"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -141,6 +162,7 @@ skeleton = NodePath("../..")
 
 [node name="Box6" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.75, 1.75)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box6"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -151,6 +173,7 @@ skeleton = NodePath("../..")
 
 [node name="Box7" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.75, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box7"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -161,6 +184,7 @@ skeleton = NodePath("../..")
 
 [node name="Box8" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1.25, 1.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box8"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -171,6 +195,7 @@ skeleton = NodePath("../..")
 
 [node name="Box9" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.75, -0.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box9"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -179,8 +204,97 @@ shape = SubResource("BoxShape3D_4kts7")
 mesh = SubResource("BoxMesh_hugsm")
 skeleton = NodePath("../..")
 
+[node name="Box14" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box14"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box14"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box20" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, -4.75)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box20"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box20"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box21" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.75, -4.75)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box21"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box21"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box15" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.75, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box15"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box15"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box16" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.75, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box16"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box16"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box17" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.75, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box17"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box17"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box18" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 1.25, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box18"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box18"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="Box19" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 1.25, -5.25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box19"]
+shape = SubResource("BoxShape3D_4kts7")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box19"]
+mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
 [node name="Box10" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.75, -0.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box10"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -191,6 +305,7 @@ skeleton = NodePath("../..")
 
 [node name="Box11" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.75, -0.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box11"]
 shape = SubResource("BoxShape3D_4kts7")
@@ -201,12 +316,442 @@ skeleton = NodePath("../..")
 
 [node name="Box12" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.25, -0.25)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box12"]
 shape = SubResource("BoxShape3D_4kts7")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="Box12"]
 mesh = SubResource("BoxMesh_hugsm")
+skeleton = NodePath("../..")
+
+[node name="BigBox" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox37" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox37"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox37"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox38" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox38"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox38"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox2"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox2"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox3"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox3"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox23" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox23"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox23"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox24" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox24"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox24"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox25" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox25"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox25"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox26" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox26"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox26"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox27" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox27"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox27"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox28" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox28"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox28"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox29" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox29"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox29"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox30" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -3)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox30"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox30"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox31" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -4)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox31"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox31"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox39" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox39"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox39"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox32" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox32"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox32"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox33" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox33"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox33"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox34" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox34"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox34"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox35" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox35"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox35"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox36" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox36"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox36"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox20" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox20"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox20"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox21" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox21"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox21"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox22" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox22"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox22"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox4"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox4"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox5"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox5"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox6"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox6"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox7"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox7"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox8" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox8"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox8"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox9" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox9"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox9"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox10" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox10"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox10"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox11" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox11"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox11"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox12" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox12"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox12"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox13" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox13"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox13"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox14" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox14"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox14"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox15" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -4.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox15"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox15"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox16" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox16"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox16"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox17" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox17"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox17"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox18" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox18"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox18"]
+mesh = SubResource("BoxMesh_7brvb")
+skeleton = NodePath("../..")
+
+[node name="BigBox19" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigBox19"]
+shape = SubResource("BoxShape3D_xwpgj")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="BigBox19"]
+mesh = SubResource("BoxMesh_7brvb")
 skeleton = NodePath("../..")
 
 [node name="TestProp" parent="." instance=ExtResource("2_daf64")]
