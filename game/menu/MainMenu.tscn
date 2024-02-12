@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmfdkwcu73843"]
+[gd_scene load_steps=6 format=3 uid="uid://dmfdkwcu73843"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_7yq1p"]
 [ext_resource type="Script" path="res://game/menu/CreditsPopup.gd" id="2"]
 [ext_resource type="Script" path="res://game/menu/VersionLabel.gd" id="3_426jp"]
 [ext_resource type="Script" path="res://game/menu/MainMenu.gd" id="4"]
+[ext_resource type="Script" path="res://game/menu/Music.gd" id="5_xcr5h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -147,3 +148,9 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Close"
+
+[node name="Music" type="FmodEventEmitter2D" parent="."]
+event_guid = "{00000000-0000-0000-fc1d-017ae8030080}"
+script = ExtResource("5_xcr5h")
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="Music" method="_on_play_button_pressed"]

@@ -26,3 +26,6 @@ layout_mode = 1
 [node name="TransitionScreen" parent="UI" instance=ExtResource("4")]
 visible = false
 layout_mode = 1
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://addons/fmod/Desktop/Master.bank", "res://addons/fmod/Desktop/Master.strings.bank"]
