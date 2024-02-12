@@ -2,4 +2,4 @@
 *.a
 *.dylib
 *.so
-!libs/
+!libs/**
