@@ -18,3 +18,4 @@ func activate_next_prop() -> void:
 	prop_idx += 1
 	if prop_idx < prop_order.size():
 		prop_order[prop_idx].activate()
+		Harbinger.dispatch("active_prop", [prop_order[prop_idx]])
