@@ -23,16 +23,16 @@ func _process(delta):
 func _physics_process(delta):
 	#use global coords pls
 	var space_state = get_world_3d().direct_space_state
-	
+
 	var query = PhysicsRayQueryParameters3D.create(position,Vector3(position.x,position.y,position.z+20))
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
-	
-	
+
+
 	if result:
 		#print("hit at " , result.position)
 		#print("hit at " + str(result.position))
 		print("hit at %v" % result.position)
-	
+
 	var ray = RayCast3D
 	pass

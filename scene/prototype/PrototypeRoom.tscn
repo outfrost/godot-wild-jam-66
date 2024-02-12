@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cckf8gufr4uos"]
+[gd_scene load_steps=19 format=3 uid="uid://cckf8gufr4uos"]
 
 [ext_resource type="Texture2D" uid="uid://7ly2lf0fa1k" path="res://scene/prototype/texture/kenney/dark/00.png" id="1_2i7cm"]
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_3vnvr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://l1dqwp7nm7rb" path="res://character/test/TestProp2.tscn" id="4_1bcnv"]
 [ext_resource type="Texture2D" uid="uid://c07y68pxnm34f" path="res://scene/prototype/texture/kenney/green/07.png" id="4_kp7cm"]
 [ext_resource type="PackedScene" uid="uid://dlbumgy041cro" path="res://character/test/TestProp3.tscn" id="5_fs64n"]
+[ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="8_7ujaf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm4g0"]
 size = Vector3(10, 1, 10)
@@ -773,3 +774,6 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinishArea"]
 shape = SubResource("BoxShape3D_42fs2")
+
+[node name="Employee" parent="." instance=ExtResource("8_7ujaf")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.06729, 0.50039, 0.35123)
