@@ -4,6 +4,7 @@
 * [ ] NPC navigation
 * [~] NPC perception @outfrost
 * [ ] NPC chase
+* [ ] test a build
 * props
 	* [~] fluid tank @lyall
 	* [~] cardboard box @lyall
@@ -21,7 +22,7 @@
 * [ ] keyboard menu navigation @outfrost
 * [ ] gamepad controls?
 * audio @grimma
-	* [ ] Godot: integrate FMOD
+	* [~] Godot: integrate FMOD
 	* [ ] Godot: set up PARAMETER_SCENE
 	* [ ] Godot: set up PARAMETER_DETECTION
 	* [ ] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
