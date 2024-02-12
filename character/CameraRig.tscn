@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcd12ht7disho"]
+
+[ext_resource type="Script" path="res://character/CameraRig.gd" id="1_gyyj8"]
+
+[node name="CameraRig" type="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_gyyj8")
+
+[node name="CameraPitch" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+near = 0.01
+far = 500.0

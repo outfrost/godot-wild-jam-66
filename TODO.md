@@ -1,5 +1,5 @@
 * [x] movement, camera control @outfrost
-* [ ] outer loop - spawning, finishing a level, progressing @outfrost
+* [x] outer loop - spawning, finishing a level, progressing @outfrost
 * [ ] overall building layout
 * [ ] NPC navigation
 * [ ] NPC perception
@@ -14,6 +14,7 @@
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
+* [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [ ] settings menu @outfrost
 * [ ] keyboard menu navigation @outfrost

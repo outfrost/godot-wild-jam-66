@@ -67,6 +67,11 @@ jump={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="general"
+3d_physics/layer_2="props"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

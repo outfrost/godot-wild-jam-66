@@ -6,6 +6,8 @@ extends Node
 
 var debug: RefCounted
 
+var scene: Room
+
 func _ready() -> void:
 	if OS.has_feature("debug") && FileAccess.file_exists("res://debug.gd"):
 		var debug_script: GDScript = load("res://debug.gd")
@@ -23,10 +25,17 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
-	var level = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
-	add_child(level)
+	scene = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
+	add_child(scene)
+	scene.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	scene.activate_next_prop()
 
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	remove_child(scene)
+	scene.queue_free()
 	main_menu.show()
+
+func prop_finished() -> void:
+	scene.activate_next_prop()

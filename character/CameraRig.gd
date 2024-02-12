@@ -1,8 +1,8 @@
 extends Node3D
 
-@export var mouse_sens = 4.0
+@onready var pitch_anchor: = $CameraPitch
 
-@onready var pitch_anchor: = $CameraPitchAnchor
+var mouse_sens = 4.0
 
 func _process(delta: float) -> void:
 	#DebugOverlay.display(str(pitch_anchor.rotation.x))
