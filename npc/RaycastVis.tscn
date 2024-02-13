@@ -9,6 +9,7 @@ radial_segments = 12
 rings = 4
 
 [node name="RaycastVis" type="MeshInstance3D"]
+visible = false
 skeleton = NodePath("../..")
 script = ExtResource("1_qkeum")
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DetectionProfile" load_steps=2 format=3 uid="uid://bjiougcw220fa"]
+
+[ext_resource type="Script" path="res://npc/DetectionProfile.gd" id="1_b4w58"]
+
+[resource]
+script = ExtResource("1_b4w58")
+motion_range = 14.0
+motion_sensitivity = 2.0
+environment_range = 10.0
+environment_sensitivity = 0.4
+decay = 0.2
