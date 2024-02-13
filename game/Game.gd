@@ -26,13 +26,14 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
-	music.set_parameter("SCENE", 1)
 	scene = load("res://scene/prototype/NavmeshRoom.tscn").instantiate()
 	add_child(scene)
 	scene.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	scene.activate_next_prop()
-
+	music.set_parameter("SCENE", 1)
+	music.set_parameter("SCENE", 0)
+	
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	remove_child(scene)
@@ -42,3 +43,5 @@ func back_to_menu() -> void:
 
 func prop_finished() -> void:
 	scene.activate_next_prop()
+	music.set_parameter("SCENE", 1)
+	music.set_parameter("SCENE", 0)
