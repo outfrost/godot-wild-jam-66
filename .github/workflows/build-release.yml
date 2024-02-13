@@ -29,6 +29,10 @@ jobs:
       run: |
         echo "${{ steps.tag_version.outputs.TAG_VERSION }}" > ./version.txt
 
+    - name: Run pre-export script
+      run: ./pre_export.sh
+      shell: bash
+
     - name: Export project
       uses: firebelley/godot-export@v5.2.1
       with:
