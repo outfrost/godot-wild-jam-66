@@ -23,11 +23,11 @@
 * [ ] gamepad controls?
 * audio @grimma
 	* [~] Godot: integrate FMOD
-	* [ ] Godot: set up PARAMETER_SCENE
+	* [~] Godot: set up PARAMETER_SCENE
 	* [ ] Godot: set up PARAMETER_DETECTION
-	* [ ] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
-	* [ ] FMOD: PARAMETER_SCENE in EVENT_1: MUSIC_menus vs MUSIC_sneaky
-	* [ ] FMOD: PARAMETER_DETECTION in EVENT_1: MUSIC_sneaky vs MUSIC_noticed vs MUSIC_spotted
+	* [~] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
+	* [~] FMOD: PARAMETER_SCENE in EVENT_1: MUSIC_menus vs MUSIC_sneaky
+	* [~] FMOD: PARAMETER_DETECTION in EVENT_1: MUSIC_sneaky vs MUSIC_noticed vs MUSIC_spotted
 	* [ ] FMOD: PARAMETER_DETECTION in EVENT_AMBIENCE_voiceover
 	* [ ] FMOD: set up sidechain between MUSIC_noticed and MUSIC_spotted, and AMBIENCE_warehouse
 	* [ ] FMOD: EVENT_AMBIENCE_warehouse: AMBIENCE_warehouse

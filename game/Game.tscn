@@ -28,7 +28,7 @@ visible = false
 layout_mode = 1
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://addons/fmod/Desktop/Master.strings.bank", "res://addons/fmod/Desktop/Master.bank"]
+bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
 [node name="Music" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/MUSIC"
@@ -37,10 +37,10 @@ autoplay = true
 event_parameter/DETECTION/id = 3904272917760853846
 event_parameter/DETECTION/value = 0.0
 event_parameter/DETECTION/min_value = 0.0
-event_parameter/DETECTION/max_value = 2.0
+event_parameter/DETECTION/max_value = 3.0
 event_parameter/DETECTION/default_value = 0.0
 event_parameter/SCENE/id = 4253876191321042138
 event_parameter/SCENE/value = 0.0
 event_parameter/SCENE/min_value = 0.0
-event_parameter/SCENE/max_value = 1.0
+event_parameter/SCENE/max_value = 2.0
 event_parameter/SCENE/default_value = 0.0
