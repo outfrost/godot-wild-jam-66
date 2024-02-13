@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
-	scene = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
+	scene = load("res://scene/prototype/NavmeshRoom.tscn").instantiate()
 	add_child(scene)
 	scene.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
