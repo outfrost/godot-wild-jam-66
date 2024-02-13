@@ -52,6 +52,11 @@ func _physics_process(delta: float) -> void:
 		if Input.get_action_strength("move_forward") > 0.0:
 			var slerp_rate: = rotation_speed * (0.25 + 0.5 * (cos(camera_rig.rotation.y) + 1.0)) * delta
 			var new_rotation_y: = lerp_angle(rotation.y, rotation.y + camera_rig.rotation.y, slerp_rate)
+
+			# prevent jitter/wiggle at low physics framerates
+			if abs(angle_difference(rotation.y, new_rotation_y)) > abs(camera_rig.rotation.y):
+				new_rotation_y = rotation.y + camera_rig.rotation.y
+
 			camera_rig.rotate_y(rotation.y - new_rotation_y)
 			rotation.y = new_rotation_y
 
