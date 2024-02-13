@@ -3,6 +3,7 @@ extends Node
 
 @onready var main_menu: Control = $UI/MainMenu
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
+@onready var music: = $Music
 
 var debug: RefCounted
 
@@ -25,6 +26,7 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
+	music.set_parameter("SCENE", 1)
 	scene = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
 	add_child(scene)
 	scene.prop_finished.connect(prop_finished)
@@ -35,6 +37,7 @@ func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	remove_child(scene)
 	scene.queue_free()
+	music.set_parameter("SCENE", 0)
 	main_menu.show()
 
 func prop_finished() -> void:
