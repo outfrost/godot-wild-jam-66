@@ -2,8 +2,16 @@
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
 * [ ] overall building layout @lyall
 * [ ] NPC navigation
+	* [x] Navmesh Gen
+	* [ ] actual gravity on it
+	* [ ] change model to raycast boys
+	* [ ] rotate boys in velocity direction
+	* [ ] create scene patrol points manager
+* [ ] NPC navigation
+	* [ ] State machine
+	* [ ] chase
+	* [ ] patrol
 * [~] NPC perception @outfrost
-* [ ] NPC chase
 * [ ] test a build
 	* [x] linux build works
 	* [x] attempt to unfuck mac build
