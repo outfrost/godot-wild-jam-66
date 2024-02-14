@@ -47,7 +47,11 @@ func _physics_process(delta: float) -> void:
 
 	if active:
 		if Input.is_action_just_pressed("jump") && is_on_floor():
+			$sfx_jump.play()
 			velocity.y = jump_speed
+			await get_tree().create_timer(0.60).timeout
+			if is_on_floor():
+					$sfx_fall.play()
 
 		if Input.get_action_strength("move_forward") > 0.0:
 			var slerp_rate: = rotation_speed * (0.25 + 0.5 * (cos(camera_rig.rotation.y) + 1.0)) * delta
