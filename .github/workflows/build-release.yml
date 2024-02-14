@@ -20,16 +20,10 @@ jobs:
       with:
         fetch-depth: 0
 
-      # Job creates release under the same version as the tag
-    - name: Get version from tag
-      id: tag_version
-      run: |
-        echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/v}
-
-    - name: Write version to version file
+    - name: Write tag version to version file
       shell: bash
       run: |
-        echo "${{ steps.tag_version.outputs.TAG_VERSION }}" > ./version.txt
+        echo "${GITHUB_REF#refs/tags/}" > ./version.txt
 
     - name: Run pre-export script
       run: ./pre_export.sh
