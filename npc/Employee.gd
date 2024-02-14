@@ -1,16 +1,13 @@
 extends CharacterBody3D
 
 const RAYCAST_VIS_SCN: PackedScene = preload("res://npc/RaycastVis.tscn")
+const MOTION_SPEED_DEADZONE: float = 0.05
 
 @export var vision_sensor: Node3D
 
 @export_group("Detection", "detection_")
-@export_subgroup("Normal Range", "detection_normal_range_")
-@export var detection_normal_range_movement: = 8.0
-@export var detection_normal_range_environment: = 6.0
-@export_subgroup("Chase Range", "detection_chase_range_")
-@export var detection_chase_range_movement: = 14.0
-@export var detection_chase_range_environment: = 10.0
+@export var detection_normal_profile: DetectionProfile
+@export var detection_chase_profile: DetectionProfile
 @export var detection_ray_length: float = 15.0
 @export_range(0.0, 45.0, 0.5, "radians_as_degrees") var detection_ray_cone_angle: float = TAU / 32.0
 @export_range(0, 4, 1) var detection_ray_cone_angle_steps: int = 3
@@ -18,8 +15,16 @@ const RAYCAST_VIS_SCN: PackedScene = preload("res://npc/RaycastVis.tscn")
 @onready var num_rays: int = 1 + (detection_ray_cone_angle_steps * 6)
 var raycast_vis: Array[RaycastVis]
 
-var prop: Node3D = null
+var prop: Prop = null
+
 var ray_idx: int = 0
+var line_of_sight: bool = false
+var los_last_ray_idx: int = 0
+var los_distance: float = 0.0
+
+var detection_profile: DetectionProfile
+var detected: float = 0.0
+var prop_last_pos: = Vector3.ZERO
 
 func _ready() -> void:
 	Harbinger.subscribe("active_prop", func(p): prop = p[0])
@@ -27,14 +32,20 @@ func _ready() -> void:
 		var vis: = RAYCAST_VIS_SCN.instantiate()
 		vision_sensor.add_child(vis)
 		raycast_vis.append(vis)
+	detection_profile = detection_normal_profile
 
 func _process(delta: float) -> void:
-	DebugOverlay.display(prop, self)
+	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected }, self)
+	if Input.is_action_just_pressed("debug_draw_raycast"):
+		for vis in raycast_vis:
+			vis.visible = !vis.visible
 
 func _physics_process(delta: float) -> void:
 	if !prop:
+		detected = 0.0
 		return
 
+	#region perception
 	var dir_to_prop: = (prop.global_position - vision_sensor.global_position).normalized()
 	var dir: = dir_to_prop
 	var cone_angle_axis: = dir.cross(dir.rotated(Vector3.UP, 0.5)).normalized()
@@ -56,11 +67,30 @@ func _physics_process(delta: float) -> void:
 	if result:
 		if result.collider == prop:
 			raycast_vis[ray_idx].update_vis(result.position, Color.GREEN)
+			line_of_sight = true
+			los_last_ray_idx = ray_idx
+			los_distance = (result.position - vision_sensor.global_position).length()
 		else:
 			raycast_vis[ray_idx].update_vis(result.position, Color.ORANGE)
-		#raycast_vis.show()
+			if los_last_ray_idx == ray_idx:
+				line_of_sight = false
 	else:
 		raycast_vis[ray_idx].update_vis(vision_sensor.global_position + (dir * detection_ray_length), Color.DARK_RED)
-		#raycast_vis.hide()
+		if los_last_ray_idx == ray_idx:
+				line_of_sight = false
 
 	ray_idx = (ray_idx + 1) % num_rays
+	#endregion
+
+	#region detection
+	if line_of_sight:
+		var prop_speed: = prop.velocity.length()
+		if los_distance <= detection_profile.motion_range && prop_speed > MOTION_SPEED_DEADZONE:
+			detected += prop_speed * detection_profile.motion_sensitivity * delta
+		else:
+			detected -= detection_profile.decay * delta
+	else:
+		detected -= detection_profile.decay * delta
+
+	detected = clampf(detected, 0.0, 1.0)
+	#endregion

@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://4y2uas5rrqh6"]
+[gd_scene load_steps=12 format=3 uid="uid://4y2uas5rrqh6"]
 
 [ext_resource type="Script" path="res://npc/Employee.gd" id="1_6muni"]
+[ext_resource type="Resource" uid="uid://bwduvthfiwk3b" path="res://npc/DetectionProfile_Normal.tres" id="2_lmpye"]
+[ext_resource type="Resource" uid="uid://bjiougcw220fa" path="res://npc/DetectionProfile_Chase.tres" id="3_8c7hm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wx4mc"]
 size = Vector3(0.4, 1.8, 0.3)
@@ -38,6 +40,8 @@ size = Vector3(0.4, 0.6, 0.2)
 [node name="BasicEmployee" type="CharacterBody3D" node_paths=PackedStringArray("vision_sensor")]
 script = ExtResource("1_6muni")
 vision_sensor = NodePath("VisionSensor")
+detection_normal_profile = ExtResource("2_lmpye")
+detection_chase_profile = ExtResource("3_8c7hm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_wx4mc")

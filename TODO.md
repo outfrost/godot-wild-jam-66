@@ -5,6 +5,15 @@
 * [~] NPC perception @outfrost
 * [ ] NPC chase
 * [ ] test a build
+	* [x] linux build works
+	* [x] attempt to unfuck mac build
+	* [x] crawl up a wall
+	* [x] it's still fucked
+	* [x] crawl back down
+	* [x] cry
+	* [x] yep, still fucked
+	* [ ] get help
+	* [ ] windows build???
 * props
 	* [~] fluid tank @lyall
 	* [~] cardboard box @lyall

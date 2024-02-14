@@ -8,6 +8,9 @@ var colour: = Color.BLACK
 @onready var ball: = $Ball
 
 func _ready() -> void:
+	if !OS.has_feature("debug"):
+		set_process(false)
+		return
 	mesh = ImmediateMesh.new()
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	ball.mesh = ball.mesh.duplicate()
