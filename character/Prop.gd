@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 	visual.rotation.y = visual_base_rot + rot_correction
 
 	#DebugOverlay.display([rotation.y, camera_rig.rotation.y], self)
+	#DebugOverlay.display({ velocity = velocity }, self)
 
 func _physics_process(delta: float) -> void:
 	var last_pos: = transform.origin
@@ -49,9 +50,6 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") && is_on_floor():
 			$sfx_jump.play()
 			velocity.y = jump_speed
-			await get_tree().create_timer(0.60).timeout
-			if is_on_floor():
-					$sfx_fall.play()
 
 		if Input.get_action_strength("move_forward") > 0.0:
 			var slerp_rate: = rotation_speed * (0.25 + 0.5 * (cos(camera_rig.rotation.y) + 1.0)) * delta
@@ -78,7 +76,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = velocity_xz.x
 		velocity.z = velocity_xz.y
 
+	var velocity_tmp: = velocity
+
 	move_and_slide()
+
+	for i in range(get_slide_collision_count()):
+		if get_slide_collision(i).get_normal().y * velocity_tmp.y < - jump_speed + 0.05:
+			$sfx_fall.play()
 
 	movement_delta = transform.origin - last_pos
 	rotation_delta = wrapf(rotation.y - last_rot, - 0.5 * TAU, 0.5 * TAU)
