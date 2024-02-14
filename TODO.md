@@ -26,9 +26,10 @@
 	* [~] fluid tank @lyall
 	* [~] cardboard box @lyall
 	* [~] forklift @lyall
-	* [~] shelving unit @lyall
+	* [~] shelving unit X2 @lyall
 	* [ ] manager's coffee mug
 	* [ ] tools
+		* [x] bucket
 	* [ ] conveyor?
 	* [ ] re:placement props @outfrost
 * environment
