@@ -12,7 +12,9 @@
 	* [ ] chase
 	* [ ] patrol
 * [~] NPC perception @outfrost
-* [ ] test a build
+	* [x] see motion
+	* [ ] see environment mismatch
+* [x] test a build
 	* [x] linux build works
 	* [x] attempt to unfuck mac build
 	* [x] crawl up a wall
@@ -20,8 +22,10 @@
 	* [x] crawl back down
 	* [x] cry
 	* [x] yep, still fucked
-	* [ ] get help
-	* [ ] windows build???
+	* [x] get help
+		* [x] thank linux gods for strace
+	* [x] fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fu
+	* [x] windows build???
 * props
 	* [~] fluid tank @lyall
 	* [~] cardboard box @lyall
@@ -30,17 +34,19 @@
 	* [ ] manager's coffee mug
 	* [ ] tools
 		* [x] bucket
-	* [ ] conveyor?
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
+	* [ ] conveyor?
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
+* [~] menu style and background @outfrost
 * [ ] settings menu @outfrost
 * [ ] keyboard menu navigation @outfrost
 * [ ] gamepad controls?
 * audio @grimma
 	* [~] Godot: integrate FMOD
+		* seems like we got it?
 	* [~] Godot: set up PARAMETER_SCENE
 	* [ ] Godot: set up PARAMETER_DETECTION
 	* [~] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
