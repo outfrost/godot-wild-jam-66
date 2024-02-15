@@ -3,6 +3,7 @@ extends Node
 
 @onready var main_menu: Control = $UI/MainMenu
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
+@onready var menu_background: Node = $MenuBackground
 @onready var music: = $Music
 
 var debug: RefCounted
@@ -26,19 +27,21 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
-	scene = load("res://scene/prototype/NavmeshRoom.tscn").instantiate()
+	menu_background.hide()
+	scene = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
 	add_child(scene)
 	scene.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	scene.activate_next_prop()
 	music.set_parameter("SCENE", 1)
 	music.set_parameter("SCENE", 0)
-	
+
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	remove_child(scene)
 	scene.queue_free()
 	music.set_parameter("SCENE", 0)
+	menu_background.show()
 	main_menu.show()
 
 func prop_finished() -> void:
