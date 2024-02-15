@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmfdkwcu73843"]
+[gd_scene load_steps=7 format=3 uid="uid://dmfdkwcu73843"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_7yq1p"]
 [ext_resource type="Script" path="res://game/menu/CreditsPopup.gd" id="2"]
 [ext_resource type="Script" path="res://game/menu/VersionLabel.gd" id="3_426jp"]
 [ext_resource type="Script" path="res://game/menu/MainMenu.gd" id="4"]
+[ext_resource type="Theme" uid="uid://bneqecul7ufgx" path="res://game/ui-theme/theme_main_menu.tres" id="4_g6k5d"]
 [ext_resource type="Script" path="res://game/menu/sfx_ui-click.gd" id="5_1q6hi"]
 
 [node name="MainMenu" type="Control"]
@@ -52,40 +53,44 @@ text = "[center][/center]"
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.55
-anchor_right = 0.5
-anchor_bottom = 0.55
-offset_left = -120.0
-offset_right = 120.0
-grow_horizontal = 2
+anchor_left = 0.85
+anchor_top = 0.75
+anchor_right = 0.85
+anchor_bottom = 0.75
+offset_left = -360.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_g6k5d")
+alignment = 2
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Play"
-
-[node name="ChooseLevelButton" type="Button" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-disabled = true
-text = "Choose level"
+text = "PLAY"
+alignment = 2
+clip_text = true
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-text = "Options"
+text = "SETTINGS"
+alignment = 2
+clip_text = true
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Credits"
+text = "CREDITS"
+alignment = 2
+clip_text = true
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit"
+text = "QUIT"
+alignment = 2
+clip_text = true
 
 [node name="CreditsPopup" type="Control" parent="."]
 visible = false
@@ -156,7 +161,6 @@ unique_name_in_owner = true
 script = ExtResource("5_1q6hi")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="sfx_uiclick" method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ChooseLevelButton" to="sfx_uiclick" method="_on_choose_level_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="sfx_uiclick" method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="sfx_uiclick" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="sfx_uiclick" method="_on_quit_button_pressed"]
