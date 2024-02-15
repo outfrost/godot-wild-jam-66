@@ -8,14 +8,14 @@
 [ext_resource type="StyleBox" uid="uid://b2irxlnj0dbjq" path="res://game/ui-theme/button_style_base.tres" id="6"]
 [ext_resource type="StyleBox" uid="uid://c6tm755r242je" path="res://game/ui-theme/panel_style_base.tres" id="7"]
 [ext_resource type="StyleBox" path="res://game/ui-theme/panel_style_popup.tres" id="8"]
-[ext_resource type="FontVariation" path="res://game/ui-theme/font/default/bold.tres" id="9_kyv48"]
-[ext_resource type="FontVariation" path="res://game/ui-theme/font/default/bold_italic.tres" id="10_r85sa"]
-[ext_resource type="FontVariation" path="res://game/ui-theme/font/default/italic.tres" id="11_hu7no"]
-[ext_resource type="FontVariation" uid="uid://chthmdaxij4fq" path="res://game/ui-theme/font/monospace/regular.tres" id="12_arhbb"]
+[ext_resource type="FontVariation" uid="uid://b0ji8plgwfom1" path="res://game/ui-theme/font/default/bold.tres" id="9_kyv48"]
+[ext_resource type="FontVariation" uid="uid://bf4yyux86yb1x" path="res://game/ui-theme/font/default/bold_italic.tres" id="10_r85sa"]
+[ext_resource type="FontVariation" uid="uid://niguaunegliq" path="res://game/ui-theme/font/default/italic.tres" id="11_hu7no"]
+[ext_resource type="FontVariation" uid="uid://bnko71w2gyi3r" path="res://game/ui-theme/font/monospace/medium.tres" id="12_y8s4f"]
 
 [resource]
 default_font = ExtResource("1_8q0xk")
-default_font_size = 16
+default_font_size = 20
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(1, 1, 1, 0.313726)
 Button/constants/hseparation = 3
@@ -31,6 +31,6 @@ PopupPanel/styles/panel = ExtResource("8")
 RichTextLabel/fonts/bold_font = ExtResource("9_kyv48")
 RichTextLabel/fonts/bold_italics_font = ExtResource("10_r85sa")
 RichTextLabel/fonts/italics_font = ExtResource("11_hu7no")
-RichTextLabel/fonts/mono_font = ExtResource("12_arhbb")
+RichTextLabel/fonts/mono_font = ExtResource("12_y8s4f")
 RichTextLabel/fonts/normal_font = ExtResource("1_8q0xk")
 VBoxContainer/constants/separation = 4

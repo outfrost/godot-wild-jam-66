@@ -50,8 +50,9 @@ gdscript/warnings/unused_argument=false
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode.release=3
 
 [editor_plugins]
 
