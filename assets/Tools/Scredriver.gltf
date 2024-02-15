@@ -1,0 +1,283 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.49",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Screwdriver"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "metal.003",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.2810102105140686,
+                    0.2810102105140686,
+                    0.2810102105140686,
+                    1
+                ],
+                "metallicFactor" : 0.787564754486084,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "handle",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8000000715255737,
+                    0.15919309854507446,
+                    0.022863946855068207,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "accent",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.7903274893760681,
+                    0.8000000715255737,
+                    0.010011730715632439,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.012",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "TEXCOORD_0" : 9,
+                        "NORMAL" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 86,
+            "max" : [
+                0.6079931855201721,
+                0.029427677392959595,
+                0.05468221381306648
+            ],
+            "min" : [
+                -0.015129037201404572,
+                -0.02942769229412079,
+                -0.05468221381306648
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 86,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 86,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 120,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 300,
+            "max" : [
+                -0.015129037201404572,
+                0.10000001639127731,
+                0.10000000149011612
+            ],
+            "min" : [
+                -0.45163071155548096,
+                -0.10000000149011612,
+                -0.10000000149011612
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 300,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 300,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 444,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 48,
+            "max" : [
+                -0.10951602458953857,
+                0.07912109792232513,
+                0.07912109792232513
+            ],
+            "min" : [
+                -0.1924547255039215,
+                -0.07912109792232513,
+                -0.07912109792232513
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 48,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 48,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 72,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1032,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 688,
+            "byteOffset" : 1032,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1032,
+            "byteOffset" : 1720,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 2752,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3600,
+            "byteOffset" : 2992,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2400,
+            "byteOffset" : 6592,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3600,
+            "byteOffset" : 8992,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 888,
+            "byteOffset" : 12592,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 13480,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 384,
+            "byteOffset" : 14056,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 14440,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 15016,
+            "target" : 34963
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 15160,
+            "uri" : "Scredriver.bin"
+        }
+    ]
+}
