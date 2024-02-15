@@ -101,6 +101,11 @@ debug_draw_raycast={
 3d_physics/layer_1="general"
 3d_physics/layer_2="props"
 
+[navigation]
+
+3d/default_cell_size=0.063
+3d/default_cell_height=0.063
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
