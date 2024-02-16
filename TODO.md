@@ -1,7 +1,7 @@
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
 * [~] overall building layout @outfrost
-* [ ] NPC navigation
+* [~] NPC navigation @lyall
 	* [x] Navmesh Gen
 	* [ ] actual gravity on it
 	* [ ] change model to raycast boys
@@ -43,14 +43,15 @@
 	* [ ] toolbox @lyall
 	* [ ] re:placement props @outfrost
 * environment
-	* [~] fire exit @lyall
+	* [x] fire exit @lyall
 	* [x] conveyor?
-	* [~] large shelf rescale @lyall
-	* [ ] clean table @lyall
-	* [ ] clean small table @lyall
-	* [ ] box: both sizes @lyall
+	* [x] large shelf rescale @lyall
+	* [x] clean table @lyall
+	* [x] clean small table @lyall
+	* [x] box: both sizes @lyall
 	* [ ] another big machine @lyall
-	* [ ] work devices™
+	* [ ] buckets of small parts (literally could be small cylinders in an open box)
+	* [~] work devices™
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost

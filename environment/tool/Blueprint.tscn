@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dclqyhypxt1gw"]
+
+[ext_resource type="PackedScene" uid="uid://didvd1jviglmv" path="res://assets/Tools/Blueprint.gltf" id="1_qc1kw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yfiaq"]
+size = Vector3(1.7, 0.035, 1.7)
+
+[node name="Blueprint" type="RigidBody3D"]
+mass = 0.2
+gravity_scale = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.018, 0)
+shape = SubResource("BoxShape3D_yfiaq")
+
+[node name="Blueprint" parent="." instance=ExtResource("1_qc1kw")]

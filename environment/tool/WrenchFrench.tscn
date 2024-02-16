@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgbdg6dnk2a0l"]
+
+[ext_resource type="PackedScene" uid="uid://d3k22r7e8jyw4" path="res://assets/Tools/WrenchFrench.gltf" id="1_oklqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ciki"]
+size = Vector3(0.71, 0.03, 0.12)
+
+[node name="WrenchFrench" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6ciki")
+
+[node name="WrenchFrench" parent="." instance=ExtResource("1_oklqo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

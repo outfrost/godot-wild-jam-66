@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://be7ueep8b3gdq"]
+
+[ext_resource type="PackedScene" uid="uid://px6iy7w36il3" path="res://assets/Box/FluidStorage.gltf" id="1_5qfel"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2qcu"]
+size = Vector3(2, 1.8, 2)
+
+[node name="Canister" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_e2qcu")
+
+[node name="FluidStorage" parent="." instance=ExtResource("1_5qfel")]
