@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=37 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="20_hpmtr"]
 [ext_resource type="PackedScene" uid="uid://nlk44fx0ufo5" path="res://environment/shelf_large/ShelfLarge.tscn" id="20_sfigs"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="24_gelmj"]
+[ext_resource type="PackedScene" uid="uid://fiaybotgspa7" path="res://character/Coffee.tscn" id="25_esun5"]
 [ext_resource type="PackedScene" uid="uid://nieost7b5uoa" path="res://environment/box/BoxOpen.tscn" id="25_oi247"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqas"]
@@ -60,7 +61,7 @@ size = Vector3(4, 3, 0.1)
 
 [node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
 script = ExtResource("1_f4j7u")
-prop_order = [NodePath("Props/TestProp"), NodePath("Props/Forklift")]
+prop_order = [NodePath("Props/TestProp"), NodePath("Props/Coffee"), NodePath("Props/Forklift")]
 finish_area = NodePath("FinishArea")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -346,11 +347,16 @@ transform = Transform3D(0.999833, 0, 0.01829, 0, 1, 0, -0.01829, 0, 0.999833, 3.
 [node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection3" instance=ExtResource("13_4godo")]
 transform = Transform3D(0.998152, 0, -0.0607698, 0, 1, 0, 0.0607698, 0, 0.998152, 1.65, 0, -1.5)
 
+[node name="Subsection4" type="Node3D" parent="NavigationRegion3D/WorkbenchSection"]
+
+[node name="TableBlueprint" parent="NavigationRegion3D/WorkbenchSection/Subsection4" instance=ExtResource("12_6mytv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.5, 0, 4.5)
+
+[node name="Blueprint" parent="NavigationRegion3D/WorkbenchSection/Subsection4/TableBlueprint" instance=ExtResource("13_ehoc5")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 1.016, 0)
+
 [node name="TableBlueprint" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("12_6mytv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -2)
-
-[node name="Blueprint" parent="NavigationRegion3D/WorkbenchSection/TableBlueprint" instance=ExtResource("13_ehoc5")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 1.01751, 0)
 
 [node name="AirCompressor" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("10_cop4s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.55, 0, -1.2)
@@ -460,6 +466,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 6)
 
 [node name="Forklift" parent="Props" instance=ExtResource("5_ym8pv")]
 transform = Transform3D(-0.5, 0, -1.9789e-07, 0, 0.65, 0, 9.53694e-08, 0, -0.6, 12, 0, -11.1083)
+
+[node name="Coffee" parent="Props" instance=ExtResource("25_esun5")]
+transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, 11.4, 1.01624, 12.7)
 
 [node name="BasicEmployee" parent="." instance=ExtResource("24_gelmj")]
 transform = Transform3D(-0.382683, 0, -0.92388, 0, 1, 0, 0.92388, 0, -0.382683, -5.5, 0, -2.5)
