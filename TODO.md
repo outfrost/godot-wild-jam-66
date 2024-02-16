@@ -27,13 +27,17 @@
 	* [x] fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fu
 	* [x] windows build???
 * props
-	* [~] fluid tank @lyall
-	* [~] cardboard box @lyall
-	* [~] forklift @lyall
-	* [~] shelving unit X2 @lyall
-	* [ ] manager's coffee mug
-	* [ ] tools
+	* [x] fluid tank @lyall
+	* [x] cardboard box @lyall
+	* [x] forklift @lyall
+	* [x] shelving unit X2 @lyall
+	* [x] manager's coffee mug
+	* [x] tools
 		* [x] bucket
+		* [x] Hammer
+		* [x] pipe wrench
+		* [x] wrench
+		* [x] screwdriver
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
