@@ -12,6 +12,7 @@ var current_agent_position: Vector3 = global_position
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var vy: float
 
 func _ready():
 	set_physics_process(false)
@@ -60,7 +61,11 @@ func _physics_process(delta):
 	current_agent_position = global_position
 	next_path_position = navigation_agent.get_next_path_position()
 
+	if !is_on_floor():
+		velocity.y -= gravity * delta
+		vy = velocity.y
 	velocity = current_agent_position.direction_to(next_path_position) * speed
+	velocity.y = vy
 
 	move_and_slide()
 

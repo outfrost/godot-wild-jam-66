@@ -23,7 +23,7 @@ var los_last_ray_idx: int = 0
 var los_distance: float = 0.0
 
 var detection_profile: DetectionProfile
-var detected: float = 0.0
+@export var detected: float = 0.0
 var prop_last_pos: = Vector3.ZERO
 
 func _ready() -> void:
