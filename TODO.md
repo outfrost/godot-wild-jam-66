@@ -30,11 +30,15 @@
 * props
 	* [x] fluid tank @lyall
 	* [x] cardboard box @lyall
-	* [~] forklift @lyall
+	* [x] forklift @lyall
 	* [x] shelving unit X2 @lyall
 	* [x] manager's coffee mug
 	* [x] tools
 		* [x] bucket
+		* [x] Hammer
+		* [x] pipe wrench
+		* [x] wrench
+		* [x] screwdriver
 	* [ ] something being fabricated
 	* [ ] toolbox @lyall
 	* [ ] re:placement props @outfrost

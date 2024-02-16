@@ -1,41 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://4y2uas5rrqh6"]
+[gd_scene load_steps=8 format=3 uid="uid://4y2uas5rrqh6"]
 
 [ext_resource type="Script" path="res://npc/Employee.gd" id="1_6muni"]
 [ext_resource type="Resource" uid="uid://bwduvthfiwk3b" path="res://npc/DetectionProfile_Normal.tres" id="2_lmpye"]
 [ext_resource type="Resource" uid="uid://bjiougcw220fa" path="res://npc/DetectionProfile_Chase.tres" id="3_8c7hm"]
+[ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="4_xaqww"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wx4mc"]
-size = Vector3(0.4, 1.8, 0.3)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bvf6n"]
+radius = 0.259172
+height = 1.52982
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb4jf"]
-albedo_color = Color(0.709804, 0.52549, 0.34902, 1)
+[sub_resource type="CylinderMesh" id="CylinderMesh_hq24h"]
+top_radius = 0.0
+height = 4.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_kxxot"]
-material = SubResource("StandardMaterial3D_jb4jf")
-size = Vector3(0.4, 1.5, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgcs6"]
-albedo_color = Color(0.835294, 0.223529, 0.239216, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_y657e"]
-material = SubResource("StandardMaterial3D_sgcs6")
-radius = 0.2
-height = 0.3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2sfq"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 0.878431, 0, 0.188235)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_g2lpo"]
-material = SubResource("StandardMaterial3D_u2sfq")
-top_radius = 0.25
-bottom_radius = 0.0
-height = 0.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_cqhef"]
-material = SubResource("StandardMaterial3D_jb4jf")
-size = Vector3(0.4, 0.6, 0.2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snjlp"]
+albedo_color = Color(0.823529, 0.423529, 0.368627, 1)
 
 [node name="BasicEmployee" type="CharacterBody3D" node_paths=PackedStringArray("vision_sensor")]
 script = ExtResource("1_6muni")
@@ -44,25 +23,19 @@ detection_normal_profile = ExtResource("2_lmpye")
 detection_chase_profile = ExtResource("3_8c7hm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_wx4mc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.755074, 0)
+shape = SubResource("CapsuleShape3D_bvf6n")
 
-[node name="amongus" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
-mesh = SubResource("BoxMesh_kxxot")
+[node name="Employee" parent="." instance=ExtResource("4_xaqww")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="amongus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-mesh = SubResource("SphereMesh_y657e")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="amongus"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.9, -0.4)
-mesh = SubResource("CylinderMesh_g2lpo")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="amongus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.25)
-mesh = SubResource("BoxMesh_cqhef")
+[node name="Vision cone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.47588, -2.14681)
+transparency = 0.75
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_hq24h")
+surface_material_override/0 = SubResource("StandardMaterial3D_snjlp")
 
 [node name="VisionSensor" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38203, 0)
 gizmo_extents = 0.35

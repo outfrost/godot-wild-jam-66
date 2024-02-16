@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b78uciv6mk813"]
+
+[ext_resource type="PackedScene" uid="uid://br7vilrvpv3xy" path="res://assets/Bucket/Compressed.gltf" id="1_2efg2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3jagl"]
+radius = 0.200919
+height = 1.33377
+
+[node name="AirTank" type="StaticBody3D"]
+
+[node name="Compressed" parent="." instance=ExtResource("1_2efg2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468642, 0)
+shape = SubResource("CapsuleShape3D_3jagl")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi4wrdtyu41hh"]
+
+[ext_resource type="PackedScene" uid="uid://dx4nw8o0ml0pu" path="res://assets/Bucket/Compressor.gltf" id="1_gxkoi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dcvuq"]
+radius = 0.203269
+height = 1.49521
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fhfo7"]
+height = 0.768085
+radius = 0.141243
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpq61"]
+size = Vector3(0.424377, 0.0911865, 0.424805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cf41c"]
+size = Vector3(0.191528, 0.0985718, 0.322098)
+
+[node name="AirCompressor" type="StaticBody3D"]
+
+[node name="Compressor2" parent="." instance=ExtResource("1_gxkoi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569509, 0)
+shape = SubResource("CapsuleShape3D_dcvuq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.105174, 0.0979253, 0)
+shape = SubResource("CylinderShape3D_fhfo7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473022, 0.0972734, -0.00341797)
+shape = SubResource("BoxShape3D_tpq61")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27417, 1.3556, 0.00371552)
+shape = SubResource("BoxShape3D_cf41c")
