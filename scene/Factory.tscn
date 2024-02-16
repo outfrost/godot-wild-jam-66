@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=37 format=3 uid="uid://8064wgu24krk"]
 
+[ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_gmfwc"]
 [ext_resource type="Texture2D" uid="uid://bdh6ay0a1fkdr" path="res://scene/prototype/texture/kenney/green/06.png" id="3_jj71p"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bxqfvw5265x8k" path="res://environment/table/TableBlueprint.tscn" id="12_6mytv"]
 [ext_resource type="PackedScene" uid="uid://be7ueep8b3gdq" path="res://environment/canister/Canister.tscn" id="12_s5wrr"]
 [ext_resource type="PackedScene" uid="uid://dclqyhypxt1gw" path="res://environment/tool/Blueprint.tscn" id="13_ehoc5"]
+[ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="20_hpmtr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqas"]
 size = Vector3(2, 1, 2)
@@ -73,7 +75,10 @@ size = Vector3(4, 3, 0.1)
 material = ExtResource("4_5hula")
 size = Vector3(4, 3, 0.1)
 
-[node name="Factory" type="Node3D"]
+[node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
+script = ExtResource("1_f4j7u")
+prop_order = [NodePath("Props/TestProp"), NodePath("Props/Forklift")]
+finish_area = NodePath("FinishArea")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.382683, 0.853553, 0.353553, 0, -0.382683, 0.92388, 0.92388, -0.353553, -0.146447, 0, 16, 0)
@@ -249,6 +254,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5.5)
 
 [node name="Props" type="Node3D" parent="."]
+
+[node name="TestProp" parent="Props" instance=ExtResource("20_hpmtr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.25, 0.5)
 
 [node name="Forklift" parent="Props" instance=ExtResource("5_ym8pv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, -10.5)

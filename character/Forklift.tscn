@@ -30,3 +30,4 @@ shape = SubResource("BoxShape3D_3hn2j")
 [node name="Forklift" parent="." instance=ExtResource("2_wxgqg")]
 
 [node name="CameraRig" parent="." instance=ExtResource("3_u4vlk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
