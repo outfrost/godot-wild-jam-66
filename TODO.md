@@ -52,6 +52,7 @@
 	* [ ] another big machine @lyall
 	* [ ] some more shit to put on shelves and tables
 		* [ ] buckets of small parts (literally could be small cylinders in an open box)
+	* [ ] hand trolley
 	* [~] work devices™
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
