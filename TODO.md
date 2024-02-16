@@ -1,6 +1,6 @@
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
-* [ ] overall building layout @lyall
+* [~] overall building layout @outfrost
 * [ ] NPC navigation
 	* [x] Navmesh Gen
 	* [ ] actual gravity on it
@@ -14,6 +14,7 @@
 * [~] NPC perception @outfrost
 	* [x] see motion
 	* [ ] see environment mismatch
+	* [ ] see better when closer
 * [x] test a build
 	* [x] linux build works
 	* [x] attempt to unfuck mac build
