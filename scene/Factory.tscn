@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=24 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_gmfwc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhdb3db5mvy6e" path="res://environment/shelf_small/ShelfSmall.tscn" id="5_04iy8"]
 [ext_resource type="PackedScene" uid="uid://bbc8yslqreeg4" path="res://character/Forklift.tscn" id="5_ym8pv"]
 [ext_resource type="PackedScene" uid="uid://c6k2i388wt5wr" path="res://environment/assembler/Assembler.tscn" id="6_urk2n"]
+[ext_resource type="PackedScene" uid="uid://cki75ty4w1i87" path="res://environment/conveyor/Conveyor.tscn" id="7_jux4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqas"]
 size = Vector3(2, 1, 2)
@@ -195,10 +196,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.75, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.5)
 
 [node name="Assembler" parent="NavigationRegion3D/HeavySection" instance=ExtResource("6_urk2n")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 0.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -6.5)
 
 [node name="Assembler2" parent="NavigationRegion3D/HeavySection" instance=ExtResource("6_urk2n")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 5.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2.5)
+
+[node name="Conveyor" parent="NavigationRegion3D/HeavySection" instance=ExtResource("7_jux4k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.15, 0, -1.35)
 
 [node name="Props" type="Node3D" parent="."]
 

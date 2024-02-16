@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://nlk44fx0ufo5"]
+
+[ext_resource type="PackedScene" uid="uid://cgame3lk43v6n" path="res://assets/Shelves Large/ShelfLarge.gltf" id="1_s84p6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2p3qf"]
+size = Vector3(0.19, 4.56, 0.19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqw4e"]
+size = Vector3(3.635, 0.28, 1.9)
+
+[node name="ShelfLarge" type="StaticBody3D"]
+
+[node name="ShelfLarge2" parent="." instance=ExtResource("1_s84p6")]
+
+[node name="CollisionShapePillar1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78, 2.1, -0.858)
+shape = SubResource("BoxShape3D_2p3qf")
+
+[node name="CollisionShapePillar2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78, 2.1, 0.858)
+shape = SubResource("BoxShape3D_2p3qf")
+
+[node name="CollisionShapePillar3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78, 2.1, -0.858)
+shape = SubResource("BoxShape3D_2p3qf")
+
+[node name="CollisionShapePillar4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78, 2.1, 0.858)
+shape = SubResource("BoxShape3D_2p3qf")
+
+[node name="CollisionShapeSlab1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306, 0)
+shape = SubResource("BoxShape3D_mqw4e")
+
+[node name="CollisionShapeSlab2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.126, 0)
+shape = SubResource("BoxShape3D_mqw4e")
+
+[node name="CollisionShapeSlab3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.912, 0)
+shape = SubResource("BoxShape3D_mqw4e")
