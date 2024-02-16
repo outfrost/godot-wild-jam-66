@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=49 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
 [ext_resource type="Material" uid="uid://c6ke1ot845yhd" path="res://material/mat_wall.tres" id="4_5hula"]
+[ext_resource type="PackedScene" uid="uid://cn0xxiidgluyw" path="res://environment/door/FireExit.tscn" id="4_bomub"]
 [ext_resource type="Material" uid="uid://hxnyruqb58as" path="res://material/mat_office_door.tres" id="4_j38ed"]
 [ext_resource type="PackedScene" uid="uid://dhdb3db5mvy6e" path="res://environment/shelf_small/ShelfSmall.tscn" id="5_04iy8"]
 [ext_resource type="PackedScene" uid="uid://bbc8yslqreeg4" path="res://character/Forklift.tscn" id="5_ym8pv"]
@@ -60,6 +61,20 @@ size = Vector3(4, 3, 0.1)
 material = ExtResource("4_5hula")
 size = Vector3(4, 3, 0.1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v675n"]
+size = Vector3(3, 7, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3jls6"]
+material = ExtResource("4_5hula")
+size = Vector3(3, 7, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m1nu"]
+size = Vector3(3, 4.2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5k20"]
+material = ExtResource("4_5hula")
+size = Vector3(3, 4.2, 0.1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8iakv"]
 size = Vector3(4, 5, 0.1)
 
@@ -110,15 +125,8 @@ shape = SubResource("BoxShape3D_kdfi4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 0)
 mesh = SubResource("BoxMesh_fe115")
 
-[node name="Wall" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.05, 3.5, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall"]
-shape = SubResource("BoxShape3D_aop1i")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall"]
-mesh = SubResource("BoxMesh_84e4m")
+[node name="FireExit" parent="NavigationRegion3D" instance=ExtResource("4_bomub")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 5.5)
 
 [node name="Wall2" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.05, 3.5, 0)
@@ -199,6 +207,86 @@ shape = SubResource("BoxShape3D_cjkrf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall7"]
 mesh = SubResource("BoxMesh_31syq")
+
+[node name="Wall19" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, 13)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall19"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall19"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall20" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, 9)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall20"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall20"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall21" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, -13)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall21"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall21"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall22" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, -9)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall22"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall22"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall23" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, -5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall23"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall23"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall24" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall24"]
+shape = SubResource("BoxShape3D_uiean")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall24"]
+mesh = SubResource("BoxMesh_o7opb")
+
+[node name="Wall25" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 3.5, 2.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall25"]
+shape = SubResource("BoxShape3D_v675n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall25"]
+mesh = SubResource("BoxMesh_3jls6")
+
+[node name="Wall26" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.05, 4.9, 5.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Wall26"]
+shape = SubResource("BoxShape3D_2m1nu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Wall26"]
+mesh = SubResource("BoxMesh_f5k20")
 
 [node name="Wall10" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -8, 3.5, 15.05)
@@ -532,22 +620,22 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.875,
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4.5, 0, -5.75)
 
 [node name="AirTank" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 11)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 11)
 
 [node name="AirTank2" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 11.45)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 11.45)
 
 [node name="AirTank3" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 11.9)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 11.9)
 
 [node name="AirTank4" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 12.35)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 12.35)
 
 [node name="AirTank5" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 12.8)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 12.8)
 
 [node name="AirTank6" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 13.3)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.25, 0, 13.3)
 
 [node name="Canister" parent="NavigationRegion3D/HeavySection" instance=ExtResource("12_s5wrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6.5)

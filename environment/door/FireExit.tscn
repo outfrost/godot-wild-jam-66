@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn0xxiidgluyw"]
+
+[ext_resource type="PackedScene" uid="uid://du6fg0o8lc082" path="res://assets/Doors/Doorway.gltf" id="1_gxdou"]
+[ext_resource type="PackedScene" uid="uid://cvum4tghtsywi" path="res://assets/Doors/DoorL.gltf" id="2_mstri"]
+[ext_resource type="PackedScene" uid="uid://wpsmcowtjj0e" path="res://assets/Doors/DoorR.gltf" id="3_ap7ux"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lb5v"]
+size = Vector3(3.045, 3, 0.75)
+
+[node name="FireExit" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.435, -0.08)
+shape = SubResource("BoxShape3D_5lb5v")
+
+[node name="Doorway2" parent="." instance=ExtResource("1_gxdou")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="DoorL2" parent="." instance=ExtResource("2_mstri")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="DoorR2" parent="." instance=ExtResource("3_ap7ux")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
