@@ -34,7 +34,7 @@ layout_mode = 1
 bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
 [node name="Music" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/MUSIC v3"
+event_name = "event:/MUSIC"
 event_guid = "{dd14fbcf-ed6f-45c9-8289-fb3ec36ca7b1}"
 autoplay = true
 event_parameter/REVERB/id = 8824678378981003569
