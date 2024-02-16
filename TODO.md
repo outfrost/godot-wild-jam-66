@@ -50,7 +50,8 @@
 	* [x] clean small table @lyall
 	* [x] box: both sizes @lyall
 	* [ ] another big machine @lyall
-	* [ ] buckets of small parts (literally could be small cylinders in an open box)
+	* [ ] some more shit to put on shelves and tables
+		* [ ] buckets of small parts (literally could be small cylinders in an open box)
 	* [~] work devices™
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
