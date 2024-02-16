@@ -71,16 +71,16 @@
 	* [~] FMOD: PARAMETER_DETECTION in EVENT_1: MUSIC_sneaky vs MUSIC_noticed vs MUSIC_spotted
 	* [ ] FMOD: PARAMETER_DETECTION in EVENT_AMBIENCE_voiceover
 	* [ ] FMOD: set up sidechain between MUSIC_noticed and MUSIC_spotted, and AMBIENCE_warehouse
-	* [ ] FMOD: EVENT_AMBIENCE_warehouse: AMBIENCE_warehouse
+	* [~] FMOD: EVENT_AMBIENCE_warehouse: AMBIENCE_warehouse
 	* [ ] FMOD: EVENT_AMBIENCE_voiceover: AMBIENCE_voiceover (note to self: scatterer?)
-	* [ ] MUSIC_menus
-	* [ ] MUSIC_sneaky
-	* [ ] MUSIC_noticed
-	* [ ] MUSIC_spotted
+	* [~] MUSIC_menus
+	* [~] MUSIC_sneaky
+	* [~] MUSIC_noticed
+	* [~] MUSIC_spotted
 	* [ ] AMBIENCE_warehouse
 	* [ ] AMBIENCE_voiceover
-	* [ ] ONESHOT_jump
+	* [~] ONESHOT_jump
 	* [ ] ONESHOT_UI hover
-	* [ ] ONESHOT_UI accept
-	* [ ] ONESHOT_mission-complete
+	* [~] ONESHOT_UI accept
+	* [~] ONESHOT_mission-complete
 	* [ ] ONESHOT_mission-failed
