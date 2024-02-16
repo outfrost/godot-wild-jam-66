@@ -15,13 +15,18 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Shelf.004"
+            "name" : "Shelf",
+            "scale" : [
+                1.268050193786621,
+                1.1051404476165771,
+                1.3062783479690552
+            ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "metal.005",
+            "name" : "metal",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.019114382565021515,
@@ -35,7 +40,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "shelf.002",
+            "name" : "shelf",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.8000000715255737,
@@ -50,7 +55,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.006",
+            "name" : "Cube.008",
             "primitives" : [
                 {
                     "attributes" : {
@@ -86,29 +91,29 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 1309,
+            "count" : 1301,
             "max" : [
-                0.9070308804512024,
-                4.792313575744629,
-                1.814065933227539
+                1.4785000085830688,
+                3.9626388549804688,
+                0.7290903925895691
             ],
             "min" : [
-                -0.9070308804512024,
-                -0.20931048691272736,
-                -1.8140603303909302
+                -1.4785047769546509,
+                -0.173073410987854,
+                -0.7290903925895691
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 1309,
+            "count" : 1301,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 1309,
+            "count" : 1301,
             "type" : "VEC3"
         },
         {
@@ -122,14 +127,14 @@
             "componentType" : 5126,
             "count" : 805,
             "max" : [
-                0.7561289072036743,
-                4.434281826019287,
-                1.743431568145752
+                1.4331610202789307,
+                3.6665916442871094,
+                0.6322254538536072
             ],
             "min" : [
-                -0.7561289072036743,
-                0.3876841366291046,
-                -1.7434284687042236
+                -1.4331640005111694,
+                0.3205658197402954,
+                -0.6322254538536072
             ],
             "type" : "VEC3"
         },
@@ -156,14 +161,14 @@
             "componentType" : 5126,
             "count" : 1826,
             "max" : [
-                0.596725344657898,
-                4.434281826019287,
-                1.4896553754806519
+                1.2679556608200073,
+                3.6665916442871094,
+                0.49341651797294617
             ],
             "min" : [
-                -0.5660008788108826,
-                0.3876841366291046,
-                -1.533432960510254
+                -1.2317570447921753,
+                0.3205658793449402,
+                -0.4680112898349762
             ],
             "type" : "VEC3"
         },
@@ -189,80 +194,80 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 15708,
+            "byteLength" : 15612,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 10472,
-            "byteOffset" : 15708,
+            "byteLength" : 10408,
+            "byteOffset" : 15612,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 15708,
-            "byteOffset" : 26180,
+            "byteLength" : 15612,
+            "byteOffset" : 26020,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 5826,
-            "byteOffset" : 41888,
+            "byteOffset" : 41632,
             "target" : 34963
         },
         {
             "buffer" : 0,
             "byteLength" : 9660,
-            "byteOffset" : 47716,
+            "byteOffset" : 47460,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 6440,
-            "byteOffset" : 57376,
+            "byteOffset" : 57120,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 9660,
-            "byteOffset" : 63816,
+            "byteOffset" : 63560,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 3846,
-            "byteOffset" : 73476,
+            "byteOffset" : 73220,
             "target" : 34963
         },
         {
             "buffer" : 0,
             "byteLength" : 21912,
-            "byteOffset" : 77324,
+            "byteOffset" : 77068,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 14608,
-            "byteOffset" : 99236,
+            "byteOffset" : 98980,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 21912,
-            "byteOffset" : 113844,
+            "byteOffset" : 113588,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 6096,
-            "byteOffset" : 135756,
+            "byteOffset" : 135500,
             "target" : 34963
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 141852,
+            "byteLength" : 141596,
             "uri" : "ShelfLarge.bin"
         }
     ]
