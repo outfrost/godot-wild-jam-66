@@ -40,6 +40,8 @@ func move_toward_target(delta):
 	velocity = velocity.lerp(direction * speed, acceleration * delta)
 
 func _physics_process(delta):
+	#save gravity from last frame, copy gravity from player controller
+
 
 	#var direction = Vector3()
 	#direction = navigation_agent.get_next_path_position() - global_position
