@@ -1,6 +1,6 @@
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
-* [ ] overall building layout @lyall
+* [~] overall building layout @outfrost
 * [ ] NPC navigation
 	* [x] Navmesh Gen
 	* [ ] actual gravity on it
@@ -14,6 +14,7 @@
 * [~] NPC perception @outfrost
 	* [x] see motion
 	* [ ] see environment mismatch
+	* [ ] see better when closer
 * [x] test a build
 	* [x] linux build works
 	* [x] attempt to unfuck mac build
@@ -38,6 +39,8 @@
 		* [x] pipe wrench
 		* [x] wrench
 		* [x] screwdriver
+	* [ ] something being fabricated
+	* [ ] toolbox @lyall
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
@@ -46,6 +49,8 @@
 	* [ ] clean table @lyall
 	* [ ] clean small table @lyall
 	* [ ] box: both sizes @lyall
+	* [ ] another big machine @lyall
+	* [ ] work devices™
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
