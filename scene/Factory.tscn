@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=25 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_gmfwc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://c6ke1ot845yhd" path="res://material/mat_wall.tres" id="4_5hula"]
 [ext_resource type="PackedScene" uid="uid://dhdb3db5mvy6e" path="res://environment/shelf_small/ShelfSmall.tscn" id="5_04iy8"]
 [ext_resource type="PackedScene" uid="uid://bbc8yslqreeg4" path="res://character/Forklift.tscn" id="5_ym8pv"]
+[ext_resource type="PackedScene" uid="uid://cqhvqrnfgdcv" path="res://environment/table_small/TableSmall.tscn" id="6_32s72"]
 [ext_resource type="PackedScene" uid="uid://c6k2i388wt5wr" path="res://environment/assembler/Assembler.tscn" id="6_urk2n"]
 [ext_resource type="PackedScene" uid="uid://cki75ty4w1i87" path="res://environment/conveyor/Conveyor.tscn" id="7_jux4k"]
 
@@ -73,7 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -15)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinishArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_lhqas")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -185,13 +185,16 @@ mesh = SubResource("BoxMesh_31syq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7.5)
 
 [node name="ShelfSmall" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.25, 0, -1.1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.25, 0, -3.1)
 
 [node name="ShelfSmall2" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.75, 0, -1.1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.75, 0, -3.1)
 
 [node name="ShelfSmall3" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.75, 0, -1.1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.75, 0, -3.1)
+
+[node name="TableSmall" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("6_32s72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1)
 
 [node name="HeavySection" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.5)
