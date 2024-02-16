@@ -1,6 +1,6 @@
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
-* [~] overall building layout @outfrost
+* [x] overall building layout @outfrost
 * [~] NPC navigation @lyall
 	* [x] Navmesh Gen
 	* [ ] actual gravity on it
