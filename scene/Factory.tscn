@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=28 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_gmfwc"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cqhvqrnfgdcv" path="res://environment/table_small/TableSmall.tscn" id="6_32s72"]
 [ext_resource type="PackedScene" uid="uid://c6k2i388wt5wr" path="res://environment/assembler/Assembler.tscn" id="6_urk2n"]
 [ext_resource type="PackedScene" uid="uid://cki75ty4w1i87" path="res://environment/conveyor/Conveyor.tscn" id="7_jux4k"]
+[ext_resource type="PackedScene" uid="uid://c8f3rdaakoy7k" path="res://environment/bucket/Bucket.tscn" id="7_nxcwe"]
+[ext_resource type="PackedScene" uid="uid://bi4wrdtyu41hh" path="res://environment/airTanks/AirCompressor.tscn" id="10_cop4s"]
+[ext_resource type="PackedScene" uid="uid://b78uciv6mk813" path="res://environment/airTanks/AirTank.tscn" id="11_ndc18"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqas"]
 size = Vector3(2, 1, 2)
@@ -196,6 +199,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.75, 
 [node name="TableSmall" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("6_32s72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1)
 
+[node name="Bucket" parent="NavigationRegion3D/WorkbenchSection" instance=ExtResource("7_nxcwe")]
+transform = Transform3D(-0.382683, 0, -0.92388, 0, 1, 0, 0.92388, 0, -0.382683, -1.6, 0, 0.25)
+
 [node name="HeavySection" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.5)
 
@@ -207,6 +213,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="Conveyor" parent="NavigationRegion3D/HeavySection" instance=ExtResource("7_jux4k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.15, 0, -1.35)
+
+[node name="AirCompressor" parent="NavigationRegion3D/HeavySection" instance=ExtResource("10_cop4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6)
+
+[node name="AirTank" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 7)
 
 [node name="Props" type="Node3D" parent="."]
 
