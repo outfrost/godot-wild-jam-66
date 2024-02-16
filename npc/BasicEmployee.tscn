@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bjiougcw220fa" path="res://npc/DetectionProfile_Chase.tres" id="3_8c7hm"]
 [ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="4_xaqww"]
 
-[node name="BasicEmployee" type="CharacterBody3D" node_paths=PackedStringArray("vision_sensor")]
+[node name="BasicEmployee" type="Node3D" node_paths=PackedStringArray("vision_sensor")]
 script = ExtResource("1_6muni")
 vision_sensor = NodePath("VisionSensor")
 detection_normal_profile = ExtResource("2_lmpye")

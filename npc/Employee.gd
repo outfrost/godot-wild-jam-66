@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Node3D
 
 const RAYCAST_VIS_SCN: PackedScene = preload("res://npc/RaycastVis.tscn")
 const MOTION_SPEED_DEADZONE: float = 0.05
@@ -23,7 +23,7 @@ var los_last_ray_idx: int = 0
 var los_distance: float = 0.0
 
 var detection_profile: DetectionProfile
-@export var detected: float = 0.0
+var detected: float = 0.0
 var prop_last_pos: = Vector3.ZERO
 
 func _ready() -> void:
