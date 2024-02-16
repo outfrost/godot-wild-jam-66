@@ -3,10 +3,10 @@
 * [x] overall building layout @outfrost
 * [~] NPC navigation @lyall
 	* [x] Navmesh Gen
-	* [ ] actual gravity on it
-	* [ ] change model to raycast boys
-	* [ ] rotate boys in velocity direction
-	* [ ] create scene patrol points manager
+	* [x] actual gravity on it
+	* [x] change model to raycast boys
+	* [x] rotate boys in velocity direction
+	* [x] create scene patrol points manager
 * [ ] NPC navigation
 	* [ ] State machine
 	* [ ] chase
