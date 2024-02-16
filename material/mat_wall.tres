@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://eqq7bd625yy0" path="res://scene/prototype/texture/kenney/light/00.png" id="1_clmec"]
 
 [resource]
-albedo_color = Color(0.8, 0.772549, 0.721569, 1)
+albedo_color = Color(0.8, 0.76, 0.68, 1)
 albedo_texture = ExtResource("1_clmec")
 uv1_triplanar = true
 uv1_world_triplanar = true

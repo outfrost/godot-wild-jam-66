@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var speed: = 1.0
 @export var acceleration: = 4.0
 @export var deceleration: = 10.0
-@export var jump_speed: = 2.7
+@export var jump_speed: = 3.0
 @export var rotation_speed: = 10.0
 
 @onready var visual_base_pos: = visual.position

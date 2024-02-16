@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c43nmb2uoyd8u"]
+
+[ext_resource type="PackedScene" uid="uid://dkjqdmfseiqqs" path="res://assets/Box/BoxFlat.gltf" id="1_q3gje"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxqxv"]
+size = Vector3(0.6, 0.118457, 0.86)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usbps"]
+size = Vector3(0.512, 0.3, 0.775)
+
+[node name="BoxFlat" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340771, 0)
+shape = SubResource("BoxShape3D_nxqxv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_usbps")
+
+[node name="BoxFlat" parent="." instance=ExtResource("1_q3gje")]
+transform = Transform3D(1, 0, 0, 0, 1.034, 0, 0, 0, 1, 0, 0, 0)
