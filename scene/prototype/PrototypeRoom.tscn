@@ -786,7 +786,45 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 4, 1.4, 
 [node name="Employee" parent="." instance=ExtResource("8_7ujaf")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.06729, 0.50039, 0.35123)
 
-[node name="sfx3D_npc_idlechatter" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/NPC_IDLE-CHATTER"
-event_guid = "{82f41eb4-4b22-4206-9a60-a9d90fa5703c}"
-autoplay = true
+[node name="Employee_Noticed" type="FmodEventEmitter3D" parent="Employee"]
+event_name = "event:/NPC/SFX_NPC_CHASESTART"
+event_guid = "{6c667adf-1a47-4f2e-9b30-468163b01127}"
+
+[node name="Employee_Chase_Start" type="FmodEventEmitter3D" parent="Employee"]
+event_name = "event:/NPC/SFX_NPC_CHASESTART"
+event_guid = "{6c667adf-1a47-4f2e-9b30-468163b01127}"
+
+[node name="Employee_Chase_End" type="FmodEventEmitter3D" parent="Employee"]
+event_name = "event:/NPC/SFX_NPC_CHASEEND"
+event_guid = "{0afc656d-41bf-4ec2-b514-365acdad5688}"
+
+[node name="Employee_Chase_Lost_Track" type="FmodEventEmitter3D" parent="Employee"]
+event_name = "event:/NPC/SFX_NPC_LOSTTRACK"
+event_guid = "{8a571240-dce1-4dbe-9a1f-41887d6bb629}"
+
+[node name="Employee_Gotcha" type="FmodEventEmitter3D" parent="Employee"]
+event_guid = "{00000000-0000-0000-9757-00016b000000}"
+
+[node name="Employee_PlayerCaught" type="FmodEventEmitter3D" parent="Employee"]
+event_name = "event:/NPC/SFX_NPC_PLAYERCAUGHT"
+event_guid = "{0d581eb2-59b9-43f6-b5b9-9eac681cf3bd}"
+
+[node name="Station_Drill" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ROOM/SFX_DRILLSTATION"
+event_guid = "{052f02c0-5ffc-43c6-ae18-efdc4961c75f}"
+
+[node name="Station_Paint" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ROOM/SFX_PAINTSTATION"
+event_guid = "{54edc8ce-543e-4447-b915-df5a262d2ce9}"
+
+[node name="Station_Conveyor" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ROOM/SFX_CONVEYOR"
+event_guid = "{5a68edda-60c6-4a20-bbf8-4e3126c60ac0}"
+
+[node name="Station_Hammer" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ROOM/SFX_HAMMERSTATION"
+event_guid = "{1da6fa16-c4cb-4ebb-ac05-be6a0c6aa264}"
+
+[node name="RoomTone" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ROOM/SFX_ROOM TONE"
+event_guid = "{d6c425a7-e579-44f7-898e-4d4f1c12446c}"

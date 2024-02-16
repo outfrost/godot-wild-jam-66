@@ -154,14 +154,14 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Close"
 
-[node name="sfx_uiclick" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/SFX_UI-ACCEPT"
+[node name="UI_Click" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MISC/SFX_UI-ACCEPT"
 event_guid = "{a07157b8-42c9-4784-a141-6c85120fa10a}"
 unique_name_in_owner = true
 script = ExtResource("5_1q6hi")
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="sfx_uiclick" method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="sfx_uiclick" method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="sfx_uiclick" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="sfx_uiclick" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CreditsPopup/Panel/CloseButton" to="sfx_uiclick" method="_on_close_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="UI_Click" method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="UI_Click" method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="UI_Click" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="UI_Click" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsPopup/Panel/CloseButton" to="UI_Click" method="_on_close_button_pressed"]
