@@ -16,6 +16,7 @@ var current_agent_position: Vector3 = global_position
 @export var loop: bool = true
 var target: Marker3D
 var index: int = 0
+var growing: bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -51,16 +52,33 @@ func move_toward_target(delta, target):
 
 func select_target():
 	target = route.get_child(index)
-	index += 1
-	if index > route.get_child_count() - 1:
-		index = 0
+	#await get_tree().create_timer(freeze_time).timeout
+	if growing:
+		index += 1
+	else:
+		index -= 1
+	if loop:
+		# we are looping, we can go 0-n again
+		if index > route.get_child_count() - 1:
+			index = 0
+	else :
+		#we aren't, we need to switch direction
+		if index > route.get_child_count() - 1:
+			index -= 2
+			growing = false
+		if index < 0:
+			index += 2
+			growing = true
+
 
 func _physics_process(delta):
 
 	#route and loop to select next target
 	if navigation_agent.is_navigation_finished():
-		await get_tree().create_timer(freeze_time).timeout
+		#await get_tree().create_timer(freeze_time).timeout
 		select_target()
+		move_toward_target(delta,target)
+		return
 
 
 	# calculate jumping, and remember the y velocity, then do x,z calculations

@@ -7,6 +7,7 @@
 	* [x] change model to raycast boys
 	* [x] rotate boys in velocity direction
 	* [x] create scene patrol points manager
+	* [x] add looping version to manager
 * [ ] NPC navigation
 	* [ ] State machine
 	* [ ] chase
