@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b4yfjqm3h1dg2" path="res://assets/Tools/Hammer.gltf" id="1_a1o4f"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_kwd5e"]
-height = 0.72
-radius = 0.06
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gvfy"]
+size = Vector3(0.72, 0.12, 0.12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s44ew"]
 size = Vector3(0.12, 0.12, 0.37)
@@ -12,8 +11,7 @@ size = Vector3(0.12, 0.12, 0.37)
 [node name="Hammer" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CylinderShape3D_kwd5e")
+shape = SubResource("BoxShape3D_4gvfy")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, -0.037)
