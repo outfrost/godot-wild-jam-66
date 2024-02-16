@@ -37,7 +37,11 @@
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
-	* [ ] conveyor?
+	* [x] conveyor?
+	* [~] large shelf rescale @lyall
+	* [ ] clean table @lyall
+	* [ ] clean small table @lyall
+	* [ ] box: both sizes @lyall
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
