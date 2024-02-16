@@ -27,13 +27,15 @@
 	* [x] fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fuck apple fu
 	* [x] windows build???
 * props
-	* [~] fluid tank @lyall
-	* [~] cardboard box @lyall
+	* [x] fluid tank @lyall
+	* [x] cardboard box @lyall
 	* [~] forklift @lyall
-	* [~] shelving unit X2 @lyall
-	* [ ] manager's coffee mug
-	* [ ] tools
+	* [x] shelving unit X2 @lyall
+	* [x] manager's coffee mug
+	* [x] tools
 		* [x] bucket
+	* [ ] something being fabricated
+	* [ ] toolbox @lyall
 	* [ ] re:placement props @outfrost
 * environment
 	* [~] fire exit @lyall
@@ -42,6 +44,8 @@
 	* [ ] clean table @lyall
 	* [ ] clean small table @lyall
 	* [ ] box: both sizes @lyall
+	* [ ] another big machine @lyall
+	* [ ] work devices™
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
