@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://nieost7b5uoa"]
+
+[ext_resource type="PackedScene" uid="uid://bagr400raxwdj" path="res://assets/Box/BoxOpen.gltf" id="1_mlj32"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56i4h"]
+size = Vector3(1, 1, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hp1wy"]
+size = Vector3(0.075, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxxmh"]
+size = Vector3(1, 0.275, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04xe7"]
+size = Vector3(0.9, 0.05, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35kls"]
+size = Vector3(0.9, 0.05, 0.65)
+
+[node name="BoxOpen" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.475)
+shape = SubResource("BoxShape3D_56i4h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.475)
+shape = SubResource("BoxShape3D_56i4h")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462, 0.5, 0)
+shape = SubResource("BoxShape3D_hp1wy")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.462, 0.5, 0)
+shape = SubResource("BoxShape3D_hp1wy")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138, 0)
+shape = SubResource("BoxShape3D_jxxmh")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 1.01, -0.825)
+shape = SubResource("BoxShape3D_04xe7")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 1.00564, 0.77519)
+shape = SubResource("BoxShape3D_35kls")
+
+[node name="BoxOpen" parent="." instance=ExtResource("1_mlj32")]

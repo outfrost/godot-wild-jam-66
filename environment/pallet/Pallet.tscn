@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj8tee47nk5pn"]
+
+[ext_resource type="PackedScene" uid="uid://brtap20qnoac7" path="res://assets/Box/Palet.gltf" id="1_uynq8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsljh"]
+size = Vector3(1.5, 0.17, 1.5)
+
+[node name="Pallet" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+shape = SubResource("BoxShape3D_lsljh")
+
+[node name="Palet" parent="." instance=ExtResource("1_uynq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00758403, 0)
