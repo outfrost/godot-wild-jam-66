@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cki75ty4w1i87"]
+[gd_scene load_steps=10 format=3 uid="uid://cki75ty4w1i87"]
 
-[ext_resource type="PackedScene" uid="uid://fvvdu0nj8j77" path="res://assets/Heavy machinery/Conveyor.gltf" id="1_fea2f"]
+[ext_resource type="PackedScene" uid="uid://fvvdu0nj8j77" path="res://assets/Heavy machinery/Conveyor.gltf" id="1_s51ak"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0xpt"]
 size = Vector3(1.75, 1.01, 1.75)
@@ -23,6 +23,9 @@ size = Vector3(0.075, 0.7, 0.06)
 [sub_resource type="BoxShape3D" id="BoxShape3D_e1wma"]
 size = Vector3(0.082, 0.7, 0.087)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x855j"]
+points = PackedVector3Array(-0.566876, 1.00225, -0.768268, -0.768268, 1.00225, -0.566876, -0.566876, 1.76861, -0.768268, 0.768268, 1.00225, -0.768268, -0.768268, 1.76861, -0.566876, -0.768268, 1.00225, 0.566725, -0.566876, 1.97013, -0.566876, 0.768117, 1.76861, -0.768268, 0.768117, 1.87709, -0.659826, 0.768268, 1.05076, -0.634107, 0.768268, 1.00225, 0.768268, -0.768268, 1.76861, 0.566725, -0.566876, 1.00225, 0.768268, -0.566876, 1.97013, 0.566725, 0.636664, 1.97013, -0.566876, 0.768117, 1.87709, 0.659676, 0.768268, 1.05076, 0.633956, 0.768117, 1.76861, 0.768268, -0.566876, 1.76861, 0.768268, 0.636664, 1.97013, 0.566725)
+
 [node name="Conveyor" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -40,8 +43,6 @@ shape = SubResource("BoxShape3D_8kywe")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.525, 1.015, 0.815)
 shape = SubResource("BoxShape3D_8kywe")
-
-[node name="Conveyor" parent="." instance=ExtResource("1_fea2f")]
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.045, 0.04, -0.658)
@@ -66,3 +67,8 @@ shape = SubResource("BoxShape3D_pmihw")
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.045, 0.424, -0.68)
 shape = SubResource("BoxShape3D_e1wma")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_x855j")
+
+[node name="Conveyor" parent="." instance=ExtResource("1_s51ak")]
