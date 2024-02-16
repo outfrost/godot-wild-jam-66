@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://htlplnk1odln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43non"]
+size = Vector3(0.1, 2.19, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxncm"]
+size = Vector3(0.75, 0.103, 1.438)
+
+[node name="ShelfSmallStaticBody" type="StaticBody3D"]
+
+[node name="CollisionShapePillar1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328, 1.095, -0.7)
+shape = SubResource("BoxShape3D_43non")
+
+[node name="CollisionShapePillar2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328, 1.095, 0.7)
+shape = SubResource("BoxShape3D_43non")
+
+[node name="CollisionShapePillar3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328, 1.095, -0.7)
+shape = SubResource("BoxShape3D_43non")
+
+[node name="CollisionShapePillar4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328, 1.095, 0.7)
+shape = SubResource("BoxShape3D_43non")
+
+[node name="CollisionShapeSlab1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271, 0)
+shape = SubResource("BoxShape3D_yxncm")
+
+[node name="CollisionShapeSlab2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826094, 0)
+shape = SubResource("BoxShape3D_yxncm")
+
+[node name="CollisionShapeSlab3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41781, 0)
+shape = SubResource("BoxShape3D_yxncm")
+
+[node name="CollisionShapeSlab4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02657, 0)
+shape = SubResource("BoxShape3D_yxncm")

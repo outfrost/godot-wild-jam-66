@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdb3db5mvy6e"]
+
+[ext_resource type="PackedScene" uid="uid://htlplnk1odln" path="res://environment/shelf_small/ShelfSmallStaticBody.tscn" id="1_abdim"]
+[ext_resource type="PackedScene" uid="uid://g44g0br1a5ab" path="res://assets/Shelves Small/ShelfSmall.gltf" id="1_xhkpt"]
+
+[node name="ShelfSmall" type="Node3D"]
+
+[node name="ShelfSmallStaticBody" parent="." instance=ExtResource("1_abdim")]
+
+[node name="ShelfSmall2" parent="." instance=ExtResource("1_xhkpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)

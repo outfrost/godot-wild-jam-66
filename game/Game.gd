@@ -1,6 +1,8 @@
 class_name Game
 extends Node
 
+@export var room_scn: PackedScene
+
 @onready var main_menu: Control = $UI/MainMenu
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
 @onready var menu_background: Node = $MenuBackground
@@ -8,7 +10,7 @@ extends Node
 
 var debug: RefCounted
 
-var scene: Room
+var room: Room
 
 func _ready() -> void:
 	if OS.has_feature("debug") && FileAccess.file_exists("res://debug.gd"):
@@ -28,23 +30,23 @@ func _process(delta: float) -> void:
 func on_start_game() -> void:
 	main_menu.hide()
 	menu_background.hide()
-	scene = load("res://scene/prototype/PrototypeRoom.tscn").instantiate()
-	add_child(scene)
-	scene.prop_finished.connect(prop_finished)
+	room = room_scn.instantiate()
+	add_child(room)
+	room.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	scene.activate_next_prop()
+	room.activate_next_prop()
 	music.set_parameter("SCENE", 1)
 	music.set_parameter("SCENE", 0)
 
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	remove_child(scene)
-	scene.queue_free()
+	remove_child(room)
+	room.queue_free()
 	music.set_parameter("SCENE", 0)
 	menu_background.show()
 	main_menu.show()
 
 func prop_finished() -> void:
-	scene.activate_next_prop()
+	room.activate_next_prop()
 	music.set_parameter("SCENE", 1)
 	music.set_parameter("SCENE", 0)
