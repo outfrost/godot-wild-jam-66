@@ -1,7 +1,31 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://bitpm5w0awntg"]
 
-[sub_resource type="Sky" id=1]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_388bj"]
+seed = 6145
+frequency = 0.0205
+fractal_gain = 0.6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vo20e"]
+width = 1024
+height = 1024
+generate_mipmaps = false
+seamless = true
+noise = SubResource("FastNoiseLite_388bj")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qug43"]
+sky_top_color = Color(0.3364, 0.44602, 0.58, 1)
+sky_horizon_color = Color(0.68, 0.6052, 0.6052, 1)
+sky_energy_multiplier = 2.0
+sky_cover = SubResource("NoiseTexture2D_vo20e")
+sky_cover_modulate = Color(0.4, 0.4, 0.4, 1)
+ground_bottom_color = Color(0.2, 0.2, 0.2, 1)
+ground_curve = 0.0131951
+
+[sub_resource type="Sky" id="1"]
+sky_material = SubResource("ProceduralSkyMaterial_qug43")
 
 [resource]
 background_mode = 2
-background_sky = SubResource( 1 )
+sky = SubResource("1")
+ambient_light_sky_contribution = 0.4
+sdfgi_read_sky_light = false
