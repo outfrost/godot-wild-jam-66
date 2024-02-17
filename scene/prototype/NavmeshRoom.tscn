@@ -94,7 +94,7 @@ route = NodePath("../../Patrol")
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.95755, 0.502358, 9.5046)
 
 [node name="point 2" type="Marker3D" parent="NPC/Patrol"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71788, 0.782696, -6.48015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07254, 0.782696, 9.19023)
 
 [node name="point 3" type="Marker3D" parent="NPC/Patrol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342398, 0.66885, 7.14791)

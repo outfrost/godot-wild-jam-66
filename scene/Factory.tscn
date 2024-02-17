@@ -1,8 +1,8 @@
-[gd_scene load_steps=59 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=60 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
-[ext_resource type="Material" uid="uid://uuh48ql06yoy" path="res://material/mat_pillar.tres" id="3_bp5sy"]
+[ext_resource type="Material" path="res://material/mat_pillar.tres" id="3_bp5sy"]
 [ext_resource type="Material" uid="uid://c6ke1ot845yhd" path="res://material/mat_wall.tres" id="4_5hula"]
 [ext_resource type="PackedScene" uid="uid://cn0xxiidgluyw" path="res://environment/door/FireExit.tscn" id="4_bomub"]
 [ext_resource type="PackedScene" uid="uid://dhdb3db5mvy6e" path="res://environment/shelf_small/ShelfSmall.tscn" id="5_04iy8"]
@@ -26,10 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://dj8tee47nk5pn" path="res://environment/pallet/Pallet.tscn" id="14_7uq2h"]
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="20_hpmtr"]
 [ext_resource type="PackedScene" uid="uid://nlk44fx0ufo5" path="res://environment/shelf_large/ShelfLarge.tscn" id="20_sfigs"]
+[ext_resource type="PackedScene" uid="uid://tje2ovp8qrp1" path="res://environment/pallet/PalletWithBoxes.tscn" id="24_206t7"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="24_gelmj"]
 [ext_resource type="PackedScene" uid="uid://fiaybotgspa7" path="res://character/Coffee.tscn" id="25_esun5"]
 [ext_resource type="PackedScene" uid="uid://nieost7b5uoa" path="res://environment/box/BoxOpen.tscn" id="25_oi247"]
-[ext_resource type="Material" uid="uid://c0p53hap0e30t" path="res://material/mat_roof.tres" id="30_ljfrb"]
+[ext_resource type="Material" path="res://material/mat_roof.tres" id="30_ljfrb"]
 [ext_resource type="Material" uid="uid://c8vuumvcd0g23" path="res://material/mat_beam.tres" id="31_moq5u"]
 [ext_resource type="PackedScene" uid="uid://bauaxcd72nghw" path="res://scene/LAMP.tscn" id="32_u0nfl"]
 [ext_resource type="VoxelGIData" uid="uid://bnp2jtmavc3lk" path="res://scene/Factory.VoxelGI_data.res" id="33_v225k"]
@@ -824,6 +825,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6.5)
 
 [node name="StorageSection" type="Node3D" parent="NavigationRegion3D"]
 
+[node name="PalletWithBoxes" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6, 0, 0.2)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 0.4446, 0.2)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9, 0.4446, 0.2)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.9, 0.4446, 0.2)
+
 [node name="ShelfLarge" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, -12.7)
 
@@ -835,6 +848,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6, 
 
 [node name="ShelfLarge7" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.9, 0, -0.8)
+
+[node name="ShelfLarge11" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14, 0, 0.1)
 
 [node name="ShelfLarge4" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -14)
@@ -879,6 +895,7 @@ transform = Transform3D(-0.382683, 0, -0.92388, 0, 1, 0, 0.92388, 0, -0.382683, 
 
 [node name="Roof" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 0)
+visible = false
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
