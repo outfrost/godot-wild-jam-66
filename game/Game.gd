@@ -43,6 +43,7 @@ func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	remove_child(room)
 	room.queue_free()
+	Harbinger.prune()
 	music.set_parameter("SCENE", 0)
 	menu_background.add_child(menu_background_content)
 	main_menu.show()
