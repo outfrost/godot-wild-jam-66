@@ -6,6 +6,7 @@ extends Node
 @onready var main_menu: Control = $UI/MainMenu
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
 @onready var menu_background: Node = $MenuBackground
+@onready var menu_background_content: Node = menu_background.get_child(0)
 @onready var music: = $Music
 
 var debug: RefCounted
@@ -29,7 +30,7 @@ func _process(delta: float) -> void:
 
 func on_start_game() -> void:
 	main_menu.hide()
-	menu_background.hide()
+	menu_background.remove_child(menu_background_content)
 	room = room_scn.instantiate()
 	add_child(room)
 	room.prop_finished.connect(prop_finished)
@@ -43,7 +44,7 @@ func back_to_menu() -> void:
 	remove_child(room)
 	room.queue_free()
 	music.set_parameter("SCENE", 0)
-	menu_background.show()
+	menu_background.add_child(menu_background_content)
 	main_menu.show()
 
 func prop_finished() -> void:
