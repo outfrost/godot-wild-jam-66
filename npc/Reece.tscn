@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr0fywxv7c0c"]
+
+[ext_resource type="Script" path="res://npc/NavmeshAgent.gd" id="1_kf6pf"]
+[ext_resource type="Script" path="res://npc/StateMachine/StateMachine.gd" id="2_rkkfj"]
+[ext_resource type="Script" path="res://npc/StateMachine/NpcPatrol.gd" id="3_nalmh"]
+[ext_resource type="Script" path="res://npc/StateMachine/NpcWait.gd" id="4_npcrq"]
+[ext_resource type="Script" path="res://npc/StateMachine/NpcChase.gd" id="5_hjqdb"]
+[ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="6_1uhj2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_llwin"]
+radius = 0.2
+height = 1.8
+
+[node name="Reece" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2.81328, 1.07682, 3.94924)
+floor_block_on_wall = false
+script = ExtResource("1_kf6pf")
+navigation_agent = NodePath("NavigationAgent3D")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_rkkfj")
+initial_state = NodePath("PatrolState")
+
+[node name="PatrolState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent", "raycaster")]
+script = ExtResource("3_nalmh")
+parent = NodePath("../..")
+raycaster = NodePath("../../BasicEmployee")
+
+[node name="WaitState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent")]
+script = ExtResource("4_npcrq")
+parent = NodePath("../..")
+wait_time = 5.0
+
+[node name="ChaseState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent", "navigation_agent", "raycaster")]
+script = ExtResource("5_hjqdb")
+parent = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent3D")
+raycaster = NodePath("../../BasicEmployee")
+
+[node name="LastPos" type="Marker3D" parent="State Machine/ChaseState"]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
+shape = SubResource("CapsuleShape3D_llwin")

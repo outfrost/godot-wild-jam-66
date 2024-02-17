@@ -35,7 +35,7 @@ func _ready() -> void:
 	detection_profile = detection_normal_profile
 
 func _process(delta: float) -> void:
-	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected }, self)
+	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected, where = prop_last_pos }, self)
 	if Input.is_action_just_pressed("debug_draw_raycast"):
 		for vis in raycast_vis:
 			vis.visible = !vis.visible
@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 			raycast_vis[ray_idx].update_vis(result.position, Color.GREEN)
 			line_of_sight = true
 			los_last_ray_idx = ray_idx
+			prop_last_pos = result.position
 			los_distance = (result.position - vision_sensor.global_position).length()
 		else:
 			raycast_vis[ray_idx].update_vis(result.position, Color.ORANGE)

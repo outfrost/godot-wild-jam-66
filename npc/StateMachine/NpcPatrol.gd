@@ -10,7 +10,7 @@ var next_path_position: Vector3
 var current_agent_position: Vector3
 
 @export var raycaster: Node3D
-@export var route: Node
+var route: Node
 var navigation_agent: NavigationAgent3D
 
 @export var freeze_time: float = 5.0
@@ -47,7 +47,6 @@ func move_toward_target(delta, target):
 		set_movement_target(target.global_position)
 	current_agent_position = parent.position
 	next_path_position = navigation_agent.get_next_path_position()
-
 	parent.velocity = current_agent_position.direction_to(next_path_position) * speed
 
 func select_target():
@@ -77,8 +76,8 @@ func Physics_Update(delta):
 
 	#route and loop to select next target
 	if navigation_agent.is_navigation_finished():
+		Transitioned.emit(self, "WaitState")
 		select_target()
-		move_toward_target(delta,target)
 
 
 	# calculate jumping, and remember the y velocity, then do x,z calculations
@@ -92,11 +91,9 @@ func Physics_Update(delta):
 	if (parent.position - next_path_position).length() > 0.5:
 		parent.look_at(next_path_position,Vector3.UP)
 
+	#if player is detected, switch to chase state (could add suspicious state)
 	if raycaster.detected >= 0.9:
-		print("AAAAAAAAAA")
+		Transitioned.emit(self, "ChaseState")
 
 func Update(delta):
 	pass
-
-# IF RAYCASTER.suspicious >= .9, SWITCH TO CHASE STATE
-#jhsgfkshjdf2378465nghd
