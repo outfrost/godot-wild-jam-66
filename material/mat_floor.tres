@@ -1,8 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bds1x6y461w0y"]
 
-[ext_resource type="Texture2D" uid="uid://bunv8seriirnx" path="res://scene/prototype/texture/kenney/dark/07.png" id="1_5rx56"]
+[ext_resource type="Texture2D" uid="uid://jc02x4iqq1gj" path="res://material/concrete_noise.png" id="1_oabs1"]
 
 [resource]
-albedo_texture = ExtResource("1_5rx56")
-uv1_triplanar = true
-uv1_world_triplanar = true
+albedo_texture = ExtResource("1_oabs1")
+metallic = 0.05
+roughness = 0.85
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 2
