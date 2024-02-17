@@ -1,6 +1,27 @@
+## BIG THINGS
+
+* [ ] BT1: NPC behaviour - chase logic **6h** @lyall
+	* [ ] SIDE QUEST: make perception fade with distance @outfrost
+	* [ ] SIDE QUEST: employee walking animation? @lyall
+* [ ] BT2: factory details @lyall
+	* [ ] filler junk **6h**
+	* [ ] NPC placement and paths **1h**
+	* [ ] SIDE QUEST: one of the following **1h**
+		* medium-size heavy factory machine
+		* additional model (1 or 2) of shelf filler junk, like a bucket of small parts
+		* hand trolley
+* [ ] BT3: transitions, settings menu, menu polish **4h** @outfrost
+* [ ] BT4: attach and test audio events and parameters **2h** @outfrost
+* [ ] BT5: set up each playable prop and place it in the factory **2h**
+* [ ] BT6: PLAYTEST **8h+8h** @everyone
+* [ ] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
+
+## the whole list
+
 * [x] movement, camera control @outfrost
 * [x] outer loop - spawning, finishing a level, progressing @outfrost
 * [x] overall building layout @outfrost
+* [ ] refined map design @lyall
 * [~] NPC navigation @lyall
 	* [x] Navmesh Gen
 	* [x] actual gravity on it
@@ -8,7 +29,7 @@
 	* [x] rotate boys in velocity direction
 	* [x] create scene patrol points manager
 	* [x] add looping version to manager
-* [ ] NPC navigation
+* [ ] NPC behaviour
 	* [ ] State machine
 	* [ ] chase
 	* [ ] patrol
@@ -55,6 +76,7 @@
 		* [ ] buckets of small parts (literally could be small cylinders in an open box)
 	* [ ] hand trolley
 	* [~] work devices™
+* [ ] employee walking animation
 * [ ] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
@@ -62,10 +84,17 @@
 * [ ] keyboard menu navigation @outfrost
 * [ ] gamepad controls?
 * audio @grimma
-	* [~] Godot: integrate FMOD
-		* seems like we got it?
-	* [~] Godot: set up PARAMETER_SCENE
-	* [ ] Godot: set up PARAMETER_DETECTION
+	* [x] Godot: integrate FMOD
+	* [~] Godot: set up PARAMETER_SCENE @outfrost
+	* [ ] Godot: set up PARAMETER_DETECTION @outfrost
+	* [ ] Godot: set up parameter LEVELCOMPLETE @outfrost
+	* [ ] Godot: attach events @outfrost
+		* [ ] `ALERT_NOTICED`
+		* [ ] `SFX_JUMP`
+		* [ ] `SFX_FALL`
+		* [ ] NPC
+		* [ ] ROOM
+		* [ ] make sure the UI click sfx isn't gonna fall over
 	* [~] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
 	* [~] FMOD: PARAMETER_SCENE in EVENT_1: MUSIC_menus vs MUSIC_sneaky
 	* [~] FMOD: PARAMETER_DETECTION in EVENT_1: MUSIC_sneaky vs MUSIC_noticed vs MUSIC_spotted
