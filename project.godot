@@ -29,8 +29,10 @@ General/should_load_by_name=false
 [application]
 
 config/name="GWJ66"
-run/main_scene="res://game/Game.tscn"
+run/main_scene="res://game/loading/Splash.tscn"
 config/features=PackedStringArray("4.2")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [autoload]

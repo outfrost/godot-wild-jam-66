@@ -1,0 +1,25 @@
+extends Control
+
+const GAME: PackedScene = preload("res://game/Game.tscn")
+
+func _ready() -> void:
+	get_tree().create_timer(2.0).timeout.connect(func():
+		$AudioStreamPlayer.play()
+		$Godot.show()
+		get_tree().create_timer(2.5).timeout.connect(func():
+			$InsideTheBox.offset_left = 0.0
+			$InsideTheBox.offset_right = 0.0
+			$InsideTheBox.show()
+			var tween: = create_tween().set_parallel()
+			tween.tween_property($Godot, ^"offset_left", 0.0, 0.25)
+			tween.tween_property($Godot, ^"offset_right", 0.0, 0.25)
+			tween.set_parallel(false)
+			tween.tween_property($InsideTheBox, ^"offset_left", -140.0, 0.25)
+			tween.set_parallel()
+			tween.tween_property($InsideTheBox, ^"offset_right", 140.0, 0.25)
+			tween.play()
+			get_tree().create_timer(3.0).timeout.connect(func():
+				get_tree().change_scene_to_packed(GAME)
+			)
+		)
+	)
