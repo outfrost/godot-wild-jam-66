@@ -1,12 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfivue6gcwfy5"]
+[gd_scene load_steps=19 format=3 uid="uid://cfivue6gcwfy5"]
 
 [ext_resource type="Texture2D" uid="uid://7ly2lf0fa1k" path="res://scene/prototype/texture/kenney/dark/00.png" id="1_rm78j"]
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_uau2x"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_rw2ko"]
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="3_o2f8a"]
+[ext_resource type="Script" path="res://npc/StateMachine/StateMachine.gd" id="5_0716o"]
 [ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="5_a4x31"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="5_b7sox"]
 [ext_resource type="Script" path="res://npc/NavmeshAgent.gd" id="6_2gfkb"]
+[ext_resource type="Script" path="res://npc/StateMachine/NpcPatrol.gd" id="6_6rfnv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_773ei"]
 size = Vector3(3, 1, 2)
@@ -68,31 +70,42 @@ transform = Transform3D(0.947315, 0.233943, -0.218782, -0.116376, 0.887752, 0.44
 [node name="Employee" parent="." instance=ExtResource("5_a4x31")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.20909, 0.502358, -2.76638)
 
-[node name="NavmeshAgent" type="CharacterBody3D" parent="."]
+[node name="NPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("navigation_agent")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2.81328, 1.07682, 3.94924)
 floor_block_on_wall = false
 script = ExtResource("6_2gfkb")
-speed = 3.0
-loop = false
+navigation_agent = NodePath("NavigationAgent3D")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="NavmeshAgent"]
+[node name="State Machine" type="Node" parent="NPC" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_0716o")
+initial_state = NodePath("PatrolState")
 
-[node name="BasicEmployee" parent="NavmeshAgent" instance=ExtResource("5_b7sox")]
+[node name="PatrolState" type="Node" parent="NPC/State Machine" node_paths=PackedStringArray("parent", "raycaster", "route")]
+script = ExtResource("6_6rfnv")
+parent = NodePath("../..")
+raycaster = NodePath("../../BasicEmployee")
+route = NodePath("../../Patrol")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavmeshAgent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
-shape = SubResource("CapsuleShape3D_llwin")
+[node name="WaitState" type="Node" parent="NPC/State Machine"]
 
-[node name="Patrol" type="Node" parent="NavmeshAgent"]
+[node name="Patrol" type="Node" parent="NPC"]
 
-[node name="point 1" type="Marker3D" parent="NavmeshAgent/Patrol"]
+[node name="point 1" type="Marker3D" parent="NPC/Patrol"]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.95755, 0.502358, 9.5046)
 
-[node name="point 2" type="Marker3D" parent="NavmeshAgent/Patrol"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01781, 0.782696, 6.98184)
+[node name="point 2" type="Marker3D" parent="NPC/Patrol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71788, 0.782696, -6.48015)
 
-[node name="point 3" type="Marker3D" parent="NavmeshAgent/Patrol"]
+[node name="point 3" type="Marker3D" parent="NPC/Patrol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342398, 0.66885, 7.14791)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="NPC"]
+
+[node name="BasicEmployee" parent="NPC" instance=ExtResource("5_b7sox")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
+shape = SubResource("CapsuleShape3D_llwin")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596496, 0)
