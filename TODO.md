@@ -10,11 +10,11 @@
 		* medium-size heavy factory machine
 		* additional model (1 or 2) of shelf filler junk, like a bucket of small parts
 		* hand trolley
-* [ ] BT3: transitions, settings menu, menu polish **4h** @outfrost
+* [~] BT3: transitions, settings menu, menu polish **4h** @outfrost
 * [ ] BT4: attach and test audio events and parameters **2h** @outfrost
 * [ ] BT5: set up each playable prop and place it in the factory **2h**
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
-* [~] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
+* [x] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
 
 ## the whole list
 
@@ -77,10 +77,10 @@
 	* [ ] hand trolley
 	* [~] work devices™
 * [ ] employee walking animation
-* [ ] transitions (game start, level failed, next level (next prop), game finished)
+* [~] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
-* [ ] settings menu @outfrost
+* [~] settings menu @outfrost
 * [ ] keyboard menu navigation @outfrost
 * [ ] gamepad controls?
 * audio @grimma
