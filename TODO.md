@@ -14,7 +14,7 @@
 * [ ] BT4: attach and test audio events and parameters **2h** @outfrost
 * [ ] BT5: set up each playable prop and place it in the factory **2h**
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
-* [ ] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
+* [~] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
 
 ## the whole list
 
