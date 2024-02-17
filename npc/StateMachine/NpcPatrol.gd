@@ -13,7 +13,6 @@ var current_agent_position: Vector3
 var route: Node
 var navigation_agent: NavigationAgent3D
 
-@export var freeze_time: float = 5.0
 @export var loop: bool = true
 var target: Marker3D
 
@@ -68,6 +67,11 @@ func select_target():
 			index += 2
 			growing = true
 
+func Enter():
+	parent.velocity.x = 0
+	parent.velocity.z = 0
+	target = route.get_child(index)
+	set_movement_target(target.global_position)
 
 func Physics_Update(delta):
 

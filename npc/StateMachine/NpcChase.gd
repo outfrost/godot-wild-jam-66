@@ -24,6 +24,12 @@ func actor_setup():
 
 	set_physics_process(true)
 
+func Enter():
+	parent.velocity.x = 0
+	parent.velocity.z = 0
+	last_position.global_position = raycaster.prop_last_pos
+	navigation_agent.set_target_position(last_position.global_position)
+
 func Update(delta):
 	DebugOverlay.display({ last_pos = last_position.global_position}, self)
 

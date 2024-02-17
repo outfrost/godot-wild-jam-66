@@ -3,6 +3,13 @@ extends Node
 @export var initial_state : State
 
 var route: Node
+var patrol_speed : float
+var chase_speed : float
+var ping_pong_path : bool
+var wait_time : float
+
+
+
 var current_state : State
 var states : Dictionary = {}
 
@@ -19,6 +26,12 @@ func late_ready():
 	for child in get_children():
 		if child is NpcPatrol:
 			child.route = route
+			child.speed = patrol_speed
+			child.loop = !ping_pong_path
+		if child is NpcWait:
+			child.wait_time = wait_time
+		if child is NpcChase:
+			child.speed = chase_speed
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.navigation_agent = navigation_agent
