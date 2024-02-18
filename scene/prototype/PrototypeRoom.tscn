@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbumgy041cro" path="res://character/test/TestProp3.tscn" id="5_fs64n"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="8_7rh5f"]
 [ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="8_7ujaf"]
-[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/Reece.tscn" id="11_15xv0"]
+[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/FullEmployee.tscn" id="11_15xv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm4g0"]
 size = Vector3(10, 1, 10)

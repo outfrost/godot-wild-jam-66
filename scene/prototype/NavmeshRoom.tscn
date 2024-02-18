@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_uau2x"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_rw2ko"]
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="3_o2f8a"]
-[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/Reece.tscn" id="3_q6vhg"]
+[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/FullEmployee.tscn" id="3_q6vhg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_773ei"]
 size = Vector3(3, 1, 2)
