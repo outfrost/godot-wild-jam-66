@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://nlk44fx0ufo5" path="res://environment/shelf_large/ShelfLarge.tscn" id="20_sfigs"]
 [ext_resource type="PackedScene" uid="uid://tje2ovp8qrp1" path="res://environment/pallet/PalletWithBoxes.tscn" id="24_206t7"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="24_gelmj"]
-[ext_resource type="PackedScene" uid="uid://bkao5gvbx6a7o" path="res://character/Coffee.tscn" id="25_esun5"]
 [ext_resource type="PackedScene" uid="uid://nieost7b5uoa" path="res://environment/box/BoxOpen.tscn" id="25_oi247"]
 [ext_resource type="Material" uid="uid://c0p53hap0e30t" path="res://material/mat_roof.tres" id="30_ljfrb"]
+[ext_resource type="PackedScene" uid="uid://bkao5gvbx6a7o" path="res://character/PropCoffee.tscn" id="30_pm1nv"]
 [ext_resource type="Material" uid="uid://c8vuumvcd0g23" path="res://material/mat_beam.tres" id="31_moq5u"]
 [ext_resource type="PackedScene" uid="uid://bauaxcd72nghw" path="res://scene/LAMP.tscn" id="32_u0nfl"]
 [ext_resource type="VoxelGIData" uid="uid://bnp2jtmavc3lk" path="res://scene/Factory.VoxelGI_data.res" id="33_v225k"]
@@ -195,7 +195,7 @@ size = Vector3(4.35, 0.3, 1.2)
 
 [node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
 script = ExtResource("1_f4j7u")
-prop_order = [NodePath("Props/Coffee")]
+prop_order = [NodePath("Props/PropCoffee")]
 finish_area = NodePath("FinishArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -994,7 +994,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0, -13.5)
 
 [node name="Props" type="Node3D" parent="."]
 
-[node name="Coffee" parent="Props" instance=ExtResource("25_esun5")]
+[node name="PropCoffee" parent="Props" instance=ExtResource("30_pm1nv")]
 transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, 11.4, 1.01624, 12.7)
 
 [node name="BasicEmployee" parent="." instance=ExtResource("24_gelmj")]

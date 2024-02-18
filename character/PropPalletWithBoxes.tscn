@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://geqglufr04vr"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_b87ar"]
+[ext_resource type="PackedScene" uid="uid://brtap20qnoac7" path="res://assets/Box/Palet.gltf" id="2_plpbw"]
+[ext_resource type="PackedScene" uid="uid://1ub5643v6ruo" path="res://assets/Box/Box.gltf" id="3_eoufw"]
+[ext_resource type="Material" uid="uid://dm62fevftpcd3" path="res://material/mat_palletband.tres" id="4_8bgr1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsljh"]
+size = Vector3(1.5, 0.17, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6swpm"]
+size = Vector3(1.37, 1.4, 1.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3nf8"]
+material = ExtResource("4_8bgr1")
+size = Vector3(0.08, 1.35, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q6dl8"]
+material = ExtResource("4_8bgr1")
+size = Vector3(0.08, 0.04, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2krwb"]
+material = ExtResource("4_8bgr1")
+size = Vector3(0.08, 0.005, 1.285)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pjm8i"]
+material = ExtResource("4_8bgr1")
+size = Vector3(0.08, 0.005, 1.507)
+
+[node name="PropPalletWithBoxes" node_paths=PackedStringArray("visual") instance=ExtResource("1_b87ar")]
+visual = NodePath("PalletWithBoxes")
+speed = 0.5
+acceleration = 2.0
+deceleration = 6.0
+jump_speed = 1.5
+rotation_speed = 4.0
+
+[node name="CameraRig" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+shape = SubResource("BoxShape3D_lsljh")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("BoxShape3D_6swpm")
+
+[node name="PalletWithBoxes" type="Node3D" parent="." index="5"]
+
+[node name="Palet" parent="PalletWithBoxes" index="0" instance=ExtResource("2_plpbw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00758403, 0)
+
+[node name="Box7" parent="PalletWithBoxes" index="1" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.33, 0.17, 0.33)
+
+[node name="Box8" parent="PalletWithBoxes" index="2" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.33, 0.17, -0.33)
+
+[node name="Box9" parent="PalletWithBoxes" index="3" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.33, 0.17, 0.33)
+
+[node name="Box6" parent="PalletWithBoxes" index="4" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.33, 0.17, -0.33)
+
+[node name="Box5" parent="PalletWithBoxes" index="5" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.33, 0.87, 0.33)
+
+[node name="Box4" parent="PalletWithBoxes" index="6" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.33, 0.87, -0.33)
+
+[node name="Box3" parent="PalletWithBoxes" index="7" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.33, 0.87, 0.33)
+
+[node name="Box2" parent="PalletWithBoxes" index="8" instance=ExtResource("3_eoufw")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0.33, 0.87, -0.33)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PalletWithBoxes" index="9"]
+transform = Transform3D(-4.37114e-08, 0.0819385, -0.996637, 0, 0.996637, 0.0819385, 1, 3.58165e-09, -4.35644e-08, -0.698, 0.84, -0.33)
+mesh = SubResource("BoxMesh_g3nf8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PalletWithBoxes" index="10"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.753325, 0.147942, -0.33)
+mesh = SubResource("BoxMesh_q6dl8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="PalletWithBoxes" index="11"]
+transform = Transform3D(-4.37114e-08, 0.0819385, -0.996637, 0, 0.996637, 0.0819385, 1, 3.58165e-09, -4.35644e-08, -0.698, 0.84, 0.33)
+mesh = SubResource("BoxMesh_g3nf8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="PalletWithBoxes" index="12"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.753325, 0.147942, 0.33)
+mesh = SubResource("BoxMesh_q6dl8")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="PalletWithBoxes" index="13"]
+transform = Transform3D(-4.37114e-08, -0.0819385, 0.996637, 0, 0.996637, 0.0819385, -1, 3.58165e-09, -4.35644e-08, 0.698, 0.84, 0.33)
+mesh = SubResource("BoxMesh_g3nf8")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="PalletWithBoxes" index="14"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.753325, 0.147942, 0.33)
+mesh = SubResource("BoxMesh_q6dl8")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="PalletWithBoxes" index="15"]
+transform = Transform3D(-4.37114e-08, -0.0819385, 0.996637, 0, 0.996637, 0.0819385, -1, 3.58165e-09, -4.35644e-08, 0.698, 0.84, -0.33)
+mesh = SubResource("BoxMesh_g3nf8")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="PalletWithBoxes" index="16"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.753325, 0.147942, -0.33)
+mesh = SubResource("BoxMesh_q6dl8")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="PalletWithBoxes" index="17"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.51, -0.33)
+mesh = SubResource("BoxMesh_2krwb")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="PalletWithBoxes" index="18"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.51, 0.33)
+mesh = SubResource("BoxMesh_2krwb")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="PalletWithBoxes" index="19"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.130703, -0.33)
+mesh = SubResource("BoxMesh_pjm8i")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="PalletWithBoxes" index="20"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.131, 0.33)
+mesh = SubResource("BoxMesh_pjm8i")

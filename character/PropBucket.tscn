@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqkikt4fwevre"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_iel3y"]
+[ext_resource type="PackedScene" uid="uid://bcg02h1xg8mhe" path="res://assets/Bucket/bucket.gltf" id="2_y5fil"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1fyvc"]
+radius = 0.175
+height = 0.54
+
+[node name="PropBucket" node_paths=PackedStringArray("visual") instance=ExtResource("1_iel3y")]
+visual = NodePath("bucket")
+
+[node name="CameraRig" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)
+shape = SubResource("CapsuleShape3D_1fyvc")
+
+[node name="bucket" parent="." index="4" instance=ExtResource("2_y5fil")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
