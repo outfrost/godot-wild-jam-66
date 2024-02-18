@@ -13,6 +13,8 @@
 * [~] BT3: transitions, settings menu, menu polish **4h** @outfrost
 * [~] BT4: attach and test audio events and parameters **2h** @outfrost
 * [~] BT5: set up each playable prop and place it in the factory **2h**
+	* [x] prop scenes
+	* [ ] placement
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
 * [x] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
 
