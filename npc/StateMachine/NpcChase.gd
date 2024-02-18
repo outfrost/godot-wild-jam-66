@@ -41,7 +41,9 @@ func Update(delta):
 	DebugOverlay.display({ last_pos = last_position.global_position}, self)
 
 func get_next_move(delta):
-	if navigation_agent.is_navigation_finished():
+	if raycaster.detected > 0.9:
+		navigation_agent.set_target_position(last_position.global_position)
+	else: if navigation_agent.is_navigation_finished():
 		navigation_agent.set_target_position(last_position.global_position)
 	current_agent_position = parent.position
 	next_path_position = navigation_agent.get_next_path_position()
