@@ -54,17 +54,27 @@ func Physics_Update(delta):
 
 	if raycaster.line_of_sight:
 		last_position.global_position = raycaster.prop_last_pos
-		get_next_move(delta)
 	elif raycaster.detected < 0.1:
 		#switch to idling
 		Transitioned.emit(self, "PatrolState")
 		#temp set movement to farts
 		parent.velocity = Vector3.ZERO
+		return
+
+	get_next_move(delta)
 
 	#rotation
-	if (parent.position - next_path_position).length() > 0.5:
-		parent.look_at(next_path_position,Vector3.UP)
+	var to_next_path_pos_local: = parent.to_local(next_path_position)
+	if to_next_path_pos_local.length_squared() > 0.25:
+		var angle: = Vector3.FORWARD.signed_angle_to(to_next_path_pos_local, Vector3.UP)
 
+		var slerp_rate: float = clamp(8.0 * (0.25 + 0.5 * (cos(angle) + 1.0)) * delta, 0.0, 1.0)
+		var new_rotation_y: = lerp_angle(parent.rotation.y, parent.rotation.y + angle, slerp_rate)
 
+		# prevent jitter/wiggle at low physics framerates
+		if abs(angle_difference(parent.rotation.y, new_rotation_y)) > abs(angle):
+			new_rotation_y = parent.rotation.y + angle
+
+		parent.rotation.y = new_rotation_y
 
 	parent.velocity.y = vy
