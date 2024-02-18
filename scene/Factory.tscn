@@ -39,7 +39,7 @@
 [ext_resource type="Material" uid="uid://b1rlnq4slur5h" path="res://material/mat_curb.tres" id="39_147r2"]
 [ext_resource type="Material" uid="uid://dlx3r2noa2mnd" path="res://material/mat_genericbuilding3.tres" id="39_uhiec"]
 [ext_resource type="Material" uid="uid://ouym0oi35t88" path="res://material/mut_mud.tres" id="40_crwaq"]
-[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/Reece.tscn" id="43_nlw2m"]
+[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/FullEmployee.tscn" id="41_mvnva"]
 [ext_resource type="Material" uid="uid://br8pwbfn1s673" path="res://material/mat_baydoor.tres" id="43_rtajf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqas"]
@@ -1494,12 +1494,9 @@ mesh = SubResource("BoxMesh_n1wf1")
 
 [node name="Guy in the back" type="Node3D" parent="Employees"]
 
-[node name="Reece" parent="Employees/Guy in the back" node_paths=PackedStringArray("route") instance=ExtResource("43_nlw2m")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.64751, 0, 11.6398)
+[node name="FullEmployee" parent="Employees/Guy in the back" node_paths=PackedStringArray("route") instance=ExtResource("41_mvnva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 13)
 route = NodePath("../Patrol")
-patrol_speed = 1.0
-ping_pong_path = true
-chase_speed = 2.0
 
 [node name="Patrol" type="Node" parent="Employees/Guy in the back"]
 

@@ -11,14 +11,13 @@
 radius = 0.2
 height = 1.8
 
-[node name="Reece" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
 floor_block_on_wall = false
 script = ExtResource("1_kf6pf")
 navigation_agent = NodePath("NavigationAgent3D")
-patrol_speed = 0.5
-wait_time = 3.0
-chase_speed = 1.0
+patrol_speed = 1.0
+wait_time = 5.0
+chase_speed = 2.0
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_rkkfj")
@@ -44,7 +43,6 @@ raycaster = NodePath("../../BasicEmployee")
 [node name="LastPos" type="Marker3D" parent="State Machine/ChaseState"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 0.25
 
 [node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
 
