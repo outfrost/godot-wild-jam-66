@@ -28,6 +28,7 @@ var prop_last_pos: = Vector3.ZERO
 
 func _ready() -> void:
 	Harbinger.subscribe("active_prop", set_active_prop)
+	Harbinger.subscribe("npc_reset", reset)
 	for i in range(num_rays):
 		var vis: = RAYCAST_VIS_SCN.instantiate()
 		vision_sensor.add_child(vis)
@@ -104,3 +105,11 @@ func use_chase_profile() -> void:
 
 func set_active_prop(p) -> void:
 	prop = p[0]
+
+func reset(_p) -> void:
+	detection_profile = detection_normal_profile
+	detected = 0.0
+	line_of_sight = false
+	ray_idx = 0
+	los_last_ray_idx = 0
+	prop_last_pos = Vector3.ZERO
