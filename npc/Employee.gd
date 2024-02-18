@@ -122,3 +122,5 @@ func reset(_p) -> void:
 	ray_idx = 0
 	los_last_ray_idx = 0
 	prop_last_pos = Vector3.ZERO
+	for s in sfx:
+		s.stop()
