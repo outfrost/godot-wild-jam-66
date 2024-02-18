@@ -3,6 +3,7 @@
 * [x] BT1: NPC behaviour - chase logic **6h** @lyall
 	* [ ] SIDE QUEST: make perception fade with distance @outfrost
 	* [ ] SIDE QUEST: employee walking animation? @lyall
+	* [ ] possibly add proximity detection? @outfrost
 * [ ] BT2: factory details @lyall
 	* [ ] filler junk **6h**
 	* [ ] NPC placement and paths **1h**
@@ -12,7 +13,7 @@
 		* hand trolley
 * [~] BT3: transitions, settings menu, menu polish **4h** @outfrost
 * [~] BT4: attach and test audio events and parameters **2h** @outfrost
-* [~] BT5: set up each playable prop and place it in the factory **2h**
+* [~] BT5: set up each playable prop and place it in the factory **2h** @lyall
 	* [x] prop scenes
 	* [ ] placement
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
