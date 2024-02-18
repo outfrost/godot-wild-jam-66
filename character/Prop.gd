@@ -28,6 +28,7 @@ var rotation_delta: = 0.0
 func _ready() -> void:
 	deactivate()
 	collision_layer = 1 << 1 # props
+	collision_mask = 1 << 0 | 1 << 1 # general, props
 
 func _process(delta: float) -> void:
 	# interpolate movement to prevent stutters
