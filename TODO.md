@@ -95,7 +95,7 @@
 		* [~] `SFX_FALL`
 		* [~] NPC
 			* [ ] `ALERT_NOTICED`?
-		* [~] ROOM
+		* [x] ROOM
 		* [ ] make sure the UI click sfx isn't gonna fall over
 	* [~] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
 	* [~] FMOD: PARAMETER_SCENE in EVENT_1: MUSIC_menus vs MUSIC_sneaky
