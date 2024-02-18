@@ -2,11 +2,9 @@ extends Node
 
 @export var initial_state : State
 
+var route: Node
 var current_state : State
 var states : Dictionary = {}
-
-
-
 
 var navigation_agent: NavigationAgent3D
 
@@ -19,9 +17,10 @@ func late_ready():
 	# code is paused here until you call late_ready
 
 	for child in get_children():
+		if child is NpcPatrol:
+			child.route = route
 		if child is State:
 			states[child.name.to_lower()] = child
-			late_ready()
 			child.navigation_agent = navigation_agent
 			child.Transitioned.connect(on_child_transition)
 	if initial_state:
@@ -29,6 +28,7 @@ func late_ready():
 		current_state = initial_state
 
 func _process(delta):
+	DebugOverlay.display({ currentState = current_state}, self)
 	if current_state:
 		current_state.Update(delta)
 
@@ -45,8 +45,8 @@ func on_child_transition(state, new_state_name):
 		return
 
 	if current_state:
-		current_state.exit()
+		current_state.Exit()
 
-	new_state.enter()
+	new_state.Enter()
 
 	current_state = new_state
