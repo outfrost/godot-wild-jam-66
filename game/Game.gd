@@ -5,6 +5,7 @@ extends Node
 
 @onready var main_menu: Control = $UI/MainMenu
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
+@onready var level_complete_overlay: Control = $UI/LevelCompleteOverlay
 @onready var menu_background: Node = $MenuBackground
 @onready var menu_background_content: Node = menu_background.get_child(0)
 @onready var room_container: Node = $RoomContainer
@@ -43,6 +44,8 @@ func on_start_game() -> void:
 	#music.set_parameter("SCENE", 0)
 
 func back_to_menu() -> void:
+	if level_complete_overlay.visible:
+		return
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	room_container.remove_child(room)
 	room.queue_free()
@@ -51,10 +54,14 @@ func back_to_menu() -> void:
 	menu_background.add_child(menu_background_content)
 	main_menu.show()
 
-func prop_finished() -> void:
+func prop_finished(name: String) -> void:
+	get_tree().paused = true
+	music.set_parameter("SCENE", 0)
+	level_complete_overlay.display(name)
+	await level_complete_overlay.dismissed
 	room.activate_next_prop()
-	#music.set_parameter("SCENE", 1)
-	#music.set_parameter("SCENE", 0)
+	music.set_parameter("SCENE", 1)
+	get_tree().paused = false
 
 func prop_caught(params) -> void:
 	var by: String = params[0]

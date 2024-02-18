@@ -7,6 +7,7 @@
 size = Vector3(0.75, 2.2, 1.5)
 
 [node name="PropShelfSmall" node_paths=PackedStringArray("visual") instance=ExtResource("1_eu1c7")]
+friendlyname = "Shelving Unit"
 visual = NodePath("ShelfSmall2")
 acceleration = 3.0
 deceleration = 8.0

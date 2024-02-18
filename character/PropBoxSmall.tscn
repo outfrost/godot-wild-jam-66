@@ -7,6 +7,7 @@
 size = Vector3(0.65, 0.65, 0.65)
 
 [node name="PropBoxSmall" node_paths=PackedStringArray("visual") instance=ExtResource("1_qjqux")]
+friendlyname = "Small Box"
 visual = NodePath("Box2")
 acceleration = 3.0
 deceleration = 8.0

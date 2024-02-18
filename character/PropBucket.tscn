@@ -8,6 +8,7 @@ radius = 0.175
 height = 0.54
 
 [node name="PropBucket" node_paths=PackedStringArray("visual") instance=ExtResource("1_iel3y")]
+friendlyname = "Bucket"
 visual = NodePath("bucket")
 
 [node name="CameraRig" parent="." index="0"]

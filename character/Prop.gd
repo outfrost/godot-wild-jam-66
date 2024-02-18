@@ -1,6 +1,7 @@
 class_name Prop
 extends CharacterBody3D
 
+@export var friendlyname: String = "Prop"
 @export var visual: Node3D
 
 @export var speed: = 1.0

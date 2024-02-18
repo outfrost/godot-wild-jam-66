@@ -10,6 +10,7 @@ size = Vector3(1.15, 1.92214, 1.95)
 size = Vector3(0.3, 0.05, 1.25)
 
 [node name="PropForklift" node_paths=PackedStringArray("visual") instance=ExtResource("1_q8dh4")]
+friendlyname = "A Goddamn Forklift"
 visual = NodePath("Forklift")
 
 [node name="CameraRig" parent="." index="0"]

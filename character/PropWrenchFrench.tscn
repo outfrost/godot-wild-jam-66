@@ -7,6 +7,7 @@
 size = Vector3(0.71, 0.03, 0.12)
 
 [node name="PropWrenchFrench" node_paths=PackedStringArray("visual") instance=ExtResource("1_sy0xf")]
+friendlyname = "Wrench"
 visual = NodePath("WrenchFrench2")
 speed = 1.25
 jump_speed = 4.0

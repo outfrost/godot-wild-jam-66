@@ -10,6 +10,7 @@ size = Vector3(0.88, 0.06, 0.09)
 size = Vector3(0.25, 0.044043, 0.171)
 
 [node name="PropPipeWrench" node_paths=PackedStringArray("visual") instance=ExtResource("1_6w11k")]
+friendlyname = "Pipe Wrench"
 visual = NodePath("PipeWrench2")
 jump_speed = 3.5
 

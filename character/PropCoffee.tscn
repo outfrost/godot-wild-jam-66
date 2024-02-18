@@ -8,6 +8,7 @@ radius = 0.15
 height = 0.4
 
 [node name="PropCoffee" node_paths=PackedStringArray("visual") instance=ExtResource("1_cu4f1")]
+friendlyname = "Manager's Coffee"
 visual = NodePath("Coffee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]

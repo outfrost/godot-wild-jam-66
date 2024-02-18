@@ -10,6 +10,7 @@ size = Vector3(0.72, 0.12, 0.12)
 size = Vector3(0.12, 0.12, 0.37)
 
 [node name="PropHammer" node_paths=PackedStringArray("visual") instance=ExtResource("1_4ptjk")]
+friendlyname = "Hammer"
 visual = NodePath("Hammer2")
 jump_speed = 4.0
 

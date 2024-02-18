@@ -7,6 +7,7 @@
 size = Vector3(0.42, 0.08, 0.08)
 
 [node name="PropScrewdriver" node_paths=PackedStringArray("visual") instance=ExtResource("1_v1787")]
+friendlyname = "Flat-Head Screwdriver"
 visual = NodePath("Scredriver")
 speed = 1.25
 jump_speed = 4.0

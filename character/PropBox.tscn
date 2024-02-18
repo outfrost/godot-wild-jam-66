@@ -6,6 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_56i4h"]
 
 [node name="PropBox" node_paths=PackedStringArray("visual") instance=ExtResource("1_caw2b")]
+friendlyname = "Large Box"
 visual = NodePath("Box2")
 speed = 0.75
 acceleration = 3.0

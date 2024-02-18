@@ -28,6 +28,7 @@ material = ExtResource("4_8bgr1")
 size = Vector3(0.08, 0.005, 1.507)
 
 [node name="PropPalletWithBoxes" node_paths=PackedStringArray("visual") instance=ExtResource("1_b87ar")]
+friendlyname = "Pallet"
 visual = NodePath("PalletWithBoxes")
 speed = 0.5
 acceleration = 2.0
