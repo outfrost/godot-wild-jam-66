@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=84 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
@@ -193,8 +193,6 @@ size = Vector3(0.15, 0.8, 0.15)
 [sub_resource type="BoxMesh" id="BoxMesh_n1wf1"]
 material = ExtResource("43_rtajf")
 size = Vector3(4.35, 0.3, 1.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vel5d"]
 
 [node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
 script = ExtResource("1_f4j7u")
@@ -1515,9 +1513,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06368, 0.110227, 6.81147)
 
 [node name="point 5" type="Marker3D" parent="Employees/Guy in the back/Patrol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15986, 0.110227, 4.7646)
-
-[node name="REMOVE ME" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, -5.78087, -0.3039, 8.19346)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="REMOVE ME"]
-shape = SubResource("BoxShape3D_vel5d")

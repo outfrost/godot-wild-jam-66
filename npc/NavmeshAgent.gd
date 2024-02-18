@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-@export var temptarget : Node3D
-
 @export var navigation_agent : NavigationAgent3D
 @export var route : Node
 @export var patrol_speed : float
