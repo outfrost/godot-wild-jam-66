@@ -28,7 +28,7 @@ General/should_load_by_name=false
 
 [application]
 
-config/name="GWJ66"
+config/name="Missing Inventory"
 run/main_scene="res://game/loading/Splash.tscn"
 config/features=PackedStringArray("4.2")
 boot_splash/bg_color=Color(0, 0, 0, 1)
