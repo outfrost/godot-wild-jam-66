@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr0fywxv7c0c"]
+[gd_scene load_steps=9 format=3 uid="uid://dr0fywxv7c0c"]
 
 [ext_resource type="Script" path="res://npc/NavmeshAgent.gd" id="1_kf6pf"]
 [ext_resource type="Script" path="res://npc/StateMachine/StateMachine.gd" id="2_rkkfj"]
@@ -10,7 +10,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3wll"]
 size = Vector3(0.4, 1.8, 0.255)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_reox5"]
+height = 1.8
+
 [node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
+collision_mask = 3
 floor_block_on_wall = false
 script = ExtResource("1_kf6pf")
 navigation_agent = NodePath("NavigationAgent3D")
@@ -76,6 +80,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
 shape = SubResource("BoxShape3D_v3wll")
+
+[node name="CatchArea" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CatchArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CylinderShape3D_reox5")
 
 [connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]
 [connection signal="chase_end" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseEnd" method="play"]
