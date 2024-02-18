@@ -42,7 +42,8 @@ raycaster = NodePath("../../BasicEmployee")
 [node name="LastPos" type="Marker3D" parent="State Machine/ChaseState"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 0.5
+path_desired_distance = 0.25
+target_desired_distance = 0.25
 path_max_distance = 1.01
 
 [node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
