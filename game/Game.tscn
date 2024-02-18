@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmyhje0055jiq"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://cfivue6gcwfy5" path="res://scene/prototype/NavmeshRoom.tscn" id="2_e41au"]
+[ext_resource type="PackedScene" uid="uid://8064wgu24krk" path="res://scene/Factory.tscn" id="2_8t5sl"]
 [ext_resource type="PackedScene" uid="uid://dmfdkwcu73843" path="res://game/menu/MainMenu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://c36i4ds1o7ejo" path="res://scene/Factory_MenuBackground.tscn" id="3_2dw32"]
 [ext_resource type="PackedScene" uid="uid://bjbey6bjjepho" path="res://game/loading/TransitionScreen.tscn" id="4"]
@@ -10,7 +10,7 @@
 
 [node name="Game" type="Node"]
 script = ExtResource("5")
-room_scn = ExtResource("2_e41au")
+room_scn = ExtResource("2_8t5sl")
 
 [node name="MenuBackground" type="Node3D" parent="."]
 
