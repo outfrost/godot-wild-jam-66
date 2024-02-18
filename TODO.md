@@ -1,6 +1,6 @@
 ## BIG THINGS
 
-* [ ] BT1: NPC behaviour - chase logic **6h** @lyall
+* [~] BT1: NPC behaviour - chase logic **6h** @lyall
 	* [ ] SIDE QUEST: make perception fade with distance @outfrost
 	* [ ] SIDE QUEST: employee walking animation? @lyall
 * [ ] BT2: factory details @lyall
@@ -12,7 +12,7 @@
 		* hand trolley
 * [~] BT3: transitions, settings menu, menu polish **4h** @outfrost
 * [~] BT4: attach and test audio events and parameters **2h** @outfrost
-* [ ] BT5: set up each playable prop and place it in the factory **2h**
+* [~] BT5: set up each playable prop and place it in the factory **2h**
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
 * [x] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
 
@@ -80,7 +80,7 @@
 * [~] transitions (game start, level failed, next level (next prop), game finished)
 * [ ] domestic pineapple juice @outfrost
 * [~] menu style and background @outfrost
-* [~] settings menu @outfrost
+* [ ] settings menu @outfrost
 * [ ] keyboard menu navigation @outfrost
 * [ ] gamepad controls?
 * audio @grimma
@@ -88,12 +88,12 @@
 	* [~] Godot: set up PARAMETER_SCENE @outfrost
 	* [ ] Godot: set up PARAMETER_DETECTION @outfrost
 	* [ ] Godot: set up parameter LEVELCOMPLETE @outfrost
-	* [ ] Godot: attach events @outfrost
-		* [ ] `ALERT_NOTICED`
-		* [ ] `SFX_JUMP`
-		* [ ] `SFX_FALL`
-		* [ ] NPC
-		* [ ] ROOM
+	* [~] Godot: attach events @outfrost
+		* [x] `SFX_JUMP`
+		* [~] `SFX_FALL`
+		* [~] NPC
+			* [ ] `ALERT_NOTICED`?
+		* [~] ROOM
 		* [ ] make sure the UI click sfx isn't gonna fall over
 	* [~] FMOD: EVENT_MUSIC: MUSIC_menus/MUSIC_sneaky/MUSIC_noticed/MUSIC_spotted/ONESHOT_MGS-style-chase-alert
 	* [~] FMOD: PARAMETER_SCENE in EVENT_1: MUSIC_menus vs MUSIC_sneaky
