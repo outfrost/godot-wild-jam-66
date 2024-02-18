@@ -204,7 +204,7 @@ size = Vector3(4.35, 0.3, 1.2)
 
 [node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
 script = ExtResource("1_f4j7u")
-prop_order = [NodePath("Props/PropCoffee")]
+prop_order = [NodePath("Props/PropCoffee"), NodePath("Props/PropScrewdriver"), NodePath("Props/PropPropane"), NodePath("Props/PropForklift")]
 finish_area = NodePath("FinishArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1882,8 +1882,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0, -13.5)
 
 [node name="Props" type="Node3D" parent="."]
 
-[node name="PropPropane" parent="Props" instance=ExtResource("33_wqunp")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -9.75, 0, 6.7)
+[node name="PropCoffee" parent="Props" instance=ExtResource("30_pm1nv")]
+transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, 11.3559, 1.05046, 12.5756)
 speed = 1.25
 jump_speed = 5.0
 
@@ -1891,8 +1891,10 @@ jump_speed = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49495, 1.10997, 14.6708)
 speed = 1.5
 
-[node name="PropCoffee" parent="Props" instance=ExtResource("30_pm1nv")]
-transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, -4.79003, 1.98514, -4.22233)
+[node name="PropPropane" parent="Props" instance=ExtResource("33_wqunp")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -9.75, 0, 6.7)
+speed = 1.25
+jump_speed = 5.0
 
 [node name="PropForklift" parent="Props" instance=ExtResource("39_tfo4o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.12643, 0, -4.27068)
