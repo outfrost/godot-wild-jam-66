@@ -1,6 +1,8 @@
 extends State
 class_name NpcPatrol
 
+signal alerted
+
 @export var speed = 5.0
 @export var acceleration = 20.0
 @export var rotation_speed: = 10.0
@@ -93,6 +95,7 @@ func Physics_Update(delta):
 
 	#if player is detected, switch to chase state (could add suspicious state)
 	if raycaster.detected >= 0.9:
+		alerted.emit()
 		Transitioned.emit(self, "ChaseState")
 
 func Update(delta):

@@ -662,6 +662,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.5, 
 [node name="WorkbenchSection" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7.5)
 
+[node name="DrillNoise" type="FmodEventEmitter3D" parent="NavigationRegion3D/WorkbenchSection"]
+event_name = "event:/ROOM/SFX_DRILLSTATION"
+event_guid = "{052f02c0-5ffc-43c6-ae18-efdc4961c75f}"
+attached = false
+autoplay = true
+volume = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, -0.5)
+
 [node name="Subsection1" type="Node3D" parent="NavigationRegion3D/WorkbenchSection"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 4)
 
@@ -878,6 +886,13 @@ transform = Transform3D(0.984935, 0, 0.172926, 0, 1, 0, -0.172926, 0, 0.984935, 
 
 [node name="HeavySection" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.5)
+
+[node name="ConveyorNoise" type="FmodEventEmitter3D" parent="NavigationRegion3D/HeavySection"]
+event_name = "event:/ROOM/SFX_CONVEYOR"
+event_guid = "{5a68edda-60c6-4a20-bbf8-4e3126c60ac0}"
+autoplay = true
+volume = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2.5, 3.5)
 
 [node name="Assembler" parent="NavigationRegion3D/HeavySection" instance=ExtResource("6_urk2n")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 7.5)

@@ -43,6 +43,13 @@ raycaster = NodePath("../../BasicEmployee")
 
 [node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
 
+[node name="SfxNoticed" type="FmodEventEmitter3D" parent="BasicEmployee"]
+event_name = "event:/NPC/SFX_NPC_NOTICED"
+event_guid = "{62ae4737-25fd-4d4a-95d0-46636b8d1266}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
 shape = SubResource("CapsuleShape3D_llwin")
+
+[connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]

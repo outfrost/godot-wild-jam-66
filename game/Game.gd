@@ -37,7 +37,7 @@ func on_start_game() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	room.activate_next_prop()
 	music.set_parameter("SCENE", 1)
-	music.set_parameter("SCENE", 0)
+	#music.set_parameter("SCENE", 0)
 
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -50,5 +50,5 @@ func back_to_menu() -> void:
 
 func prop_finished() -> void:
 	room.activate_next_prop()
-	music.set_parameter("SCENE", 1)
-	music.set_parameter("SCENE", 0)
+	#music.set_parameter("SCENE", 1)
+	#music.set_parameter("SCENE", 0)

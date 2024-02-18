@@ -84,9 +84,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	for i in range(get_slide_collision_count()):
-		if get_slide_collision(i).get_normal().y * velocity_tmp.y < - jump_speed + 0.05:
-			sfx_fall.play()
+	#for i in range(get_slide_collision_count()):
+		#if get_slide_collision(i).get_normal().y * velocity_tmp.y < - jump_speed + 0.05:
+			#sfx_fall.play()
 
 	movement_delta = transform.origin - last_pos
 	rotation_delta = wrapf(rotation.y - last_rot, - 0.5 * TAU, 0.5 * TAU)
