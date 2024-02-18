@@ -1055,21 +1055,6 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -6.517
 [node name="Subsection5" type="Node3D" parent="NavigationRegion3D/WorkbenchSection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1.75)
 
-[node name="ShelfSmall" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.45, 2, -4.2)
-
-[node name="ShelfSmall8" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.95, 2, -4.2)
-
-[node name="ShelfSmall9" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.55, 2, -4.2)
-
-[node name="ShelfSmall2" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.6, 2, -2)
-
-[node name="ShelfSmall6" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.6, 2, -3.5)
-
 [node name="ShelfSmall15" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.75, 0, -1.3)
 
@@ -1132,24 +1117,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.5, 
 
 [node name="Pallet" parent="NavigationRegion3D/WorkbenchSection/Subsection5/TableSmall4" instance=ExtResource("14_7uq2h")]
 transform = Transform3D(0.258819, 0.965926, -6.47961e-08, -0.965926, 0.258819, -8.44439e-08, -6.47961e-08, 8.44439e-08, 1, 0.586494, 0.743992, -0.714832)
-
-[node name="ShelfSmall17" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.25, 2, -4.4)
-
-[node name="ShelfSmall18" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.75, 2, -4.4)
-
-[node name="ShelfSmall19" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.25, 2, -4.4)
-
-[node name="ShelfSmall20" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.75, 2, -4.4)
-
-[node name="ShelfSmall21" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.75, 2, -4.4)
-
-[node name="ShelfSmall22" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.25, 2, -4.4)
 
 [node name="ShelfSmall23" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.25, 0, 2.55)
@@ -1289,6 +1256,168 @@ transform = Transform3D(1.90739e-07, 0, -1, 0, 1, 0, 1, 0, 1.90739e-07, 0.313779
 [node name="BoxFlat7" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall31" instance=ExtResource("13_4godo")]
 transform = Transform3D(-1, 0, -1.01332e-07, 0, 1, 0, 1.01332e-07, 0, -1, 0.746047, 2.09051, 0.368229)
 
+[node name="ShelfSmall32" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.6, 0, -2)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall32" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206109, -4.4603e-08, -4.37114e-08, -4.37114e-08, -1, -0.0206109, 0.999788, -4.28012e-08, -0.123756, 1.0066, 0.265806)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall32" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall32" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall32" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall33" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.6, 0, -3.5)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall33" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 2, 0.25)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall33" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 1.47971, -0.272429)
+
+[node name="Bucket" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall33" instance=ExtResource("7_nxcwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109469, 0.870916, 0.421088)
+
+[node name="WrenchFrench" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall33" instance=ExtResource("10_dio60")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.044486, 0.345509, 0.291327)
+
+[node name="ShelfSmall34" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.45, 0, -4.25)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall34" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206109, -4.4603e-08, -4.37114e-08, -4.37114e-08, -1, -0.0206109, 0.999788, -4.28012e-08, -0.123756, 1.0066, 0.265806)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall34" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall34" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall34" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall35" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.950001, 0, -4.25)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall35" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 2, 0.25)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall35" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 1.47971, -0.272429)
+
+[node name="Bucket" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall35" instance=ExtResource("7_nxcwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109469, 0.870916, 0.421088)
+
+[node name="WrenchFrench" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall35" instance=ExtResource("10_dio60")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.044486, 0.345509, 0.291327)
+
+[node name="ShelfSmall36" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.549999, 0, -4.25)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall36" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206108, -4.4603e-08, 4.55133e-08, -4.36928e-08, 1, 0.0206108, -0.999788, -4.46216e-08, -0.259193, 1.0066, 0.534111)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall36" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall36" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall36" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall37" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.75, 0, -4.4)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall37" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206109, -4.4603e-08, -4.37114e-08, -4.37114e-08, -1, -0.0206109, 0.999788, -4.28012e-08, -0.123756, 1.0066, 0.265806)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall37" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall37" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall37" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall38" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.25, 0, -4.4)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall38" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 2, 0.25)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall38" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 1.47971, -0.272429)
+
+[node name="Bucket" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall38" instance=ExtResource("7_nxcwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0299875, 0.870916, 1.1334)
+
+[node name="WrenchFrench" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall38" instance=ExtResource("10_dio60")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.044486, 0.345509, 0.291327)
+
+[node name="ShelfSmall39" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.25, 0, -4.4)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall39" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206108, -4.4603e-08, 4.55133e-08, -4.36928e-08, 1, 0.0206108, -0.999788, -4.46216e-08, 0.00678587, 1.0066, 0.534111)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall39" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall39" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall39" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall40" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.75, 0, -4.4)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall40" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall40" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall40" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
+[node name="ShelfSmall41" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.75, 0, -4.4)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall41" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 2, 0.25)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall41" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 1.47971, -0.272429)
+
+[node name="Bucket" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall41" instance=ExtResource("7_nxcwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109469, 0.870916, 0.421088)
+
+[node name="WrenchFrench" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall41" instance=ExtResource("10_dio60")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.044486, 0.345509, 0.291327)
+
+[node name="ShelfSmall42" parent="NavigationRegion3D/WorkbenchSection/Subsection5" instance=ExtResource("5_04iy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.25, 0, -4.4)
+
+[node name="AirTank" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall42" instance=ExtResource("11_ndc18")]
+transform = Transform3D(0.999788, 0.0206108, -4.4603e-08, 4.55133e-08, -4.36928e-08, 1, 0.0206108, -0.999788, -4.46216e-08, -0.259193, 1.0066, 0.534111)
+
+[node name="BoxFlat" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall42" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.716156, 0, -0.69794, 0, 1, 0, 0.69794, 0, -0.716156, 0.0420427, 0.322889, -0.281654)
+
+[node name="BoxFlat2" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall42" instance=ExtResource("13_4godo")]
+transform = Transform3D(-0.971143, 0, 0.2385, 0, 1, 0, -0.2385, 0, -0.971143, 0.0420427, 1.47292, 0.131762)
+
+[node name="BoxSmallOpen" parent="NavigationRegion3D/WorkbenchSection/Subsection5/ShelfSmall42" instance=ExtResource("12_m2hrl")]
+transform = Transform3D(-0.517191, 0, -0.85587, 0, 1, 0, 0.85587, 0, -0.517191, 0, 2.07314, 0)
+
 [node name="HeavySection" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.5)
 
@@ -1359,7 +1488,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6, 0, 0.2)
 
 [node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 0.4446, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4, 0.4446, 0.2)
 
 [node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection" instance=ExtResource("24_206t7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9, 0.4446, 0.2)
@@ -1385,26 +1514,146 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14, 0,
 [node name="ShelfLarge4" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -14)
 
-[node name="ShelfLarge10" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
-
-[node name="ShelfLarge8" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, -8)
-
 [node name="ShelfLarge9" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, 0)
+
+[node name="PalletWithBoxes" parent="NavigationRegion3D/StorageSection/ShelfLarge9" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 0.440231, 0.0757142)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge9" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge9" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge9" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
 
 [node name="ShelfLarge5" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
 
-[node name="ShelfLarge12" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
-
-[node name="ShelfLarge14" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+[node name="ShelfLarge15" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, -8)
 
-[node name="ShelfLarge15" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
+
+[node name="AirTank" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486746, 0.438935, -0.61879)
+
+[node name="AirTank2" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11196, 0.438935, -0.617359)
+
+[node name="AirTank3" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453216, 0.438935, -0.0809689)
+
+[node name="AirTank4" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893678, 0.438935, -0.166939)
+
+[node name="AirTank5" parent="NavigationRegion3D/StorageSection/ShelfLarge15" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444122, 0.438935, 0.422333)
+
+[node name="ShelfLarge16" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, 0)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
+
+[node name="AirTank" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486746, 0.438935, -0.61879)
+
+[node name="AirTank2" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11196, 0.438935, -0.617359)
+
+[node name="AirTank3" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453216, 0.438935, -0.0809689)
+
+[node name="AirTank4" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893678, 0.438935, -0.166939)
+
+[node name="AirTank5" parent="NavigationRegion3D/StorageSection/ShelfLarge16" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444122, 0.438935, 0.422333)
+
+[node name="ShelfLarge17" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, -6)
+
+[node name="PalletWithBoxes" parent="NavigationRegion3D/StorageSection/ShelfLarge17" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 0.440231, 0.0757142)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge17" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge17" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge17" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
+
+[node name="ShelfLarge18" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, -6)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
+
+[node name="AirTank" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486746, 0.438935, -0.61879)
+
+[node name="AirTank2" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11196, 0.438935, -0.617359)
+
+[node name="AirTank3" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453216, 0.438935, -0.0809689)
+
+[node name="AirTank4" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893678, 0.438935, -0.166939)
+
+[node name="AirTank5" parent="NavigationRegion3D/StorageSection/ShelfLarge18" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444122, 0.438935, 0.422333)
+
+[node name="ShelfLarge19" parent="NavigationRegion3D/StorageSection" instance=ExtResource("20_sfigs")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 8, 0, -8)
+
+[node name="PalletWithBoxes2" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530559, 0.440231, 0.0757141)
+
+[node name="PalletWithBoxes3" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838292, 2.26992, 0.075714)
+
+[node name="PalletWithBoxes4" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("24_206t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969441, 2.2758, 0.0757142)
+
+[node name="AirTank" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486746, 0.438935, -0.61879)
+
+[node name="AirTank2" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11196, 0.438935, -0.617359)
+
+[node name="AirTank3" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453216, 0.438935, -0.0809689)
+
+[node name="AirTank4" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893678, 0.438935, -0.166939)
+
+[node name="AirTank5" parent="NavigationRegion3D/StorageSection/ShelfLarge19" instance=ExtResource("11_ndc18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444122, 0.438935, 0.422333)
 
 [node name="BoxOpen" parent="NavigationRegion3D" instance=ExtResource("25_oi247")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0, -13.5)
@@ -1413,9 +1662,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0, -13.5)
 
 [node name="PropPropane" parent="Props" instance=ExtResource("33_wqunp")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -9.75, 0, 6.7)
+speed = 1.25
+jump_speed = 5.0
 
 [node name="PropScrewdriver" parent="Props" instance=ExtResource("33_gsmpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49495, 1.10997, 14.6708)
+speed = 1.5
 
 [node name="PropCoffee" parent="Props" instance=ExtResource("30_pm1nv")]
 transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, -3.92543, 2.17945, 8.80238)
