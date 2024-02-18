@@ -20,4 +20,3 @@ func _ready():
 
 func _physics_process(delta):
 	move_and_slide()
-	temptarget.position = navigation_agent.get_next_path_position()
