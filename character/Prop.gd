@@ -19,6 +19,8 @@ extends CharacterBody3D
 @onready var sfx_jump: FmodEventEmitter3D = $SfxJump
 @onready var sfx_fall: FmodEventEmitter3D = $SfxFall
 
+@onready var starting_xform: = transform
+
 var active: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -114,3 +116,7 @@ func deactivate() -> void:
 		camera_rig.remove_child(camera_rig.fmod_listener)
 		camera_rig.fmod_listener.queue_free()
 		camera_rig.fmod_listener = null
+
+func reset() -> void:
+	transform = starting_xform
+	velocity = Vector3.ZERO

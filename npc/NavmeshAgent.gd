@@ -7,7 +7,10 @@ extends CharacterBody3D
 @export var wait_time : float
 @export var chase_speed : float
 
+@onready var starting_xform: = transform
+
 var state_machine
+var prop: Prop
 
 func _ready():
 	state_machine = find_child("State Machine",true,false)
@@ -19,10 +22,19 @@ func _ready():
 	state_machine.chase_speed = chase_speed
 
 	$CatchArea.body_entered.connect(func(body):
-		if body is Prop && state_machine.current_state == state_machine.states["chasestate"]:
+		if prop && body == prop && state_machine.current_state == state_machine.states["chasestate"]:
 			$BasicEmployee/SfxPlayerCaught.play()
 			Harbinger.dispatch("prop_caught", [self.name])
 	)
 
+	Harbinger.subscribe("active_prop", active_prop)
+	Harbinger.subscribe("npc_reset", reset)
+
 func _physics_process(delta):
 	move_and_slide()
+
+func active_prop(p) -> void:
+	prop = p[0]
+
+func reset(_p) -> void:
+	transform = starting_xform

@@ -18,6 +18,8 @@ var navigation_agent: NavigationAgent3D
 func  _ready():
 	late_ready()
 
+	Harbinger.subscribe("npc_reset", reset)
+
 func late_ready():
 	await get_tree().physics_frame
 
@@ -63,3 +65,10 @@ func on_child_transition(state, new_state_name):
 	new_state.Enter()
 
 	current_state = new_state
+
+func reset(_p) -> void:
+	if initial_state:
+		if current_state != initial_state:
+			current_state.Exit()
+		initial_state.Enter()
+		current_state = initial_state

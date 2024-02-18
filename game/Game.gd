@@ -59,10 +59,13 @@ func prop_finished(name: String) -> void:
 	music.set_parameter("SCENE", 0)
 	level_complete_overlay.display(name)
 	await level_complete_overlay.dismissed
+	Harbinger.dispatch("npc_reset")
 	room.activate_next_prop()
 	music.set_parameter("SCENE", 1)
 	get_tree().paused = false
 
 func prop_caught(params) -> void:
 	var by: String = params[0]
-	get_tree().paused = true
+	#get_tree().paused = true
+	room.prop_order[room.prop_idx].reset()
+	Harbinger.dispatch("npc_reset")

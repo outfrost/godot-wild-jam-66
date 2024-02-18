@@ -30,6 +30,8 @@ func _ready():
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 
+	Harbinger.subscribe("npc_reset", reset)
+
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
 	await get_tree().physics_frame
@@ -82,6 +84,13 @@ func Physics_Update(delta):
 		Transitioned.emit(self, "WaitState")
 		select_target()
 
+	# calculate jumping, and remember the y velocity, then do x,z calculations
+	if !parent.is_on_floor():
+		parent.velocity.y -= gravity * delta
+		vy = parent.velocity.y
+	move_toward_target(delta,target)
+	parent.velocity.y = vy
+
 	#rotation
 	var to_next_path_pos_local: = parent.to_local(next_path_position)
 	if to_next_path_pos_local.length_squared() > 0.25:
@@ -96,13 +105,6 @@ func Physics_Update(delta):
 
 		parent.rotation.y = new_rotation_y
 
-	# calculate jumping, and remember the y velocity, then do x,z calculations
-	if !parent.is_on_floor():
-		parent.velocity.y -= gravity * delta
-		vy = parent.velocity.y
-	move_toward_target(delta,target)
-	parent.velocity.y = vy
-
 	#if player is detected, switch to chase state (could add suspicious state)
 	if raycaster.detected >= 1.0:
 		alerted.emit()
@@ -110,3 +112,6 @@ func Physics_Update(delta):
 
 func Update(delta):
 	pass
+
+func reset(_p) -> void:
+	index = 0

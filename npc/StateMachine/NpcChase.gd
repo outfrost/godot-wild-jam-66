@@ -23,6 +23,8 @@ func _ready():
 
 	call_deferred("actor_setup")
 
+	Harbinger.subscribe("npc_reset", reset)
+
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
 	await get_tree().physics_frame
@@ -89,3 +91,6 @@ func Physics_Update(delta):
 		parent.rotation.y = new_rotation_y
 
 	parent.velocity.y = vy
+
+func reset(_p) -> void:
+	sfx_lost_track_played = false
