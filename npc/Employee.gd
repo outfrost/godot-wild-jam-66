@@ -26,6 +26,8 @@ var detection_profile: DetectionProfile
 var detected: float = 0.0
 var prop_last_pos: = Vector3.ZERO
 
+var sfx: Array[FmodEventEmitter3D] = []
+
 func _ready() -> void:
 	Harbinger.subscribe("active_prop", set_active_prop)
 	Harbinger.subscribe("npc_reset", reset)
@@ -34,6 +36,10 @@ func _ready() -> void:
 		vision_sensor.add_child(vis)
 		raycast_vis.append(vis)
 	detection_profile = detection_normal_profile
+
+	for child in get_children():
+		if child is FmodEventEmitter3D:
+			sfx.append(child)
 
 func _process(delta: float) -> void:
 	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected, where = prop_last_pos }, self)
@@ -96,6 +102,9 @@ func _physics_process(delta: float) -> void:
 
 	detected = clampf(detected, 0.0, 1.0)
 	#endregion
+
+	for s in sfx:
+		s.position = global_position + 1.0 * Vector3.UP
 
 func use_normal_profile() -> void:
 	detection_profile = detection_normal_profile
