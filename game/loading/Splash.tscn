@@ -48,6 +48,8 @@ stretch_mode = 4
 
 [node name="Godot" type="TextureRect" parent="."]
 visible = false
+texture_filter = 6
+texture_repeat = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -65,6 +67,8 @@ expand_mode = 1
 
 [node name="InsideTheBox" type="TextureRect" parent="."]
 visible = false
+texture_filter = 6
+texture_repeat = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -81,6 +85,8 @@ texture = ExtResource("4_wju78")
 expand_mode = 1
 
 [node name="GWJ" type="TextureRect" parent="."]
+texture_filter = 6
+texture_repeat = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
