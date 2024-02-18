@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=94 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
@@ -43,7 +43,6 @@
 [ext_resource type="PackedScene" uid="uid://3v8wa51sgsbx" path="res://character/PropPropane.tscn" id="33_wqunp"]
 [ext_resource type="Material" uid="uid://b8pvj5ebxy1pv" path="res://material/mat_genericbuilding.tres" id="36_jgmpv"]
 [ext_resource type="Material" uid="uid://dfy1gcmn438py" path="res://material/mat_asphalt.tres" id="37_paatw"]
-[ext_resource type="PackedScene" uid="uid://bt1y0b4jy0hnf" path="res://character/PropBox.tscn" id="38_s5ykv"]
 [ext_resource type="Material" uid="uid://clq03kpukjod5" path="res://material/mat_genericbuilding2.tres" id="38_y2byo"]
 [ext_resource type="Material" uid="uid://b1rlnq4slur5h" path="res://material/mat_curb.tres" id="39_147r2"]
 [ext_resource type="PackedScene" uid="uid://dys3uk8nmj4fn" path="res://character/PropForklift.tscn" id="39_tfo4o"]
@@ -207,7 +206,7 @@ size = Vector3(4.35, 0.3, 1.2)
 
 [node name="Factory" type="Node3D" node_paths=PackedStringArray("prop_order", "finish_area")]
 script = ExtResource("1_f4j7u")
-prop_order = [NodePath("Props/PropCoffee"), NodePath("Props/PropScrewdriver"), NodePath("Props/PropBox"), NodePath("Props/PropPropane"), NodePath("Props/PropBucket"), NodePath("Props/PropPalletWithBoxes"), NodePath("Props/PropForklift")]
+prop_order = [NodePath("Props/PropCoffee"), NodePath("Props/PropScrewdriver"), NodePath("Props/PropPropane"), NodePath("Props/PropBucket"), NodePath("Props/PropPalletWithBoxes"), NodePath("Props/PropForklift")]
 finish_area = NodePath("FinishArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1893,10 +1892,7 @@ jump_speed = 4.75
 [node name="PropScrewdriver" parent="Props" instance=ExtResource("33_gsmpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49495, 1.10997, 14.6708)
 speed = 1.6
-jump_speed = 4.25
-
-[node name="PropBox" parent="Props" instance=ExtResource("38_s5ykv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08575, 0.85, -6.28636)
+jump_speed = 2.75
 
 [node name="PropPropane" parent="Props" instance=ExtResource("33_wqunp")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -9.75, 0, 6.7)
