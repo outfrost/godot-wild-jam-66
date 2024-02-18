@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://3v8wa51sgsbx"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_mh5qe"]
+[ext_resource type="PackedScene" uid="uid://br7vilrvpv3xy" path="res://assets/Bucket/Compressed.gltf" id="2_y0og2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5g4yq"]
+radius = 0.193521
+height = 1.10033
+
+[node name="Prop" node_paths=PackedStringArray("visual") instance=ExtResource("1_mh5qe")]
+visual = NodePath("Compressed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552921, 0)
+shape = SubResource("CapsuleShape3D_5g4yq")
+
+[node name="Compressed" parent="." index="4" instance=ExtResource("2_y0og2")]
