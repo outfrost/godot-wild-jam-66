@@ -27,7 +27,7 @@ var detected: float = 0.0
 var prop_last_pos: = Vector3.ZERO
 
 func _ready() -> void:
-	Harbinger.subscribe("active_prop", func(p): prop = p[0])
+	Harbinger.subscribe("active_prop", set_active_prop)
 	for i in range(num_rays):
 		var vis: = RAYCAST_VIS_SCN.instantiate()
 		vision_sensor.add_child(vis)
@@ -101,3 +101,6 @@ func use_normal_profile() -> void:
 
 func use_chase_profile() -> void:
 	detection_profile = detection_chase_profile
+
+func set_active_prop(p) -> void:
+	prop = p[0]

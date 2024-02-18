@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 func on_start_game() -> void:
 	main_menu.hide()
 	menu_background.remove_child(menu_background_content)
+	Harbinger.prune()
 	room = room_scn.instantiate()
 	room_container.add_child(room)
 	room.prop_finished.connect(prop_finished)
@@ -45,7 +46,6 @@ func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	room_container.remove_child(room)
 	room.queue_free()
-	Harbinger.prune()
 	get_tree().paused = false
 	music.set_parameter("SCENE", 0)
 	menu_background.add_child(menu_background_content)

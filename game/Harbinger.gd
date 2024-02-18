@@ -27,5 +27,5 @@ func dispatch_deferred(msg: String, params: Array = []) -> void:
 func prune() -> void:
 	for msg in subs:
 		var rx_list: Array[Callable] = subs[msg] as Array[Callable]
-		rx_list = rx_list.filter(func(rx): rx.is_valid())
+		rx_list = rx_list.filter(func(rx): return rx.is_valid())
 		subs[msg] = rx_list
