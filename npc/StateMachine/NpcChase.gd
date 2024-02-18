@@ -3,6 +3,7 @@ class_name NpcChase
 
 signal chase_start
 signal chase_end
+signal lost_track
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var parent: CharacterBody3D
@@ -15,6 +16,7 @@ var vy : float
 
 var next_path_position: Vector3
 var current_agent_position: Vector3
+var sfx_lost_track_played: bool = false
 
 func _ready():
 	set_physics_process(false)
@@ -54,6 +56,7 @@ func Physics_Update(delta):
 
 	if raycaster.line_of_sight:
 		last_position.global_position = raycaster.prop_last_pos
+		sfx_lost_track_played = false
 	elif raycaster.detected < 0.1:
 		#switch to idling
 		Transitioned.emit(self, "PatrolState")
@@ -62,6 +65,14 @@ func Physics_Update(delta):
 		return
 
 	get_next_move(delta)
+
+	if (
+		!sfx_lost_track_played
+		&& navigation_agent.is_navigation_finished()
+		&& !raycaster.line_of_sight
+	):
+		sfx_lost_track_played = true
+		lost_track.emit()
 
 	#rotation
 	var to_next_path_pos_local: = parent.to_local(next_path_position)

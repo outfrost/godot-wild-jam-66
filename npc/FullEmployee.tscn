@@ -75,6 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="SfxPlayerCaught" type="FmodEventEmitter3D" parent="BasicEmployee"]
 event_name = "event:/NPC/SFX_NPC_PLAYERCAUGHT"
 event_guid = "{0d581eb2-59b9-43f6-b5b9-9eac681cf3bd}"
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -91,3 +92,4 @@ shape = SubResource("CylinderShape3D_reox5")
 [connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]
 [connection signal="chase_end" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseEnd" method="play"]
 [connection signal="chase_start" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseStart" method="play"]
+[connection signal="lost_track" from="State Machine/ChaseState" to="BasicEmployee/SfxLostTrack" method="play"]

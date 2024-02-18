@@ -20,6 +20,7 @@ func _ready():
 
 	$CatchArea.body_entered.connect(func(body):
 		if body is Prop && state_machine.current_state == state_machine.states["chasestate"]:
+			$BasicEmployee/SfxPlayerCaught.play()
 			Harbinger.dispatch("prop_caught", [self.name])
 	)
 

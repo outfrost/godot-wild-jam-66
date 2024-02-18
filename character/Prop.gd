@@ -94,6 +94,10 @@ func _physics_process(delta: float) -> void:
 
 func activate() -> void:
 	camera_rig.get_node(^"CameraPitch/Camera3D").make_current()
+	camera_rig.fmod_listener = FmodListener3D.new()
+	camera_rig.fmod_listener.listener_index = 0
+	camera_rig.fmod_listener.scale_object_local(Vector3(-1.0, 1.0, 1.0))
+	camera_rig.add_child(camera_rig.fmod_listener)
 	#set_process(true)
 	#set_physics_process(true)
 	camera_rig.set_process_unhandled_input(true)
@@ -105,3 +109,7 @@ func deactivate() -> void:
 	#set_process(false)
 	#set_physics_process(false)
 	camera_rig.set_process_unhandled_input(false)
+	if camera_rig.fmod_listener:
+		camera_rig.remove_child(camera_rig.fmod_listener)
+		camera_rig.fmod_listener.queue_free()
+		camera_rig.fmod_listener = null
