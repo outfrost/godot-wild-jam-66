@@ -29,6 +29,10 @@ func actor_setup():
 
 func Enter():
 	chase_start.emit()
+		parent.velocity.x = 0
+	parent.velocity.z = 0
+	last_position.global_position = raycaster.prop_last_pos
+	navigation_agent.set_target_position(last_position.global_position)
 
 func Exit():
 	chase_end.emit()

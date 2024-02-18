@@ -1,6 +1,6 @@
 ## BIG THINGS
 
-* [~] BT1: NPC behaviour - chase logic **6h** @lyall
+* [x] BT1: NPC behaviour - chase logic **6h** @lyall
 	* [ ] SIDE QUEST: make perception fade with distance @outfrost
 	* [ ] SIDE QUEST: employee walking animation? @lyall
 * [ ] BT2: factory details @lyall
