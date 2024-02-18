@@ -1524,9 +1524,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75,
 [node name="AirTank3" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 13.75)
 
-[node name="AirTank4" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 14.2)
-
 [node name="AirTank5" parent="NavigationRegion3D/HeavySection" instance=ExtResource("11_ndc18")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.75, 0, 14.65)
 
