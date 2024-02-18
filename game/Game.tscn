@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmyhje0055jiq"]
+[gd_scene load_steps=9 format=3 uid="uid://cmyhje0055jiq"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://8064wgu24krk" path="res://scene/Factory.tscn" id="2_8t5sl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjbey6bjjepho" path="res://game/loading/TransitionScreen.tscn" id="4"]
 [ext_resource type="Script" path="res://game/Game.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://bmtrg631t53ce" path="res://game/LevelCompleteOverlay.tscn" id="5_qsxln"]
+[ext_resource type="PackedScene" uid="uid://cpsuij1n1t35a" path="res://game/LevelFailedOverlay.tscn" id="6_j65kt"]
 
 [node name="Game" type="Node"]
 process_mode = 3
@@ -35,6 +36,10 @@ theme = ExtResource("1")
 visible = false
 layout_mode = 1
 
+[node name="LevelFailedOverlay" parent="UI" instance=ExtResource("6_j65kt")]
+visible = false
+layout_mode = 1
+
 [node name="MainMenu" parent="UI" instance=ExtResource("3")]
 layout_mode = 1
 
@@ -45,7 +50,7 @@ layout_mode = 1
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
-[node name="Music" type="FmodEventEmitter2D" parent="."]
+[node name="Music" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/MUSIC"
 event_guid = "{dd14fbcf-ed6f-45c9-8289-fb3ec36ca7b1}"
 autoplay = true

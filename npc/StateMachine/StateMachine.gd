@@ -68,7 +68,5 @@ func on_child_transition(state, new_state_name):
 
 func reset(_p) -> void:
 	if initial_state:
-		if current_state != initial_state:
-			current_state.Exit()
 		initial_state.Enter()
 		current_state = initial_state
