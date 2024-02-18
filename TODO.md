@@ -18,6 +18,7 @@
 	* [ ] placement
 * [ ] BT6: PLAYTEST **8h+8h** @everyone
 * [x] BT7: attempt to make a factory building that isn't just kenney greybox textures **3h** @outfrost
+* [ ] update menu background @outfrost
 
 ## the whole list
 
