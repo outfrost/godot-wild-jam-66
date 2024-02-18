@@ -88,10 +88,16 @@ func _physics_process(delta: float) -> void:
 		var prop_speed: = prop.velocity.length()
 		if los_distance <= detection_profile.motion_range && prop_speed > MOTION_SPEED_DEADZONE:
 			detected += prop_speed * detection_profile.motion_sensitivity * delta
-		else:
+		elif detection_profile != detection_chase_profile:
 			detected -= detection_profile.decay * delta
 	else:
 		detected -= detection_profile.decay * delta
 
 	detected = clampf(detected, 0.0, 1.0)
 	#endregion
+
+func use_normal_profile() -> void:
+	detection_profile = detection_normal_profile
+
+func use_chase_profile() -> void:
+	detection_profile = detection_chase_profile

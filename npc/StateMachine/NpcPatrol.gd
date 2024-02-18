@@ -70,6 +70,7 @@ func Enter():
 	parent.velocity.z = 0
 	target = route.get_child(index)
 	set_movement_target(target.global_position)
+	raycaster.use_normal_profile()
 
 func Physics_Update(delta):
 
@@ -103,7 +104,7 @@ func Physics_Update(delta):
 	parent.velocity.y = vy
 
 	#if player is detected, switch to chase state (could add suspicious state)
-	if raycaster.detected >= 0.9:
+	if raycaster.detected >= 1.0:
 		alerted.emit()
 		Transitioned.emit(self, "ChaseState")
 
