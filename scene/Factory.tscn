@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://8064wgu24krk"]
+[gd_scene load_steps=92 format=3 uid="uid://8064wgu24krk"]
 
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_f4j7u"]
 [ext_resource type="Material" uid="uid://bds1x6y461w0y" path="res://material/mat_floor.tres" id="1_g3vbl"]
@@ -45,6 +45,7 @@
 [ext_resource type="Material" uid="uid://dfy1gcmn438py" path="res://material/mat_asphalt.tres" id="37_paatw"]
 [ext_resource type="Material" uid="uid://clq03kpukjod5" path="res://material/mat_genericbuilding2.tres" id="38_y2byo"]
 [ext_resource type="Material" uid="uid://b1rlnq4slur5h" path="res://material/mat_curb.tres" id="39_147r2"]
+[ext_resource type="PackedScene" uid="uid://dys3uk8nmj4fn" path="res://character/PropForklift.tscn" id="39_tfo4o"]
 [ext_resource type="Material" uid="uid://dlx3r2noa2mnd" path="res://material/mat_genericbuilding3.tres" id="39_uhiec"]
 [ext_resource type="Material" uid="uid://ouym0oi35t88" path="res://material/mut_mud.tres" id="40_crwaq"]
 [ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/FullEmployee.tscn" id="41_mvnva"]
@@ -1895,6 +1896,9 @@ speed = 1.5
 
 [node name="PropCoffee" parent="Props" instance=ExtResource("30_pm1nv")]
 transform = Transform3D(0.382684, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382684, -4.79003, 1.98514, -4.22233)
+
+[node name="PropForklift" parent="Props" instance=ExtResource("39_tfo4o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.12643, 0, -4.27068)
 
 [node name="Roof" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 0)
