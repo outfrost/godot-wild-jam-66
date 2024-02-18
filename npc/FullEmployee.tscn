@@ -7,9 +7,8 @@
 [ext_resource type="Script" path="res://npc/StateMachine/NpcChase.gd" id="5_hjqdb"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="6_1uhj2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_llwin"]
-radius = 0.2
-height = 1.8
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3wll"]
+size = Vector3(0.4, 1.8, 0.255)
 
 [node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
 floor_block_on_wall = false
@@ -43,6 +42,8 @@ raycaster = NodePath("../../BasicEmployee")
 [node name="LastPos" type="Marker3D" parent="State Machine/ChaseState"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+path_max_distance = 1.01
 
 [node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
 
@@ -73,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
-shape = SubResource("CapsuleShape3D_llwin")
+shape = SubResource("BoxShape3D_v3wll")
 
 [connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]
 [connection signal="chase_end" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseEnd" method="play"]

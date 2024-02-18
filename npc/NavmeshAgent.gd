@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var temptarget : Node3D
+
 @export var navigation_agent : NavigationAgent3D
 @export var route : Node
 @export var patrol_speed : float
@@ -18,4 +20,4 @@ func _ready():
 
 func _physics_process(delta):
 	move_and_slide()
-
+	temptarget.position = navigation_agent.get_next_path_position()
