@@ -4,9 +4,9 @@
 	* [ ] SIDE QUEST: make perception fade with distance @outfrost
 	* [ ] SIDE QUEST: employee walking animation? @lyall
 	* [ ] possibly add proximity detection? @outfrost
-* [ ] BT2: factory details @lyall
-	* [ ] filler junk **6h**
-	* [ ] NPC placement and paths **1h**
+* [x] BT2: factory details @lyall
+	* [x] filler junk **6h**
+	* [x] NPC placement and paths **1h**
 	* [ ] SIDE QUEST: one of the following **1h**
 		* medium-size heavy factory machine
 		* additional model (1 or 2) of shelf filler junk, like a bucket of small parts
