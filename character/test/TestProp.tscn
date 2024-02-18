@@ -46,12 +46,10 @@ mesh = SubResource("BoxMesh_xbsln")
 
 [node name="CameraRig" parent="." instance=ExtResource("2_k8i41")]
 
-[node name="SfxJump" type="FmodEventEmitter2D" parent="."]
+[node name="SfxJump" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/MISC/SFX_JUMP"
 event_guid = "{b696e38b-172e-4d10-9fec-5f342e220bdc}"
-attached = false
 
-[node name="SfxFall" type="FmodEventEmitter2D" parent="."]
+[node name="SfxFall" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/MISC/SFX_FALL"
 event_guid = "{66b3c885-0ff6-4465-b851-0406cc397819}"
-attached = false

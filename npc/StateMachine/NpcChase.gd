@@ -1,6 +1,9 @@
 extends State
 class_name NpcChase
 
+signal chase_start
+signal chase_end
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var parent: CharacterBody3D
 @export var speed : int = 3
@@ -23,6 +26,12 @@ func actor_setup():
 	await get_tree().physics_frame
 
 	set_physics_process(true)
+
+func Enter():
+	chase_start.emit()
+
+func Exit():
+	chase_end.emit()
 
 func Update(delta):
 	DebugOverlay.display({ last_pos = last_position.global_position}, self)

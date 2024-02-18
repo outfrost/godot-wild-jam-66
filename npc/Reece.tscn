@@ -44,8 +44,28 @@ raycaster = NodePath("../../BasicEmployee")
 [node name="BasicEmployee" parent="." instance=ExtResource("6_1uhj2")]
 
 [node name="SfxNoticed" type="FmodEventEmitter3D" parent="BasicEmployee"]
-event_name = "event:/NPC/SFX_NPC_NOTICED"
-event_guid = "{62ae4737-25fd-4d4a-95d0-46636b8d1266}"
+event_name = "event:/ALERT_NOTICED"
+event_guid = "{ee65606c-dc86-43d9-9ec3-c3d9ba4b3c34}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SfxChaseStart" type="FmodEventEmitter3D" parent="BasicEmployee"]
+event_name = "event:/NPC/SFX_NPC_CHASESTART"
+event_guid = "{6c667adf-1a47-4f2e-9b30-468163b01127}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SfxChaseEnd" type="FmodEventEmitter3D" parent="BasicEmployee"]
+event_name = "event:/NPC/SFX_NPC_CHASEEND"
+event_guid = "{0afc656d-41bf-4ec2-b514-365acdad5688}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SfxLostTrack" type="FmodEventEmitter3D" parent="BasicEmployee"]
+event_name = "event:/NPC/SFX_NPC_LOSTTRACK"
+event_guid = "{8a571240-dce1-4dbe-9a1f-41887d6bb629}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SfxPlayerCaught" type="FmodEventEmitter3D" parent="BasicEmployee"]
+event_name = "event:/NPC/SFX_NPC_PLAYERCAUGHT"
+event_guid = "{0d581eb2-59b9-43f6-b5b9-9eac681cf3bd}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -53,3 +73,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885937, 0)
 shape = SubResource("CapsuleShape3D_llwin")
 
 [connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]
+[connection signal="chase_end" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseEnd" method="play"]
+[connection signal="chase_start" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseStart" method="play"]

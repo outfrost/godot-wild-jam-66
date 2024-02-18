@@ -15,8 +15,8 @@ extends CharacterBody3D
 @onready var visual_base_pos: = visual.position
 @onready var visual_base_rot: = visual.rotation.y
 
-@onready var sfx_jump: FmodEventEmitter2D = $SfxJump
-@onready var sfx_fall: FmodEventEmitter2D = $SfxFall
+@onready var sfx_jump: FmodEventEmitter3D = $SfxJump
+@onready var sfx_fall: FmodEventEmitter3D = $SfxFall
 
 var active: bool = false
 
