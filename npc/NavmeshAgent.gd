@@ -7,14 +7,21 @@ extends CharacterBody3D
 @export var wait_time : float
 @export var chase_speed : float
 
+var state_machine
+
 func _ready():
-	find_child("State Machine",true,false).navigation_agent = navigation_agent
-	find_child("State Machine",true,false).route = route
-	find_child("State Machine",true,false).patrol_speed = patrol_speed
-	find_child("State Machine",true,false).ping_pong_path = ping_pong_path
-	find_child("State Machine",true,false).wait_time = wait_time
-	find_child("State Machine",true,false).chase_speed = chase_speed
-	pass
+	state_machine = find_child("State Machine",true,false)
+	state_machine.navigation_agent = navigation_agent
+	state_machine.route = route
+	state_machine.patrol_speed = patrol_speed
+	state_machine.ping_pong_path = ping_pong_path
+	state_machine.wait_time = wait_time
+	state_machine.chase_speed = chase_speed
+
+	$CatchArea.body_entered.connect(func(body):
+		if body is Prop && state_machine.current_state == state_machine.states["chasestate"]:
+			Harbinger.dispatch("prop_caught", [self.name])
+	)
 
 func _physics_process(delta):
 	move_and_slide()

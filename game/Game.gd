@@ -7,6 +7,7 @@ extends Node
 @onready var transition_screen: TransitionScreen = $UI/TransitionScreen
 @onready var menu_background: Node = $MenuBackground
 @onready var menu_background_content: Node = menu_background.get_child(0)
+@onready var room_container: Node = $RoomContainer
 @onready var music: = $Music
 
 var debug: RefCounted
@@ -20,6 +21,7 @@ func _ready() -> void:
 			debug = debug_script.new(self)
 			debug.startup()
 
+	Harbinger.subscribe("prop_caught", prop_caught)
 	main_menu.start_game.connect(on_start_game)
 
 func _process(delta: float) -> void:
@@ -32,7 +34,7 @@ func on_start_game() -> void:
 	main_menu.hide()
 	menu_background.remove_child(menu_background_content)
 	room = room_scn.instantiate()
-	add_child(room)
+	room_container.add_child(room)
 	room.prop_finished.connect(prop_finished)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	room.activate_next_prop()
@@ -41,9 +43,10 @@ func on_start_game() -> void:
 
 func back_to_menu() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	remove_child(room)
+	room_container.remove_child(room)
 	room.queue_free()
 	Harbinger.prune()
+	get_tree().paused = false
 	music.set_parameter("SCENE", 0)
 	menu_background.add_child(menu_background_content)
 	main_menu.show()
@@ -52,3 +55,7 @@ func prop_finished() -> void:
 	room.activate_next_prop()
 	#music.set_parameter("SCENE", 1)
 	#music.set_parameter("SCENE", 0)
+
+func prop_caught(params) -> void:
+	var by: String = params[0]
+	get_tree().paused = true

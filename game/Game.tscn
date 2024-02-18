@@ -9,12 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bmtrg631t53ce" path="res://game/LevelCompleteOverlay.tscn" id="5_qsxln"]
 
 [node name="Game" type="Node"]
+process_mode = 3
 script = ExtResource("5")
 room_scn = ExtResource("2_8t5sl")
 
 [node name="MenuBackground" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="Factory_MenuBackground" parent="MenuBackground" instance=ExtResource("3_2dw32")]
+
+[node name="RoomContainer" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
