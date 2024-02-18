@@ -81,6 +81,19 @@ func Physics_Update(delta):
 		Transitioned.emit(self, "WaitState")
 		select_target()
 
+	#rotation
+	var to_next_path_pos_local: = parent.to_local(next_path_position)
+	if to_next_path_pos_local.length_squared() > 0.25:
+		var angle: = Vector3.FORWARD.signed_angle_to(to_next_path_pos_local, Vector3.UP)
+
+		var slerp_rate: float = clamp(8.0 * (0.25 + 0.5 * (cos(angle) + 1.0)) * delta, 0.0, 1.0)
+		var new_rotation_y: = lerp_angle(parent.rotation.y, parent.rotation.y + angle, slerp_rate)
+
+		# prevent jitter/wiggle at low physics framerates
+		if abs(angle_difference(parent.rotation.y, new_rotation_y)) > abs(angle):
+			new_rotation_y = parent.rotation.y + angle
+
+		parent.rotation.y = new_rotation_y
 
 	# calculate jumping, and remember the y velocity, then do x,z calculations
 	if !parent.is_on_floor():
@@ -88,10 +101,6 @@ func Physics_Update(delta):
 		vy = parent.velocity.y
 	move_toward_target(delta,target)
 	parent.velocity.y = vy
-
-	#rotation
-	if (parent.position - next_path_position).length() > 0.5:
-		parent.look_at(next_path_position,Vector3.UP)
 
 	#if player is detected, switch to chase state (could add suspicious state)
 	if raycaster.detected >= 0.9:

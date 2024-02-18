@@ -11,6 +11,7 @@
 size = Vector3(0.4, 1.8, 0.255)
 
 [node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
+collision_mask = 3
 floor_block_on_wall = false
 script = ExtResource("1_kf6pf")
 navigation_agent = NodePath("NavigationAgent3D")
