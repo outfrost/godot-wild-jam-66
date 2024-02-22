@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy8efntknpfue"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_v1787"]
+[ext_resource type="PackedScene" uid="uid://cr776iaw55wsk" path="res://assets/Tools/Scredriver.gltf" id="2_e6dyb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnn0t"]
+size = Vector3(0.42, 0.08, 0.08)
+
+[node name="PropScrewdriver" node_paths=PackedStringArray("visual") instance=ExtResource("1_v1787")]
+friendlyname = "Flat-Head Screwdriver"
+visual = NodePath("Scredriver")
+speed = 1.25
+jump_speed = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.31134e-09, 0, -0.03)
+shape = SubResource("BoxShape3D_dnn0t")
+
+[node name="Scredriver" parent="." index="4" instance=ExtResource("2_e6dyb")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0, 0, 0)

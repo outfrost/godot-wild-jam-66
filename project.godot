@@ -19,18 +19,20 @@ General/is_memory_tracking_enabled=false
 "Software Format/raw_speaker_count"=0
 General/default_listener_count=1
 General/banks_path="res://sound/Desktop"
-General/should_load_by_name=true
 DSP/dsp_buffer_size=512
 DSP/dsp_buffer_count=4
 "3D Settings/doppler_scale"=1.0
 "3D Settings/distance_factor"=1.0
 "3D Settings/rolloff_scale"=1.0
+General/should_load_by_name=false
 
 [application]
 
-config/name="GWJ66"
-run/main_scene="res://game/Game.tscn"
+config/name="Missing Inventory"
+run/main_scene="res://game/loading/Splash.tscn"
 config/features=PackedStringArray("4.2")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [autoload]
@@ -103,10 +105,11 @@ debug_draw_raycast={
 
 [navigation]
 
-3d/default_cell_size=0.063
-3d/default_cell_height=0.063
+3d/default_cell_size=0.1
+3d/default_cell_height=0.1
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/msaa_3d=2
 environment/default_environment="res://default_env.tres"

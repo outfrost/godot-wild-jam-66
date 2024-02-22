@@ -1,97 +1,40 @@
 extends CharacterBody3D
 
+@export var navigation_agent : NavigationAgent3D
+@export var route : Node
+@export var patrol_speed : float
+@export var ping_pong_path : bool
+@export var wait_time : float
+@export var chase_speed : float
 
-@export var speed = 5.0
-@export var acceleration = 20.0
-@export var rotation_speed: = 10.0
+@onready var starting_xform: = transform
 
-var next_path_position: Vector3
-var current_agent_position: Vector3 = global_position
-
-@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var raycaster: Node3D = $BasicEmployee
-@onready var route: Node = $"Patrol"
-
-@export var freeze_time: float = 5.0 #i think this is in seconds?
-@export var loop: bool = true
-var target: Marker3D
-var index: int = 0
-var growing: bool = true
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var vy: float
+var state_machine
+var prop: Prop
 
 func _ready():
-	set_physics_process(false)
-	# These values need to be adjusted for the actor's speed
-	# and the navigation layout.
-	navigation_agent.path_desired_distance = 0.5
-	navigation_agent.target_desired_distance = 0.5
+	state_machine = find_child("State Machine",true,false)
+	state_machine.navigation_agent = navigation_agent
+	state_machine.route = route
+	state_machine.patrol_speed = patrol_speed
+	state_machine.ping_pong_path = ping_pong_path
+	state_machine.wait_time = wait_time
+	state_machine.chase_speed = chase_speed
 
-	# Make sure to not await during _ready.
-	call_deferred("actor_setup")
+	$CatchArea.body_entered.connect(func(body):
+		if prop && body == prop && state_machine.current_state == state_machine.states["chasestate"]:
+			$BasicEmployee/SfxPlayerCaught.play()
+			Harbinger.dispatch("prop_caught", [self.name])
+	)
 
-func actor_setup():
-	# Wait for the first physics frame so the NavigationServer can sync.
-	await get_tree().physics_frame
-
-	set_physics_process(true)
-
-func set_movement_target(movement_target: Vector3):
-	#keeping this in to add rotation logic maybe?
-	navigation_agent.set_target_position(movement_target)
-
-func move_toward_target(delta, target):
-	if navigation_agent.is_navigation_finished():
-		set_movement_target(target.global_position)
-	current_agent_position = global_position
-	next_path_position = navigation_agent.get_next_path_position()
-
-	velocity = current_agent_position.direction_to(next_path_position) * speed
-
-func select_target():
-	target = route.get_child(index)
-	#await get_tree().create_timer(freeze_time).timeout
-	if growing:
-		index += 1
-	else:
-		index -= 1
-	if loop:
-		# we are looping, we can go 0-n again
-		if index > route.get_child_count() - 1:
-			index = 0
-	else :
-		#we aren't, we need to switch direction
-		if index > route.get_child_count() - 1:
-			index -= 2
-			growing = false
-		if index < 0:
-			index += 2
-			growing = true
-
+	Harbinger.subscribe("active_prop", active_prop)
+	Harbinger.subscribe("npc_reset", reset)
 
 func _physics_process(delta):
-
-	#route and loop to select next target
-	if navigation_agent.is_navigation_finished():
-		#await get_tree().create_timer(freeze_time).timeout
-		select_target()
-		move_toward_target(delta,target)
-		return
-
-
-	# calculate jumping, and remember the y velocity, then do x,z calculations
-	if !is_on_floor():
-		velocity.y -= gravity * delta
-		vy = velocity.y
-	move_toward_target(delta,target)
-	velocity.y = vy
-
-	#add some nice lerping to this?
-
-	#because idk how to lerp this stuff
-	if (position - next_path_position).length() > 0.5:
-		look_at(next_path_position,Vector3.UP)
-
 	move_and_slide()
+
+func active_prop(p) -> void:
+	prop = p[0]
+
+func reset(_p) -> void:
+	transform = starting_xform

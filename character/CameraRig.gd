@@ -3,6 +3,7 @@ extends Node3D
 @onready var pitch_anchor: = $CameraPitch
 
 var mouse_sens = 4.0
+var fmod_listener: FmodListener3D
 
 func _process(delta: float) -> void:
 	#DebugOverlay.display(str(pitch_anchor.rotation.x))

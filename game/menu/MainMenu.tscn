@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmfdkwcu73843"]
+[gd_scene load_steps=10 format=3 uid="uid://dmfdkwcu73843"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_7yq1p"]
 [ext_resource type="Script" path="res://game/menu/CreditsPopup.gd" id="2"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://game/menu/MainMenu.gd" id="4"]
 [ext_resource type="Theme" uid="uid://bneqecul7ufgx" path="res://game/ui-theme/theme_main_menu.tres" id="4_g6k5d"]
 [ext_resource type="Script" path="res://game/menu/sfx_ui-click.gd" id="5_1q6hi"]
+[ext_resource type="FontVariation" uid="uid://2ny6cbh4f65c" path="res://game/ui-theme/font/default/regular.tres" id="6_qe4t0"]
+[ext_resource type="FontVariation" uid="uid://b0ji8plgwfom1" path="res://game/ui-theme/font/default/bold.tres" id="7_x31vi"]
+[ext_resource type="FontVariation" uid="uid://0508n4x4c5gj" path="res://game/ui-theme/font/banner/bold.tres" id="8_0xu7u"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -44,19 +47,26 @@ script = ExtResource("3_426jp")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.1
+anchor_top = 0.05
 anchor_right = 0.95
 anchor_bottom = 0.5
+theme_override_colors/default_color = Color(0.980392, 0.380392, 0.286275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.627451)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/normal_font = ExtResource("8_0xu7u")
+theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
-text = "[center][/center]"
+text = "[center]MISSING INVENTORY[/center]"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.85
-anchor_top = 0.75
+anchor_top = 0.9
 anchor_right = 0.85
-anchor_bottom = 0.75
+anchor_bottom = 0.9
 offset_left = -360.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -72,6 +82,7 @@ clip_text = true
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 disabled = true
 text = "SETTINGS"
@@ -125,7 +136,27 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -8.0
 offset_bottom = -54.0
+theme_override_fonts/normal_font = ExtResource("6_qe4t0")
+theme_override_fonts/bold_font = ExtResource("7_x31vi")
+theme_override_fonts/italics_font = ExtResource("8_0xu7u")
+theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
+text = "[center][i][url=https://lyall-kindmurr.itch.io/]Lyall Kindmurr[/url][/i]
+3D art, programming and level design
+
+
+[i][url=https://marekdomagala.itch.io/]Marek Domagała[/url][/i]
+Music, sound design and voice acting
+
+
+[i][url=https://outfrost.itch.io/]Outfrost[/url][/i]
+Programming, level design and production
+
+
+[b][url=https://honestdan.itch.io/]HonestDan[/url][/b]
+[url=https://clips.twitch.tv/NeighborlyToughCakeDoritosChip]Intro sound[/url]
+[/center]"
+scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CreditsPopup/Panel"]
 layout_mode = 1
@@ -137,7 +168,32 @@ offset_left = 8.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -54.0
+theme_override_fonts/normal_font = ExtResource("6_qe4t0")
+theme_override_fonts/bold_font = ExtResource("7_x31vi")
+theme_override_fonts/italics_font = ExtResource("8_0xu7u")
+theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
+text = "[center]A [b][url=https://itch.io/jam/godot-wild-jam-66]Godot Wild Jam 66[/url][/b] game
+
+
+
+
+
+
+
+
+Made with [b][url=https://godotengine.org/]Godot Engine[/url][/b]
+
+
+Made with [b][url=https://fmod.com/]FMOD Studio[/url][/b]
+by Firelight Technologies Pty Ltd.
+
+
+[b][url=https://github.com/utopia-rise/fmod-gdextension]fmod-gdextension[/url][/b]
+by Utopia-Rise and Alex Fonseka
+Distributed on the MIT License
+[/center]"
+scroll_active = false
 
 [node name="CloseButton" type="Button" parent="CreditsPopup/Panel"]
 layout_mode = 1

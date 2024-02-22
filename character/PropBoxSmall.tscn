@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2wp0dnwqead4"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_qjqux"]
+[ext_resource type="PackedScene" uid="uid://1ub5643v6ruo" path="res://assets/Box/Box.gltf" id="2_p7iac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56i4h"]
+size = Vector3(0.65, 0.65, 0.65)
+
+[node name="PropBoxSmall" node_paths=PackedStringArray("visual") instance=ExtResource("1_qjqux")]
+friendlyname = "Small Box"
+visual = NodePath("Box2")
+acceleration = 3.0
+deceleration = 8.0
+
+[node name="CameraRig" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.325, 0)
+shape = SubResource("BoxShape3D_56i4h")
+
+[node name="Box2" parent="." index="4" instance=ExtResource("2_p7iac")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)

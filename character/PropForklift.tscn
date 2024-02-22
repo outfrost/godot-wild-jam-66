@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dys3uk8nmj4fn"]
+
+[ext_resource type="PackedScene" uid="uid://c8pl07tl2qho3" path="res://character/BaseProp.tscn" id="1_q8dh4"]
+[ext_resource type="PackedScene" uid="uid://mp7rn6l1oqfv" path="res://assets/Heavy machinery/Forklift.gltf" id="2_kmpc7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3yoj"]
+size = Vector3(1.15, 1.92214, 1.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p22u3"]
+size = Vector3(0.3, 0.05, 1.25)
+
+[node name="PropForklift" node_paths=PackedStringArray("visual") instance=ExtResource("1_q8dh4")]
+friendlyname = "A Goddamn Forklift"
+visual = NodePath("Forklift")
+
+[node name="CameraRig" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.961072, 0.625)
+shape = SubResource("BoxShape3D_a3yoj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.987688, -0.156434, 0, 0.156434, 0.987688, 0.385, 0.215, -0.926)
+shape = SubResource("BoxShape3D_p22u3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 0.987688, -0.156434, 0, 0.156434, 0.987688, -0.385, 0.215, -0.926)
+shape = SubResource("BoxShape3D_p22u3")
+
+[node name="Forklift" parent="." index="6" instance=ExtResource("2_kmpc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)

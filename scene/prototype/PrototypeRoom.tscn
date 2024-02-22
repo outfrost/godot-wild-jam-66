@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cckf8gufr4uos"]
+[gd_scene load_steps=22 format=3 uid="uid://cckf8gufr4uos"]
 
 [ext_resource type="Texture2D" uid="uid://7ly2lf0fa1k" path="res://scene/prototype/texture/kenney/dark/00.png" id="1_2i7cm"]
 [ext_resource type="Script" path="res://scene/Room.gd" id="1_3vnvr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbumgy041cro" path="res://character/test/TestProp3.tscn" id="5_fs64n"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="8_7rh5f"]
 [ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="8_7ujaf"]
+[ext_resource type="PackedScene" uid="uid://dr0fywxv7c0c" path="res://npc/FullEmployee.tscn" id="11_15xv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm4g0"]
 size = Vector3(10, 1, 10)
@@ -786,7 +787,17 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 4, 1.4, 
 [node name="Employee" parent="." instance=ExtResource("8_7ujaf")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.06729, 0.50039, 0.35123)
 
-[node name="sfx3D_npc_idlechatter" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/NPC_IDLE-CHATTER"
-event_guid = "{82f41eb4-4b22-4206-9a60-a9d90fa5703c}"
-autoplay = true
+[node name="Reece" parent="." node_paths=PackedStringArray("route") instance=ExtResource("11_15xv0")]
+transform = Transform3D(-0.706283, -0.000333816, 0.707931, 0.000912073, 0.999999, 0.00138152, -0.70793, 0.00162143, -0.706281, 5.63832, 0.5, -1.20163)
+route = NodePath("../Patrol")
+
+[node name="Patrol" type="Node" parent="."]
+
+[node name="point 1" type="Marker3D" parent="Patrol"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 3.50271, 0.8799, 6.90971)
+
+[node name="point 2" type="Marker3D" parent="Patrol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5328, 0.868069, 6.59534)
+
+[node name="point 3" type="Marker3D" parent="Patrol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80266, 0.754223, 4.55302)

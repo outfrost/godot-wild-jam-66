@@ -26,16 +26,23 @@ var detection_profile: DetectionProfile
 var detected: float = 0.0
 var prop_last_pos: = Vector3.ZERO
 
+var sfx: Array[FmodEventEmitter3D] = []
+
 func _ready() -> void:
-	Harbinger.subscribe("active_prop", func(p): prop = p[0])
+	Harbinger.subscribe("active_prop", set_active_prop)
+	Harbinger.subscribe("npc_reset", reset)
 	for i in range(num_rays):
 		var vis: = RAYCAST_VIS_SCN.instantiate()
 		vision_sensor.add_child(vis)
 		raycast_vis.append(vis)
 	detection_profile = detection_normal_profile
 
+	for child in get_children():
+		if child is FmodEventEmitter3D:
+			sfx.append(child)
+
 func _process(delta: float) -> void:
-	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected }, self)
+	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected, where = prop_last_pos }, self)
 	if Input.is_action_just_pressed("debug_draw_raycast"):
 		for vis in raycast_vis:
 			vis.visible = !vis.visible
@@ -69,6 +76,7 @@ func _physics_process(delta: float) -> void:
 			raycast_vis[ray_idx].update_vis(result.position, Color.GREEN)
 			line_of_sight = true
 			los_last_ray_idx = ray_idx
+			prop_last_pos = result.position
 			los_distance = (result.position - vision_sensor.global_position).length()
 		else:
 			raycast_vis[ray_idx].update_vis(result.position, Color.ORANGE)
@@ -87,10 +95,32 @@ func _physics_process(delta: float) -> void:
 		var prop_speed: = prop.velocity.length()
 		if los_distance <= detection_profile.motion_range && prop_speed > MOTION_SPEED_DEADZONE:
 			detected += prop_speed * detection_profile.motion_sensitivity * delta
-		else:
+		elif detection_profile != detection_chase_profile:
 			detected -= detection_profile.decay * delta
 	else:
 		detected -= detection_profile.decay * delta
 
 	detected = clampf(detected, 0.0, 1.0)
 	#endregion
+
+	for s in sfx:
+		s.position = global_position + 1.0 * Vector3.UP
+
+func use_normal_profile() -> void:
+	detection_profile = detection_normal_profile
+
+func use_chase_profile() -> void:
+	detection_profile = detection_chase_profile
+
+func set_active_prop(p) -> void:
+	prop = p[0]
+
+func reset(_p) -> void:
+	detection_profile = detection_normal_profile
+	detected = 0.0
+	line_of_sight = false
+	ray_idx = 0
+	los_last_ray_idx = 0
+	prop_last_pos = Vector3.ZERO
+	for s in sfx:
+		s.stop()

@@ -1,17 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmyhje0055jiq"]
+[gd_scene load_steps=9 format=3 uid="uid://cmyhje0055jiq"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://cckf8gufr4uos" path="res://scene/prototype/PrototypeRoom.tscn" id="2_igon2"]
-[ext_resource type="PackedScene" uid="uid://ck5ollsnfo27q" path="res://scene/prototype/MenuBackground.tscn" id="2_iiltg"]
+[ext_resource type="PackedScene" uid="uid://8064wgu24krk" path="res://scene/Factory.tscn" id="2_8t5sl"]
 [ext_resource type="PackedScene" uid="uid://dmfdkwcu73843" path="res://game/menu/MainMenu.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://c36i4ds1o7ejo" path="res://scene/Factory_MenuBackground.tscn" id="3_2dw32"]
 [ext_resource type="PackedScene" uid="uid://bjbey6bjjepho" path="res://game/loading/TransitionScreen.tscn" id="4"]
 [ext_resource type="Script" path="res://game/Game.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://bmtrg631t53ce" path="res://game/LevelCompleteOverlay.tscn" id="5_qsxln"]
+[ext_resource type="PackedScene" uid="uid://cpsuij1n1t35a" path="res://game/LevelFailedOverlay.tscn" id="6_j65kt"]
 
 [node name="Game" type="Node"]
+process_mode = 3
 script = ExtResource("5")
-room_scn = ExtResource("2_igon2")
+room_scn = ExtResource("2_8t5sl")
 
-[node name="MenuBackground" parent="." instance=ExtResource("2_iiltg")]
+[node name="MenuBackground" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="Factory_MenuBackground" parent="MenuBackground" instance=ExtResource("3_2dw32")]
+
+[node name="RoomContainer" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -23,6 +32,14 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1")
 
+[node name="LevelCompleteOverlay" parent="UI" instance=ExtResource("5_qsxln")]
+visible = false
+layout_mode = 1
+
+[node name="LevelFailedOverlay" parent="UI" instance=ExtResource("6_j65kt")]
+visible = false
+layout_mode = 1
+
 [node name="MainMenu" parent="UI" instance=ExtResource("3")]
 layout_mode = 1
 
@@ -33,7 +50,7 @@ layout_mode = 1
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
-[node name="Music" type="FmodEventEmitter2D" parent="."]
+[node name="Music" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/MUSIC"
 event_guid = "{dd14fbcf-ed6f-45c9-8289-fb3ec36ca7b1}"
 autoplay = true

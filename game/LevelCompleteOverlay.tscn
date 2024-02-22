@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmtrg631t53ce"]
+
+[ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_olmd8"]
+[ext_resource type="FontVariation" uid="uid://0508n4x4c5gj" path="res://game/ui-theme/font/banner/bold.tres" id="2_thh5r"]
+[ext_resource type="Script" path="res://game/LevelCompleteOverlay.gd" id="2_wkqhx"]
+[ext_resource type="FontVariation" uid="uid://bf4yyux86yb1x" path="res://game/ui-theme/font/default/bold_italic.tres" id="3_f0bt3"]
+[ext_resource type="Theme" uid="uid://bneqecul7ufgx" path="res://game/ui-theme/theme_main_menu.tres" id="4_lork1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5lkg"]
+font = ExtResource("2_thh5r")
+font_size = 96
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.627451)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4cqvb"]
+font = ExtResource("3_f0bt3")
+font_size = 64
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.627451)
+
+[node name="LevelCompleteOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_olmd8")
+script = ExtResource("2_wkqhx")
+
+[node name="Slide" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelCompleteLabel" type="Label" parent="Slide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.15
+anchor_bottom = 0.3
+grow_vertical = 0
+text = "LEVEL COMPLETE!"
+label_settings = SubResource("LabelSettings_y5lkg")
+
+[node name="LevelPropLabel" type="Label" parent="Slide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.3
+anchor_right = 0.12
+anchor_bottom = 0.3
+offset_left = 180.0
+offset_top = 40.0
+offset_right = 180.0
+offset_bottom = 40.0
+text = "PropName made it out!"
+label_settings = SubResource("LabelSettings_4cqvb")
+
+[node name="ContinueButton" type="Button" parent="Slide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.7
+anchor_right = 0.85
+anchor_bottom = 0.7
+grow_horizontal = 0
+theme = ExtResource("4_lork1")
+text = "CONTINUE"

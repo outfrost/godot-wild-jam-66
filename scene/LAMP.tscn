@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bauaxcd72nghw"]
+
+[ext_resource type="Material" uid="uid://c8vuumvcd0g23" path="res://material/mat_beam.tres" id="1_lteri"]
+[ext_resource type="Material" uid="uid://dbv2ax3jgik2h" path="res://material/mat_lamp_cfl.tres" id="2_dcvet"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gk052"]
+material = ExtResource("1_lteri")
+size = Vector3(1.2, 0.04, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_atw4i"]
+material = ExtResource("2_dcvet")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 1.16
+
+[node name="LAMP" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_gk052")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.04, 0.05)
+mesh = SubResource("CylinderMesh_atw4i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.04, -0.05)
+mesh = SubResource("CylinderMesh_atw4i")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.08, 0)
+light_color = Color(0.901961, 0.917647, 1, 1)
+light_energy = 10.0
+light_indirect_energy = 5.0
+light_volumetric_fog_energy = 5.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_reverse_cull_face = true
+spot_range = 10.0
+spot_attenuation = 0.7
+spot_angle = 67.5
+spot_angle_attenuation = 1.5

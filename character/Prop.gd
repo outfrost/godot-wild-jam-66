@@ -1,8 +1,8 @@
 class_name Prop
 extends CharacterBody3D
 
+@export var friendlyname: String = "Prop"
 @export var visual: Node3D
-@export var camera_rig: Node3D
 
 @export var speed: = 1.0
 @export var acceleration: = 4.0
@@ -10,9 +10,16 @@ extends CharacterBody3D
 @export var jump_speed: = 3.0
 @export var rotation_speed: = 10.0
 
+@onready var camera_rig: Node3D = $CameraRig
+@onready var camera_rig_base_pos: = camera_rig.position
+
 @onready var visual_base_pos: = visual.position
 @onready var visual_base_rot: = visual.rotation.y
-@onready var camera_rig_base_pos: = camera_rig.position
+
+@onready var sfx_jump: FmodEventEmitter3D = $SfxJump
+@onready var sfx_fall: FmodEventEmitter3D = $SfxFall
+
+@onready var starting_xform: = transform
 
 var active: bool = false
 
@@ -24,6 +31,7 @@ var rotation_delta: = 0.0
 func _ready() -> void:
 	deactivate()
 	collision_layer = 1 << 1 # props
+	collision_mask = 1 << 0 | 1 << 1 # general, props
 
 func _process(delta: float) -> void:
 	# interpolate movement to prevent stutters
@@ -48,7 +56,7 @@ func _physics_process(delta: float) -> void:
 
 	if active:
 		if Input.is_action_just_pressed("jump") && is_on_floor():
-			$sfx_jump.play()
+			sfx_jump.play()
 			velocity.y = jump_speed
 
 		if Input.get_action_strength("move_forward") > 0.0:
@@ -80,15 +88,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	for i in range(get_slide_collision_count()):
-		if get_slide_collision(i).get_normal().y * velocity_tmp.y < - jump_speed + 0.05:
-			$sfx_fall.play()
+	#for i in range(get_slide_collision_count()):
+		#if get_slide_collision(i).get_normal().y * velocity_tmp.y < - jump_speed + 0.05:
+			#sfx_fall.play()
 
 	movement_delta = transform.origin - last_pos
 	rotation_delta = wrapf(rotation.y - last_rot, - 0.5 * TAU, 0.5 * TAU)
 
 func activate() -> void:
 	camera_rig.get_node(^"CameraPitch/Camera3D").make_current()
+	camera_rig.fmod_listener = FmodListener3D.new()
+	camera_rig.fmod_listener.listener_index = 0
+	camera_rig.fmod_listener.scale_object_local(Vector3(-1.0, 1.0, 1.0))
+	camera_rig.add_child(camera_rig.fmod_listener)
 	#set_process(true)
 	#set_physics_process(true)
 	camera_rig.set_process_unhandled_input(true)
@@ -100,3 +112,11 @@ func deactivate() -> void:
 	#set_process(false)
 	#set_physics_process(false)
 	camera_rig.set_process_unhandled_input(false)
+	if camera_rig.fmod_listener:
+		camera_rig.remove_child(camera_rig.fmod_listener)
+		camera_rig.fmod_listener.queue_free()
+		camera_rig.fmod_listener = null
+
+func reset() -> void:
+	transform = starting_xform
+	velocity = Vector3.ZERO

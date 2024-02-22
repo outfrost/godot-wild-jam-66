@@ -26,10 +26,9 @@ rings = 1
 material = SubResource("StandardMaterial3D_wg7od")
 size = Vector3(0.75, 0.05, 0.05)
 
-[node name="TestProp" type="CharacterBody3D" node_paths=PackedStringArray("visual", "camera_rig")]
+[node name="TestProp" type="CharacterBody3D" node_paths=PackedStringArray("visual")]
 script = ExtResource("1_qa2gm")
 visual = NodePath("MeshInstance3D")
-camera_rig = NodePath("CameraRig")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_r71dd")
@@ -47,7 +46,10 @@ mesh = SubResource("BoxMesh_xbsln")
 
 [node name="CameraRig" parent="." instance=ExtResource("2_k8i41")]
 
-[node name="Jump" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/SFX_JUMP"
+[node name="SfxJump" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/MISC/SFX_JUMP"
 event_guid = "{b696e38b-172e-4d10-9fec-5f342e220bdc}"
-attached = false
+
+[node name="SfxFall" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/MISC/SFX_FALL"
+event_guid = "{66b3c885-0ff6-4465-b851-0406cc397819}"

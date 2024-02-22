@@ -1,9 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6ke1ot845yhd"]
 
-[ext_resource type="Texture2D" uid="uid://eqq7bd625yy0" path="res://scene/prototype/texture/kenney/light/00.png" id="1_clmec"]
+[ext_resource type="Texture2D" uid="uid://bq8vkuo4uh37y" path="res://material/wall_noise.png" id="1_qw6gu"]
 
 [resource]
-albedo_color = Color(0.8, 0.76, 0.68, 1)
-albedo_texture = ExtResource("1_clmec")
+albedo_color = Color(0.8, 0.745098, 0.639216, 1)
+albedo_texture = ExtResource("1_qw6gu")
+roughness = 0.9
+uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true
+texture_filter = 2
