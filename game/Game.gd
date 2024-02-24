@@ -83,6 +83,7 @@ func prop_finished(name: String) -> void:
 	room.activate_next_prop()
 	music.set_parameter("SCENE", 1)
 	music.set_parameter("LEVELCOMPLETE", 0)
+	music.set_parameter("DETECTION", 0)
 	get_tree().paused = false
 
 func prop_caught(params) -> void:
@@ -94,4 +95,5 @@ func prop_caught(params) -> void:
 	room.prop_order[room.prop_idx].reset()
 	Harbinger.dispatch("npc_reset")
 	music.set_parameter("SCENE", 1)
+	music.set_parameter("DETECTION", 0)
 	get_tree().paused = false

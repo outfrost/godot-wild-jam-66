@@ -18,12 +18,19 @@ var next_path_position: Vector3
 var current_agent_position: Vector3
 var sfx_lost_track_played: bool = false
 
+@onready var game: Game = find_parent("Game")
+
+@onready var music_chase = game.get_node("Music")
+
 func _ready():
+	self.is_inside_tree()
 	set_physics_process(false)
 
 	call_deferred("actor_setup")
 
 	Harbinger.subscribe("npc_reset", reset)
+	
+	print(self.get_path())  # prints /root/Control/Node2D
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
@@ -38,6 +45,7 @@ func Enter():
 	last_position.global_position = raycaster.prop_last_pos
 	navigation_agent.set_target_position(last_position.global_position)
 	raycaster.use_chase_profile()
+	music_chase.set_parameter("DETECTION", 3)
 
 func Exit():
 	chase_end.emit()
@@ -75,6 +83,7 @@ func Physics_Update(delta):
 	):
 		sfx_lost_track_played = true
 		lost_track.emit()
+		music_chase.set_parameter("DETECTION", 0)
 
 	#rotation
 	var to_next_path_pos_local: = parent.to_local(next_path_position)
