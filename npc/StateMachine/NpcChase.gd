@@ -20,7 +20,7 @@ var sfx_lost_track_played: bool = false
 
 @onready var game: Game = find_parent("Game")
 
-@onready var music_chase = game.get_node("Music")
+@onready var music = game.get_node("Music")
 
 func _ready():
 	self.is_inside_tree()
@@ -45,7 +45,7 @@ func Enter():
 	last_position.global_position = raycaster.prop_last_pos
 	navigation_agent.set_target_position(last_position.global_position)
 	raycaster.use_chase_profile()
-	music_chase.set_parameter("DETECTION", 3)
+	music.set_parameter("CHASE", 3)
 
 func Exit():
 	chase_end.emit()
@@ -83,7 +83,7 @@ func Physics_Update(delta):
 	):
 		sfx_lost_track_played = true
 		lost_track.emit()
-		music_chase.set_parameter("DETECTION", 0)
+		music.set_parameter("CHASE", 0)
 
 	#rotation
 	var to_next_path_pos_local: = parent.to_local(next_path_position)

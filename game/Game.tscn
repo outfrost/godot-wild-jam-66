@@ -50,22 +50,21 @@ layout_mode = 1
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
+[node name="Music_Transition" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MUSIC_TRANSITION"
+event_guid = "{8548d105-2a3a-4ce5-85a5-6a69057132bd}"
+
 [node name="Music" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/MUSIC TEMP"
+event_name = "event:/MUSIC/MUSICTEMP"
 event_guid = "{97dbfa54-0e88-4f6d-b10d-06d329fd9b69}"
 autoplay = true
-event_parameter/SCENE/id = 4253876191321042138
-event_parameter/SCENE/value = 0.0
-event_parameter/SCENE/min_value = 0.0
-event_parameter/SCENE/max_value = 2.0
-event_parameter/SCENE/default_value = 0.0
 event_parameter/LEVELCOMPLETE/id = 8541990160951283049
 event_parameter/LEVELCOMPLETE/value = 0.0
 event_parameter/LEVELCOMPLETE/min_value = 0.0
 event_parameter/LEVELCOMPLETE/max_value = 1.0
 event_parameter/LEVELCOMPLETE/default_value = 0.0
-event_parameter/DETECTION/id = 3904272917760853846
-event_parameter/DETECTION/value = 0.0
-event_parameter/DETECTION/min_value = 0.0
-event_parameter/DETECTION/max_value = 3.0
-event_parameter/DETECTION/default_value = 0.0
+event_parameter/CHASE/id = 3904272917760853846
+event_parameter/CHASE/value = 0.0
+event_parameter/CHASE/min_value = 0.0
+event_parameter/CHASE/max_value = 3.0
+event_parameter/CHASE/default_value = 0.0
