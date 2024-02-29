@@ -20,6 +20,7 @@ func _gui_input(event):
 	):
 		hide()
 		accept_event()
+		%SFX_Click.play()
 
 func on_meta_clicked(meta: String):
 	if meta.begins_with("http"):

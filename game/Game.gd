@@ -11,6 +11,7 @@ extends Node
 @onready var menu_background_content: Node = menu_background.get_child(0)
 @onready var room_container: Node = $RoomContainer
 @onready var music: FmodEventEmitter3D = $Music
+@onready var music_transition: FmodEventEmitter2D = $Music_Transition
 
 var debug: RefCounted
 
@@ -43,7 +44,6 @@ func _process(delta: float) -> void:
 		#if npc.state_machine.current_state == npc.state_machine.states["chasestate"]:
 			#tension += 1.0
 		#max_tension = max(tension, max_tension)
-	#music.set_parameter("DETECTION", 3.0)
 
 func on_start_game() -> void:
 	main_menu.hide()
@@ -58,8 +58,7 @@ func on_start_game() -> void:
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	room.activate_next_prop()
-	music.set_parameter("SCENE", 1)
-	#music.set_parameter("SCENE", 0)
+	music_transition.play()
 
 func back_to_menu() -> void:
 	if level_complete_overlay.visible:
@@ -69,29 +68,26 @@ func back_to_menu() -> void:
 	room.queue_free()
 	#npcs.clear()
 	get_tree().paused = false
-	music.set_parameter("SCENE", 0)
 	menu_background.add_child(menu_background_content)
 	main_menu.show()
 
 func prop_finished(name: String) -> void:
 	get_tree().paused = true
 	music.set_parameter("LEVELCOMPLETE", 1)
-	music.set_parameter("SCENE", 0)
 	level_complete_overlay.display(name)
 	await level_complete_overlay.dismissed
 	Harbinger.dispatch("npc_reset")
 	room.activate_next_prop()
-	music.set_parameter("SCENE", 1)
 	music.set_parameter("LEVELCOMPLETE", 0)
+	music.set_parameter("CHASE", 0)
 	get_tree().paused = false
 
 func prop_caught(params) -> void:
 	var by: String = params[0]
 	get_tree().paused = true
-	music.set_parameter("SCENE", 0)
 	level_failed_overlay.display(by)
 	await level_failed_overlay.dismissed
 	room.prop_order[room.prop_idx].reset()
 	Harbinger.dispatch("npc_reset")
-	music.set_parameter("SCENE", 1)
+	music.set_parameter("CHASE", 0)
 	get_tree().paused = false

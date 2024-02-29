@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmyhje0055jiq"]
+[gd_scene load_steps=10 format=3 uid="uid://cmyhje0055jiq"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://8064wgu24krk" path="res://scene/Factory.tscn" id="2_8t5sl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://game/Game.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://bmtrg631t53ce" path="res://game/LevelCompleteOverlay.tscn" id="5_qsxln"]
 [ext_resource type="PackedScene" uid="uid://cpsuij1n1t35a" path="res://game/LevelFailedOverlay.tscn" id="6_j65kt"]
+[ext_resource type="Script" path="res://game/Music.gd" id="9_2cy5i"]
 
 [node name="Game" type="Node"]
 process_mode = 3
@@ -50,21 +51,24 @@ layout_mode = 1
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://sound/Desktop/Master.strings.bank", "res://sound/Desktop/Master.bank"]
 
-[node name="Music_Transition" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/MUSIC/MUSIC_TRANSITION"
-event_guid = "{8548d105-2a3a-4ce5-85a5-6a69057132bd}"
-
 [node name="Music" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/MUSIC/MUSICTEMP"
-event_guid = "{97dbfa54-0e88-4f6d-b10d-06d329fd9b69}"
+event_name = "event:/MUSIC"
+event_guid = "{dd14fbcf-ed6f-45c9-8289-fb3ec36ca7b1}"
 autoplay = true
+event_parameter/DETECTION/id = 3904272917760853846
+event_parameter/DETECTION/value = 0.0
+event_parameter/DETECTION/min_value = 0.0
+event_parameter/DETECTION/max_value = 3.0
+event_parameter/DETECTION/default_value = 0.0
+event_parameter/SCENE/id = 4253876191321042138
+event_parameter/SCENE/value = 0.0
+event_parameter/SCENE/min_value = 0.0
+event_parameter/SCENE/max_value = 2.0
+event_parameter/SCENE/default_value = 0.0
 event_parameter/LEVELCOMPLETE/id = 8541990160951283049
 event_parameter/LEVELCOMPLETE/value = 0.0
 event_parameter/LEVELCOMPLETE/min_value = 0.0
 event_parameter/LEVELCOMPLETE/max_value = 1.0
 event_parameter/LEVELCOMPLETE/default_value = 0.0
-event_parameter/CHASE/id = 3904272917760853846
-event_parameter/CHASE/value = 0.0
-event_parameter/CHASE/min_value = 0.0
-event_parameter/CHASE/max_value = 3.0
-event_parameter/CHASE/default_value = 0.0
+unique_name_in_owner = true
+script = ExtResource("9_2cy5i")
