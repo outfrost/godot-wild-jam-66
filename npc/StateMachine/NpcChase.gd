@@ -18,19 +18,14 @@ var next_path_position: Vector3
 var current_agent_position: Vector3
 var sfx_lost_track_played: bool = false
 
-@onready var game: Game = find_parent("Game")
-
-@onready var music = game.get_node("Music")
+@onready var music = find_parent("Game").get_node("Music")
 
 func _ready():
-	self.is_inside_tree()
 	set_physics_process(false)
 
 	call_deferred("actor_setup")
 
 	Harbinger.subscribe("npc_reset", reset)
-	
-	print(self.get_path())  # prints /root/Control/Node2D
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
