@@ -40,7 +40,6 @@ func Enter():
 	last_position.global_position = raycaster.prop_last_pos
 	navigation_agent.set_target_position(last_position.global_position)
 	raycaster.use_chase_profile()
-	music.set_parameter("CHASE", 3)
 
 func Exit():
 	chase_end.emit()
@@ -78,7 +77,6 @@ func Physics_Update(delta):
 	):
 		sfx_lost_track_played = true
 		lost_track.emit()
-		music.set_parameter("CHASE", 0)
 
 	#rotation
 	var to_next_path_pos_local: = parent.to_local(next_path_position)
