@@ -12,7 +12,7 @@ friendlyname = "Bucket"
 visual = NodePath("bucket")
 
 [node name="CameraRig" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+spring_length = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)

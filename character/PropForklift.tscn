@@ -15,6 +15,7 @@ visual = NodePath("Forklift")
 
 [node name="CameraRig" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+spring_length = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.961072, 0.625)
