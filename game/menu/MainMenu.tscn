@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmfdkwcu73843"]
+[gd_scene load_steps=12 format=3 uid="uid://dmfdkwcu73843"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_7yq1p"]
 [ext_resource type="Script" path="res://game/menu/CreditsPopup.gd" id="2"]
@@ -6,9 +6,15 @@
 [ext_resource type="Script" path="res://game/menu/MainMenu.gd" id="4"]
 [ext_resource type="Theme" uid="uid://bneqecul7ufgx" path="res://game/ui-theme/theme_main_menu.tres" id="4_g6k5d"]
 [ext_resource type="FontVariation" uid="uid://2ny6cbh4f65c" path="res://game/ui-theme/font/default/regular.tres" id="6_qe4t0"]
+[ext_resource type="Shader" path="res://game/menu/credits_popup_panel.gdshader" id="7_biom8"]
 [ext_resource type="FontVariation" uid="uid://b0ji8plgwfom1" path="res://game/ui-theme/font/default/bold.tres" id="7_x31vi"]
 [ext_resource type="FontVariation" uid="uid://0508n4x4c5gj" path="res://game/ui-theme/font/banner/bold.tres" id="8_0xu7u"]
 [ext_resource type="Script" path="res://game/menu/SFX_CLICK.gd" id="10_r222p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdcc4"]
+shader = ExtResource("7_biom8")
+shader_parameter/border_width = 2.0
+shader_parameter/rect_size = null
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -114,6 +120,9 @@ grow_vertical = 2
 script = ExtResource("2")
 
 [node name="Panel" type="Panel" parent="CreditsPopup"]
+texture_filter = 2
+texture_repeat = 1
+material = SubResource("ShaderMaterial_xdcc4")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

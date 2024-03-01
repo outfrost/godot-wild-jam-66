@@ -1,9 +1,14 @@
 extends Control
 
+@onready var panel: Panel = $Panel
+
 func _ready() -> void:
 	$Panel/RichTextLabel.meta_clicked.connect(on_meta_clicked)
 	$Panel/RichTextLabel2.meta_clicked.connect(on_meta_clicked)
 	$Panel/CloseButton.pressed.connect(hide)
+
+func _process(delta: float) -> void:
+	(panel.material as ShaderMaterial).set_shader_parameter("rect_size", panel.size)
 
 func _input(event: InputEvent) -> void:
 	if !visible:
