@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c36i4ds1o7ejo"]
+[gd_scene load_steps=81 format=3 uid="uid://c36i4ds1o7ejo"]
 
 [ext_resource type="Environment" uid="uid://bitpm5w0awntg" path="res://default_env.tres" id="2_litf2"]
 [ext_resource type="VoxelGIData" uid="uid://bnp2jtmavc3lk" path="res://scene/Factory.VoxelGI_data.res" id="3_22p3m"]
@@ -38,6 +38,12 @@
 [ext_resource type="Material" uid="uid://c0p53hap0e30t" path="res://material/mat_roof.tres" id="34_j1v2s"]
 [ext_resource type="Material" uid="uid://c8vuumvcd0g23" path="res://material/mat_beam.tres" id="35_6qodw"]
 [ext_resource type="PackedScene" uid="uid://bauaxcd72nghw" path="res://scene/LAMP.tscn" id="36_vhax0"]
+[ext_resource type="Material" uid="uid://dlx3r2noa2mnd" path="res://material/mat_genericbuilding3.tres" id="39_p64ik"]
+[ext_resource type="Material" uid="uid://b8pvj5ebxy1pv" path="res://material/mat_genericbuilding.tres" id="40_uls1x"]
+[ext_resource type="Material" uid="uid://clq03kpukjod5" path="res://material/mat_genericbuilding2.tres" id="41_cwh1y"]
+[ext_resource type="Material" uid="uid://dfy1gcmn438py" path="res://material/mat_asphalt.tres" id="42_o5ga2"]
+[ext_resource type="Material" uid="uid://b1rlnq4slur5h" path="res://material/mat_curb.tres" id="43_ms8tl"]
+[ext_resource type="Material" uid="uid://ouym0oi35t88" path="res://material/mut_mud.tres" id="44_8eata"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_cjqfw"]
 material = ExtResource("34_j1v2s")
@@ -131,6 +137,46 @@ size = Vector3(0.4, 7, 0.4)
 [sub_resource type="BoxMesh" id="BoxMesh_s8f2l"]
 material = ExtResource("7_ski5x")
 size = Vector3(0.4, 7, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s02un"]
+material = ExtResource("39_p64ik")
+size = Vector3(20, 9, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34cbs"]
+material = ExtResource("40_uls1x")
+size = Vector3(20, 9, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ug6g5"]
+material = ExtResource("41_cwh1y")
+size = Vector3(30, 12, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhp2a"]
+material = ExtResource("39_p64ik")
+size = Vector3(30, 11, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmhgc"]
+material = ExtResource("40_uls1x")
+size = Vector3(30, 10, 50)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pgwfq"]
+material = ExtResource("42_o5ga2")
+size = Vector2(24, 24)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6vdny"]
+material = ExtResource("42_o5ga2")
+size = Vector2(30, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ptogh"]
+material = ExtResource("43_ms8tl")
+size = Vector3(30, 0.2, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4qcv"]
+material = ExtResource("43_ms8tl")
+size = Vector3(0.2, 0.2, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_u02q3"]
+material = ExtResource("44_8eata")
+size = Vector2(80, 20)
 
 [node name="Factory_MenuBackground" type="Node3D"]
 
@@ -2080,3 +2126,58 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.1143
 
 [node name="BoxOpen" parent="." instance=ExtResource("29_0btor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0, -13.5)
+
+[node name="LoadingArea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3.5, 16)
+mesh = SubResource("BoxMesh_s02un")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 3.5, -22)
+mesh = SubResource("BoxMesh_34cbs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 5, -26)
+mesh = SubResource("BoxMesh_ug6g5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 4.5, -26)
+mesh = SubResource("BoxMesh_lhp2a")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 4, 24)
+mesh = SubResource("BoxMesh_bmhgc")
+
+[node name="Asphalt" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6, -1, 1.5)
+mesh = SubResource("QuadMesh_pgwfq")
+
+[node name="Asphalt2" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -21, -1, -7.5)
+mesh = SubResource("QuadMesh_6vdny")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.9, 5.5)
+mesh = SubResource("BoxMesh_ptogh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -0.9, 3.4)
+mesh = SubResource("BoxMesh_w4qcv")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.1, -0.9, -10.5)
+mesh = SubResource("BoxMesh_w4qcv")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.9, -0.9, -10.5)
+mesh = SubResource("BoxMesh_w4qcv")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, -1, -20.5)
+mesh = SubResource("QuadMesh_u02q3")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="LoadingArea"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 28, -1, 29.5)
+mesh = SubResource("QuadMesh_u02q3")
