@@ -55,7 +55,14 @@ func _ready():
 
 	enter_patrol()
 
+	set_physics_process(false)
+	call_deferred("_delayed_ready")
+
 	#debug.trace("state").trace("patrol_index_growing").trace("patrol_node_index")
+
+func _delayed_ready() -> void:
+	await(get_tree().physics_frame)
+	set_physics_process(true)
 
 func _process(delta: float) -> void:
 	#debug.print("target: " + target.name)
