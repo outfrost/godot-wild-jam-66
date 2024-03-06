@@ -39,7 +39,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var sfx_lost_track_played: bool = false
 
-@onready var debug: = DebugOverlay.tracker(self)
+#@onready var debug: = DebugOverlay.tracker(self)
 
 func _ready():
 	assert(navigation_agent)
@@ -55,11 +55,12 @@ func _ready():
 
 	enter_patrol()
 
-	debug.trace("state").trace("patrol_index_growing").trace("patrol_node_index")
+	#debug.trace("state").trace("patrol_index_growing").trace("patrol_node_index")
 
 func _process(delta: float) -> void:
-	debug.print("target: " + target.name)
-	debug.print("is_navigation_finished: " + str(navigation_agent.is_navigation_finished()))
+	#debug.print("target: " + target.name)
+	#debug.print("is_navigation_finished: " + str(navigation_agent.is_navigation_finished()))
+	pass
 
 func _physics_process(delta):
 	var vy: = 0.0
