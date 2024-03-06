@@ -59,16 +59,21 @@ func _physics_process(delta: float) -> void:
 			sfx_jump.play()
 			velocity.y = jump_speed
 
+		#region rotate to face forward
 		if Input.get_action_strength("move_forward") > 0.0:
 			var slerp_rate: = rotation_speed * (0.25 + 0.5 * (cos(camera_rig.rotation.y) + 1.0)) * delta
 			var new_rotation_y: = lerp_angle(rotation.y, rotation.y + camera_rig.rotation.y, slerp_rate)
 
 			# prevent jitter/wiggle at low physics framerates
-			if abs(angle_difference(rotation.y, new_rotation_y)) > abs(camera_rig.rotation.y):
+			if (
+				abs(wrapf(angle_difference(rotation.y, new_rotation_y), - TAU * 0.5, TAU * 0.5))
+				> abs(wrapf(camera_rig.rotation.y, - TAU * 0.5, TAU * 0.5))
+			):
 				new_rotation_y = rotation.y + camera_rig.rotation.y
 
 			camera_rig.rotate_y(rotation.y - new_rotation_y)
 			rotation.y = new_rotation_y
+		#endregion
 
 		var input_dir: = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 		var velocity_xz: = Vector2(velocity.x, velocity.z)
