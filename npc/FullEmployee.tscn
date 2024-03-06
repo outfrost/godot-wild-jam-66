@@ -1,10 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr0fywxv7c0c"]
+[gd_scene load_steps=5 format=3 uid="uid://dr0fywxv7c0c"]
 
 [ext_resource type="Script" path="res://npc/NavmeshAgent.gd" id="1_kf6pf"]
-[ext_resource type="Script" path="res://npc/StateMachine/StateMachine.gd" id="2_rkkfj"]
-[ext_resource type="Script" path="res://npc/StateMachine/NpcPatrol.gd" id="3_nalmh"]
-[ext_resource type="Script" path="res://npc/StateMachine/NpcWait.gd" id="4_npcrq"]
-[ext_resource type="Script" path="res://npc/StateMachine/NpcChase.gd" id="5_hjqdb"]
 [ext_resource type="PackedScene" uid="uid://4y2uas5rrqh6" path="res://npc/BasicEmployee.tscn" id="6_1uhj2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3wll"]
@@ -13,37 +9,15 @@ size = Vector3(0.4, 1.8, 0.255)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_reox5"]
 height = 1.8
 
-[node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent")]
+[node name="FullEmployee" type="CharacterBody3D" node_paths=PackedStringArray("navigation_agent", "raycaster")]
 collision_mask = 3
 floor_block_on_wall = false
 script = ExtResource("1_kf6pf")
 navigation_agent = NodePath("NavigationAgent3D")
+raycaster = NodePath("BasicEmployee")
 patrol_speed = 1.0
 wait_time = 5.0
 chase_speed = 2.0
-
-[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_rkkfj")
-initial_state = NodePath("PatrolState")
-
-[node name="PatrolState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent", "raycaster")]
-script = ExtResource("3_nalmh")
-parent = NodePath("../..")
-raycaster = NodePath("../../BasicEmployee")
-
-[node name="WaitState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent", "raycaster")]
-script = ExtResource("4_npcrq")
-parent = NodePath("../..")
-raycaster = NodePath("../../BasicEmployee")
-wait_time = 5.0
-
-[node name="ChaseState" type="Node" parent="State Machine" node_paths=PackedStringArray("parent", "navigation_agent", "raycaster")]
-script = ExtResource("5_hjqdb")
-parent = NodePath("../..")
-navigation_agent = NodePath("../../NavigationAgent3D")
-raycaster = NodePath("../../BasicEmployee")
-
-[node name="LastPos" type="Marker3D" parent="State Machine/ChaseState"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.25
@@ -89,7 +63,9 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CylinderShape3D_reox5")
 
-[connection signal="alerted" from="State Machine/PatrolState" to="BasicEmployee/SfxNoticed" method="play"]
-[connection signal="chase_end" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseEnd" method="play"]
-[connection signal="chase_start" from="State Machine/ChaseState" to="BasicEmployee/SfxChaseStart" method="play"]
-[connection signal="lost_track" from="State Machine/ChaseState" to="BasicEmployee/SfxLostTrack" method="play"]
+[node name="LastPos" type="Marker3D" parent="."]
+
+[connection signal="alerted" from="." to="BasicEmployee/SfxNoticed" method="play"]
+[connection signal="chase_end" from="." to="BasicEmployee/SfxChaseEnd" method="play"]
+[connection signal="chase_start" from="." to="BasicEmployee/SfxChaseStart" method="play"]
+[connection signal="lost_track" from="." to="BasicEmployee/SfxLostTrack" method="play"]

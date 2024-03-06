@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	max_tension = 0.0
 	for npc in npcs:
 		var tension: float = (npc.get_node(^"BasicEmployee").detected * 1.25) + 0.75
-		if npc.state_machine.current_state == npc.state_machine.states["chasestate"]:
+		if npc.state == npc.EmployeeState.Chase:
 			tension += 1.0
 		max_tension = max(tension, max_tension)
 	music.set_parameter("CHASE", max_tension)
