@@ -121,8 +121,8 @@ func _physics_process(delta):
 	velocity.y = vy
 
 	#rotation
-	var to_next_path_pos_local: = to_local(next_path_position)
-	if to_next_path_pos_local.length_squared() > 0.25:
+	var to_next_path_pos_local: = to_local(next_path_position).slide(Vector3.UP)
+	if to_next_path_pos_local.length_squared() > 0.05:
 		var angle: = Vector3.FORWARD.signed_angle_to(to_next_path_pos_local, Vector3.UP)
 
 		var slerp_rate: float = clamp(8.0 * (0.25 + 0.5 * (cos(angle) + 1.0)) * delta, 0.0, 1.0)
