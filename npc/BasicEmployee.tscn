@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://4y2uas5rrqh6"]
 
-[ext_resource type="Script" path="res://npc/Employee.gd" id="1_6muni"]
+[ext_resource type="Script" uid="uid://bn24gv77iwhiy" path="res://npc/Employee.gd" id="1_6muni"]
 [ext_resource type="Resource" uid="uid://bwduvthfiwk3b" path="res://npc/DetectionProfile_Normal.tres" id="2_lmpye"]
 [ext_resource type="Resource" uid="uid://bjiougcw220fa" path="res://npc/DetectionProfile_Chase.tres" id="3_8c7hm"]
 [ext_resource type="PackedScene" uid="uid://gburrckbovb7" path="res://assets/NPC/Employee.gltf" id="4_xaqww"]

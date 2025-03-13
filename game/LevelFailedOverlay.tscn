@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpsuij1n1t35a"]
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_pun3y"]
-[ext_resource type="Script" path="res://game/LevelFailedOverlay.gd" id="2_4yk0v"]
+[ext_resource type="Script" uid="uid://17cp28ok8t1d" path="res://game/LevelFailedOverlay.gd" id="2_4yk0v"]
 [ext_resource type="FontVariation" uid="uid://0508n4x4c5gj" path="res://game/ui-theme/font/banner/bold.tres" id="3_thmbn"]
 [ext_resource type="FontVariation" uid="uid://bf4yyux86yb1x" path="res://game/ui-theme/font/default/bold_italic.tres" id="4_pcd50"]
 [ext_resource type="Theme" uid="uid://bneqecul7ufgx" path="res://game/ui-theme/theme_main_menu.tres" id="5_par5o"]

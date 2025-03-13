@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://nr38urn226al"]
 
-[ext_resource type="Script" path="res://addons/fmod/tool/ui/FmodBankExplorer.gd" id="1_ekqus"]
+[ext_resource type="Script" uid="uid://dgpfulit7ja3e" path="res://addons/fmod/tool/ui/FmodBankExplorer.gd" id="1_ekqus"]
 [ext_resource type="PackedScene" uid="uid://cppeyr1ke5wre" path="res://addons/fmod/tool/ui/EventParametersDisplay.tscn" id="2_uoyg8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3jkpq"]

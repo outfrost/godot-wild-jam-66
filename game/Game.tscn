@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmfdkwcu73843" path="res://game/menu/MainMenu.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://c36i4ds1o7ejo" path="res://scene/Factory_MenuBackground.tscn" id="3_2dw32"]
 [ext_resource type="PackedScene" uid="uid://bjbey6bjjepho" path="res://game/loading/TransitionScreen.tscn" id="4"]
-[ext_resource type="Script" path="res://game/Game.gd" id="5"]
+[ext_resource type="Script" uid="uid://cpvt3t8pkm0sw" path="res://game/Game.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://bmtrg631t53ce" path="res://game/LevelCompleteOverlay.tscn" id="5_qsxln"]
 [ext_resource type="PackedScene" uid="uid://cpsuij1n1t35a" path="res://game/LevelFailedOverlay.tscn" id="6_j65kt"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8pl07tl2qho3"]
 
-[ext_resource type="Script" path="res://character/Prop.gd" id="1_csv7a"]
+[ext_resource type="Script" uid="uid://cejvf3m0brvjg" path="res://character/Prop.gd" id="1_csv7a"]
 [ext_resource type="PackedScene" uid="uid://bcd12ht7disho" path="res://character/CameraRig.tscn" id="2_yntfg"]
 
 [node name="Prop" type="CharacterBody3D"]

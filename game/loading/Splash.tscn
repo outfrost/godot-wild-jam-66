@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cgpmko4d01n84" path="res://game/ui-theme/theme.tres" id="1_4r55f"]
 [ext_resource type="Texture2D" uid="uid://dhgiarixq2okf" path="res://game/loading/FMOD Logo White - Black Background.png" id="2_5n0sq"]
-[ext_resource type="Script" path="res://game/loading/Splash.gd" id="2_rvm1g"]
+[ext_resource type="Script" uid="uid://c23p65jbfr37f" path="res://game/loading/Splash.gd" id="2_rvm1g"]
 [ext_resource type="Texture2D" uid="uid://c6gbryv58xgdv" path="res://game/loading/godot.png" id="3_hgmgr"]
 [ext_resource type="Texture2D" uid="uid://cawtw570l4la6" path="res://game/loading/inside-box.png" id="4_wju78"]
 [ext_resource type="Texture2D" uid="uid://baphmmpgd4rj1" path="res://game/loading/GWJ-Full-Logo-noBG-2048.png" id="5_3rpwx"]

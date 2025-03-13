@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cckf8gufr4uos"]
 
 [ext_resource type="Texture2D" uid="uid://7ly2lf0fa1k" path="res://scene/prototype/texture/kenney/dark/00.png" id="1_2i7cm"]
-[ext_resource type="Script" path="res://scene/Room.gd" id="1_3vnvr"]
+[ext_resource type="Script" uid="uid://bqy8my6moxe1h" path="res://scene/Room.gd" id="1_3vnvr"]
 [ext_resource type="NavigationMesh" uid="uid://c06ujb5hn2ygr" path="res://scene/prototype/PrototypeRoom_NavigationMesh.res" id="2_3grav"]
 [ext_resource type="Texture2D" uid="uid://bx7jeokhy6o38" path="res://scene/prototype/texture/kenney/orange/03.png" id="2_56c8p"]
 [ext_resource type="PackedScene" uid="uid://433rk2i0kijk" path="res://character/test/TestProp.tscn" id="2_daf64"]

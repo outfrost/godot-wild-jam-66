@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dlbumgy041cro"]
 
-[ext_resource type="Script" path="res://character/Prop.gd" id="1_et1ab"]
+[ext_resource type="Script" uid="uid://cejvf3m0brvjg" path="res://character/Prop.gd" id="1_et1ab"]
 [ext_resource type="PackedScene" uid="uid://bcd12ht7disho" path="res://character/CameraRig.tscn" id="2_sw44e"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_r71dd"]
