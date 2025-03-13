@@ -7,7 +7,7 @@ func _on_play_button_pressed():
 
 func _on_credits_button_pressed():
 	%SFX_Click.play()
-	
+
 func _on_close_button_pressed():
 	%SFX_Click.play()
 

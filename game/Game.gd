@@ -13,7 +13,9 @@ extends Node
 @onready var music: FmodEventEmitter3D = $Music
 @onready var music_transition: FmodEventEmitter2D = $Music_Transition
 
-var debug: RefCounted
+@onready var debug: = DebugOverlay.tracker(self)
+
+var debug_hook: RefCounted
 
 var room: Room
 
@@ -24,15 +26,17 @@ func _ready() -> void:
 	if OS.has_feature("debug") && FileAccess.file_exists("res://debug.gd"):
 		var debug_script: GDScript = load("res://debug.gd")
 		if debug_script:
-			debug = debug_script.new(self)
-			debug.startup()
+			debug_hook = debug_script.new(self)
+			debug_hook.startup()
 
 	Harbinger.subscribe("prop_caught", prop_caught)
 	main_menu.start_game.connect(on_start_game)
 
+	debug.trace("max_tension")
+
 func _process(delta: float) -> void:
-	DebugOverlay.display("fps %d" % Performance.get_monitor(Performance.TIME_FPS), null, true)
-	DebugOverlay.display({ tension = max_tension })
+	DebugOverlay.display_public("fps %d" % Performance.get_monitor(Performance.TIME_FPS))
+	debug.display(Color.INDIGO)
 
 	if Input.is_action_just_pressed("menu"):
 		back_to_menu()

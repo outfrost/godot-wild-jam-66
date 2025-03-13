@@ -28,9 +28,12 @@ var prop_last_pos: = Vector3.ZERO
 
 var sfx: Array[FmodEventEmitter3D] = []
 
+@onready var debug: = DebugOverlay.tracker(self)
+
 func _ready() -> void:
 	Harbinger.subscribe("active_prop", set_active_prop)
 	Harbinger.subscribe("npc_reset", reset)
+
 	for i in range(num_rays):
 		var vis: = RAYCAST_VIS_SCN.instantiate()
 		vision_sensor.add_child(vis)
@@ -41,8 +44,9 @@ func _ready() -> void:
 		if child is FmodEventEmitter3D:
 			sfx.append(child)
 
+	debug.trace("line_of_sight").trace("los_distance").trace("detected").trace("prop_last_pos")
+
 func _process(delta: float) -> void:
-	DebugOverlay.display({ los = line_of_sight, los_distance = los_distance, detected = detected, where = prop_last_pos }, self)
 	if Input.is_action_just_pressed("debug_draw_raycast"):
 		for vis in raycast_vis:
 			vis.visible = !vis.visible
